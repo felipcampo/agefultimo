@@ -63,7 +63,7 @@ public class ComitesController implements Serializable {
 
                 @Override
                 public Object getRowKey(Comites entity) {
-                    return entity.getIdComites();
+                    return entity.getCodCom();
                 }
 
                 @Override

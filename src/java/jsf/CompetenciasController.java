@@ -63,7 +63,7 @@ public class CompetenciasController implements Serializable {
 
                 @Override
                 public Object getRowKey(Competencias entity) {
-                    return entity.getIdCompetencias();
+                    return entity.getCodCom();
                 }
 
                 @Override

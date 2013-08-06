@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewSeguimientoProyectosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/> 
+            <h:form>
+                <div id="form" align="center">
+                    <p:panelGrid columns="2">
+                        <f:facet name="header">
+                            <p:row><p:column>#{bundle.ViewSeguimientoProyectosTitle}</p:column></p:row>                            
+                        </f:facet>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codSeg}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codSeg}" title="#{bundle.ViewSeguimientoProyectosTitle_codSeg}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_fecSeg}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.fecSeg}" title="#{bundle.ViewSeguimientoProyectosTitle_fecSeg}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_horIni}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.horIni}" title="#{bundle.ViewSeguimientoProyectosTitle_horIni}">
+                            <f:convertDateTime pattern="HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_horFin}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.horFin}" title="#{bundle.ViewSeguimientoProyectosTitle_horFin}">
+                            <f:convertDateTime pattern="HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_totHor}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.totHor}" title="#{bundle.ViewSeguimientoProyectosTitle_totHor}">
+                            <f:convertDateTime pattern="HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codPro}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codPro}" title="#{bundle.ViewSeguimientoProyectosTitle_codPro}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_area}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.area}" title="#{bundle.ViewSeguimientoProyectosTitle_area}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_jornada}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.jornada}" title="#{bundle.ViewSeguimientoProyectosTitle_jornada}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_nomIns}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.nomIns}" title="#{bundle.ViewSeguimientoProyectosTitle_nomIns}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codCom}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codCom}" title="#{bundle.ViewSeguimientoProyectosTitle_codCom}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codFasPro}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codFasPro}" title="#{bundle.ViewSeguimientoProyectosTitle_codFasPro}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codFic}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codFic}" title="#{bundle.ViewSeguimientoProyectosTitle_codFic}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codResApr}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codResApr}" title="#{bundle.ViewSeguimientoProyectosTitle_codResApr}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codTitCri}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codTitCri}" title="#{bundle.ViewSeguimientoProyectosTitle_codTitCri}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codEstJui}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codEstJui}" title="#{bundle.ViewSeguimientoProyectosTitle_codEstJui}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codGraJui}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codGraJui}" title="#{bundle.ViewSeguimientoProyectosTitle_codGraJui}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codTipJui}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codTipJui}" title="#{bundle.ViewSeguimientoProyectosTitle_codTipJui}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codPrg}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codPrg}" title="#{bundle.ViewSeguimientoProyectosTitle_codPrg}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codNivFor}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codNivFor}" title="#{bundle.ViewSeguimientoProyectosTitle_codNivFor}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codReg}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codReg}" title="#{bundle.ViewSeguimientoProyectosTitle_codReg}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codCen}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codCen}" title="#{bundle.ViewSeguimientoProyectosTitle_codCen}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_idUsu}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.idUsu}" title="#{bundle.ViewSeguimientoProyectosTitle_idUsu}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoProyectosLabel_codEstApr}"/>
+                        <h:outputText value="#{seguimientoProyectosController.selected.codEstApr}" title="#{bundle.ViewSeguimientoProyectosTitle_codEstApr}"/>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton oncomplete="confirmationDelete.show();" process="@this" value="#{bundle.ListSeguimientoProyectosDestroyLink}"
+                                     title="#{bundle.ListSeguimientoProyectosDestroyLink}" icon="ui-icon-trash">
+                    </p:commandButton>
+                    <p:button outcome="Edit" value="#{bundle.ViewSeguimientoProyectosEditLink}" icon="ui-icon-pencil"/>
+                    <p:commandButton ajax="false" action="#{seguimientoProyectosController.prepareCreate}" value="#{bundle.ViewSeguimientoProyectosCreateLink}" icon="ui-icon-document"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{seguimientoProyectosController.prepareList}" value="#{bundle.ViewSeguimientoProyectosShowAllLink}"/>
+                </div>            
+            </h:form>
+        </ui:define>
+        <ui:define name="dialogs">
+            <p:confirmDialog id="confirmDelete" message="#{bundle.DeleteItemTitle}"  
+                             header="#{bundle.DeleteItemMessage}" severity="alert" widgetVar="confirmationDelete">  
+                <p:commandButton id="confirmDeleteButtonYes" value="#{bundle.DeleteButtonYes}" oncomplete="confirmationDelete.hide();"  
+                                 action="#{seguimientoProyectosController.destroy}"/>  
+                <p:commandButton id="confirmDeleteButtonNot" value="#{bundle.DeleteButtonNot}" onclick="confirmationDelete.hide();" type="button" />   
+            </p:confirmDialog>             
+        </ui:define>
+    </ui:composition>
+
+</html>

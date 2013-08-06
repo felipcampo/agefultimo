@@ -63,7 +63,7 @@ public class SeguimientoProyectosController implements Serializable {
 
                 @Override
                 public Object getRowKey(SeguimientoProyectos entity) {
-                    return entity.getIdSeguimientoProyectos();
+                    return entity.getCodSeg();
                 }
 
                 @Override

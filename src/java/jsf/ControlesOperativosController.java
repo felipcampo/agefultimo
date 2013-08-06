@@ -63,7 +63,7 @@ public class ControlesOperativosController implements Serializable {
 
                 @Override
                 public Object getRowKey(ControlesOperativos entity) {
-                    return entity.getIdControlesOperativos();
+                    return entity.getNumConOpe();
                 }
 
                 @Override

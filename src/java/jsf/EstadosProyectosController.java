@@ -63,7 +63,7 @@ public class EstadosProyectosController implements Serializable {
 
                 @Override
                 public Object getRowKey(EstadosProyectos entity) {
-                    return entity.getIdEstadosProyectos();
+                    return entity.getCodEstPro();
                 }
 
                 @Override

@@ -63,7 +63,7 @@ public class TiposFamiliaController implements Serializable {
 
                 @Override
                 public Object getRowKey(TiposFamilia entity) {
-                    return entity.getIdTiposFamilia();
+                    return entity.getCodTipFam();
                 }
 
                 @Override

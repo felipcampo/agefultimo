@@ -63,7 +63,7 @@ public class ControlAprendizController implements Serializable {
 
                 @Override
                 public Object getRowKey(ControlAprendiz entity) {
-                    return entity.getIdControlAprendiz();
+                    return entity.getConsec();
                 }
 
                 @Override

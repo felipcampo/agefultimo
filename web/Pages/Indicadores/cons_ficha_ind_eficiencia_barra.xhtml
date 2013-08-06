@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.NameApp}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+             <div id="Layoutcontenidoindicadores">
+              
+            <div align="center">
+   
+       <p:fieldset id="ind" legend="Indicador de: Eficiencia">  
+          <h:panelGrid columns="2" cellpadding="10">  
+               <img src="imagenes/Eficiencia_barra.png" />
+           
+         </h:panelGrid>  
+        
+        <p:button style="left: 270px; top:-18px;" value="Ver reporte"/>  
+       </p:fieldset>
+              
+                <table align="right" style="margin-top: -425px;">  
+                    <tr>
+                        <td><img src="imagenes/torta.png" /></td>
+                    </tr>
+                    <tr>
+                        <td><p:button href="cons_ficha_ind_eficiencia.xhtml" style="top: 3px; left:50px;" value="Ver diagrama" /></td>
+                    </tr>
+                    <tr>
+                        <td><br/></td>
+                    </tr>
+                    <tr>
+                        <td><img src="imagenes/Ambiental.png" /></td>
+                    </tr>    
+                </table>
+                <h:outputText style="margin-left: 920px;" value="Gota a gota, el agua se agota "></h:outputText> 
+                
+                
+            </div>
+            <br/>
+            </div>
+            </ui:define>
+    </ui:composition>
+
+</html>

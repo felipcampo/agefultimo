@@ -63,7 +63,7 @@ public class CentrosFormacionController implements Serializable {
 
                 @Override
                 public Object getRowKey(CentrosFormacion entity) {
-                    return entity.getIdCentrosFormacion();
+                    return entity.getCodCen();
                 }
 
                 @Override

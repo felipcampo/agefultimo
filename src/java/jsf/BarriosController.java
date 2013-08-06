@@ -63,7 +63,7 @@ public class BarriosController implements Serializable {
 
                 @Override
                 public Object getRowKey(Barrios entity) {
-                    return entity.getIdBarrios();
+                    return entity.getCodBar();
                 }
 
                 @Override

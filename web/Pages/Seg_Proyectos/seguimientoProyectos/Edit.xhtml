@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditSeguimientoProyectosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formSeguimientoProyectos">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditSeguimientoProyectosTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codSeg}" for="codSeg" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="codSeg" value="#{seguimientoProyectosController.selected.codSeg}" title="#{bundle.EditSeguimientoProyectosTitle_codSeg}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codSeg}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codSeg"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_fecSeg}" for="fecSeg" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecSeg" value="#{seguimientoProyectosController.selected.fecSeg}" title="#{bundle.EditSeguimientoProyectosTitle_fecSeg}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_fecSeg}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecSeg"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_horIni}" for="horIni" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="horIni" value="#{seguimientoProyectosController.selected.horIni}" title="#{bundle.EditSeguimientoProyectosTitle_horIni}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_horIni}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="horIni"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_horFin}" for="horFin" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="horFin" value="#{seguimientoProyectosController.selected.horFin}" title="#{bundle.EditSeguimientoProyectosTitle_horFin}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_horFin}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="horFin"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_totHor}" for="totHor" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="totHor" value="#{seguimientoProyectosController.selected.totHor}" title="#{bundle.EditSeguimientoProyectosTitle_totHor}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_totHor}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="totHor"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codPro}" for="codPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="codPro" value="#{seguimientoProyectosController.selected.codPro}" title="#{bundle.EditSeguimientoProyectosTitle_codPro}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_area}" for="area" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="area" value="#{seguimientoProyectosController.selected.area}" title="#{bundle.EditSeguimientoProyectosTitle_area}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_area}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="area"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_jornada}" for="jornada" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="jornada" value="#{seguimientoProyectosController.selected.jornada}" title="#{bundle.EditSeguimientoProyectosTitle_jornada}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_jornada}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="jornada"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_nomIns}" for="nomIns" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="nomIns" value="#{seguimientoProyectosController.selected.nomIns}" title="#{bundle.EditSeguimientoProyectosTitle_nomIns}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_nomIns}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomIns"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codCom}" for="codCom" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codCom" value="#{seguimientoProyectosController.selected.codCom}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codCom}">
+                                    <f:selectItems value="#{competenciasController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codCom"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codFasPro}" for="codFasPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codFasPro" value="#{seguimientoProyectosController.selected.codFasPro}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codFasPro}">
+                                    <f:selectItems value="#{fasesProyectoController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFasPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codFic}" for="codFic" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codFic" value="#{seguimientoProyectosController.selected.codFic}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codFic}">
+                                    <f:selectItems value="#{fichasCaracterizacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFic"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codResApr}" for="codResApr" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codResApr" value="#{seguimientoProyectosController.selected.codResApr}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codResApr}">
+                                    <f:selectItems value="#{resultadosAprendizajeController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codResApr"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codTitCri}" for="codTitCri" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codTitCri" value="#{seguimientoProyectosController.selected.codTitCri}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codTitCri}">
+                                    <f:selectItems value="#{tituloCriteriosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTitCri"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codEstJui}" for="codEstJui" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codEstJui" value="#{seguimientoProyectosController.selected.codEstJui}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codEstJui}">
+                                    <f:selectItems value="#{estadosJuicioController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codEstJui"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codGraJui}" for="codGraJui" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codGraJui" value="#{seguimientoProyectosController.selected.codGraJui}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codGraJui}">
+                                    <f:selectItems value="#{gradosJuicioController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codGraJui"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codTipJui}" for="codTipJui" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codTipJui" value="#{seguimientoProyectosController.selected.codTipJui}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codTipJui}">
+                                    <f:selectItems value="#{tiposJuicioController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTipJui"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codPrg}" for="codPrg" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codPrg" value="#{seguimientoProyectosController.selected.codPrg}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codPrg}">
+                                    <f:selectItems value="#{programasController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codPrg"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codNivFor}" for="codNivFor" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codNivFor" value="#{seguimientoProyectosController.selected.codNivFor}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codNivFor}">
+                                    <f:selectItems value="#{nivelesFormacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codNivFor"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codReg}" for="codReg" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codReg" value="#{seguimientoProyectosController.selected.codReg}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codReg}">
+                                    <f:selectItems value="#{regionalesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codReg"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codCen}" for="codCen" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codCen" value="#{seguimientoProyectosController.selected.codCen}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codCen}">
+                                    <f:selectItems value="#{centrosFormacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codCen"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="idUsu" value="#{seguimientoProyectosController.selected.idUsu}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientoProyectosLabel_codEstApr}" for="codEstApr" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codEstApr" value="#{seguimientoProyectosController.selected.codEstApr}" required="true" requiredMessage="#{bundle.EditSeguimientoProyectosRequiredMessage_codEstApr}">
+                                    <f:selectItems value="#{estadosAprendizController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codEstApr"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{seguimientoProyectosController.update}" value="#{bundle.EditSeguimientoProyectosSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditSeguimientoProyectosViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{seguimientoProyectosController.prepareList}" value="#{bundle.EditSeguimientoProyectosShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

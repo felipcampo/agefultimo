@@ -63,7 +63,7 @@ public class MedidasFormativasController implements Serializable {
 
                 @Override
                 public Object getRowKey(MedidasFormativas entity) {
-                    return entity.getIdMedidasFormativas();
+                    return entity.getCodMedFor();
                 }
 
                 @Override

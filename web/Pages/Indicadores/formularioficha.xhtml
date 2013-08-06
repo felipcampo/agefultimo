@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+         <h:outputStylesheet name=""/>
+          <h:outputStylesheet name="../css/agef.css"/>
+           <h:outputStylesheet name="css/agef_theme.css"/>
+    </h:head>
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.NameApp}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+        <div><center>
+        <p><font size="50px">Formulario ficha</font></p>
+        <p>Ingrese numero de ficha:</p>
+        <p><input name="consultar" type="text" value="" size="6" maxlength="6" /></p>
+        <p:button id="botona" value="Consultar" href="Consultaficha.xhtml"/>
+    
+            </center>
+      </div>
+            </ui:define>
+    </ui:composition>
+
+</html>

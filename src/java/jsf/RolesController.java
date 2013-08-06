@@ -63,7 +63,7 @@ public class RolesController implements Serializable {
 
                 @Override
                 public Object getRowKey(Roles entity) {
-                    return entity.getIdRoles();
+                    return entity.getCodRol();
                 }
 
                 @Override

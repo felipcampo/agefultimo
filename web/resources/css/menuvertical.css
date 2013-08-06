@@ -1,0 +1,72 @@
+#navigationMenu{
+	padding-left:0px;
+	
+	}
+#navigationMenu li img{
+	width: 39px;
+	height: 38px;
+	margin-top: 0.5px;
+	
+	}
+
+
+
+#navigationMenu li{/*iconos*/
+padding-left:0px;
+	list-style:none;
+	height:39px;
+	padding:2px;
+	width:40px;
+}
+
+#navigationMenu span{
+	padding-left:0px;
+	/* Container properties */
+	background-color: #008C85;
+	color: #FFF;
+	width: 0;
+	left: 38px;
+	padding: 0;
+	position: absolute;
+	overflow: hidden;
+	/* Text properties */
+	font-family: 'Myriad Pro',Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 0.6px;
+	white-space: nowrap;
+	line-height: 39px;
+	/* CSS3 Transition: */
+	-webkit-transition: 0.25s;
+	/* Future proofing (these do not work yet): */
+	-moz-transition: 0.25s;
+	transition: 0.25s;
+	top: -1px;
+}
+
+#navigationMenu a{
+	padding-left:0px;
+	height: 39px;
+	width: 38px;
+	display: block;
+	position: relative;
+	background-color: #FD8E4D;
+	padding-left:: 0px;
+	top: 0;
+}
+
+/* General hover styles */
+
+#navigationMenu a:hover span{ width:auto; padding:0 20px;overflow:visible; }
+#navigationMenu a:hover{
+	text-decoration: none;
+	/* CSS outer glow with the box-shadow property */
+	-moz-box-shadow: 0 0 5px #9ddff5;
+	-webkit-box-shadow: 0 0 5px #9ddff5;
+	box-shadow: 0 0 5px #9ddff5;
+	background-color: #FC7323;
+}
+
+
+
+/* The styles below are only needed for the demo page */

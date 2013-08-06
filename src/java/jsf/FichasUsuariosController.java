@@ -64,7 +64,7 @@ public class FichasUsuariosController implements Serializable {
 
                 @Override
                 public Object getRowKey(FichasUsuarios entity) {
-                    return entity.getIdFichasUsuarios();
+                    return entity.getFichasUsuariosPK();
                 }
 
                 @Override

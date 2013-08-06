@@ -63,7 +63,7 @@ public class ConcertacionPlanTrabajoProductivaController implements Serializable
 
                 @Override
                 public Object getRowKey(ConcertacionPlanTrabajoProductiva entity) {
-                    return entity.getIdConcertacionPlanTrabajoProductiva();
+                    return entity.getCodCpt();
                 }
 
                 @Override

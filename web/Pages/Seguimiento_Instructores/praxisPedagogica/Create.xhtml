@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePraxisPedagogicaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formPraxisPedagogica">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreatePraxisPedagogicaTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePraxisPedagogicaLabel_codPrx}" for="codPrx" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="codPrx" value="#{praxisPedagogicaController.selected.codPrx}" title="#{bundle.CreatePraxisPedagogicaTitle_codPrx}" required="true" requiredMessage="#{bundle.CreatePraxisPedagogicaRequiredMessage_codPrx}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codPrx"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePraxisPedagogicaLabel_desPra}" for="desPra" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="desPra" value="#{praxisPedagogicaController.selected.desPra}" title="#{bundle.CreatePraxisPedagogicaTitle_desPra}" required="true" requiredMessage="#{bundle.CreatePraxisPedagogicaRequiredMessage_desPra}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="desPra"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePraxisPedagogicaLabel_cumple}" for="cumple" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="cumple" value="#{praxisPedagogicaController.selected.cumple}" title="#{bundle.CreatePraxisPedagogicaTitle_cumple}" required="true" requiredMessage="#{bundle.CreatePraxisPedagogicaRequiredMessage_cumple}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="cumple"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePraxisPedagogicaLabel_observaciones}" for="observaciones" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="observaciones" value="#{praxisPedagogicaController.selected.observaciones}" title="#{bundle.CreatePraxisPedagogicaTitle_observaciones}" required="true" requiredMessage="#{bundle.CreatePraxisPedagogicaRequiredMessage_observaciones}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="observaciones"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePraxisPedagogicaLabel_revisor}" for="revisor" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="revisor" value="#{praxisPedagogicaController.selected.revisor}" title="#{bundle.CreatePraxisPedagogicaTitle_revisor}" required="true" requiredMessage="#{bundle.CreatePraxisPedagogicaRequiredMessage_revisor}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="revisor"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePraxisPedagogicaLabel_recomendacion}" for="recomendacion" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="recomendacion" value="#{praxisPedagogicaController.selected.recomendacion}" title="#{bundle.CreatePraxisPedagogicaTitle_recomendacion}" required="true" requiredMessage="#{bundle.CreatePraxisPedagogicaRequiredMessage_recomendacion}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="recomendacion"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePraxisPedagogicaLabel_fecha}" for="fecha" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecha" value="#{praxisPedagogicaController.selected.fecha}" title="#{bundle.CreatePraxisPedagogicaTitle_fecha}" required="true" requiredMessage="#{bundle.CreatePraxisPedagogicaRequiredMessage_fecha}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecha"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePraxisPedagogicaLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="idUsu" value="#{praxisPedagogicaController.selected.idUsu}" required="true" requiredMessage="#{bundle.CreatePraxisPedagogicaRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePraxisPedagogicaLabel_codPro}" for="codPro" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codPro" value="#{praxisPedagogicaController.selected.codPro}" required="true" requiredMessage="#{bundle.CreatePraxisPedagogicaRequiredMessage_codPro}">
+                                    <f:selectItems value="#{proyectosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codPro"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePraxisPedagogicaLabel_codCen}" for="codCen" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codCen" value="#{praxisPedagogicaController.selected.codCen}" required="true" requiredMessage="#{bundle.CreatePraxisPedagogicaRequiredMessage_codCen}">
+                                    <f:selectItems value="#{centrosFormacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codCen"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{praxisPedagogicaController.create}" value="#{bundle.CreatePraxisPedagogicaSaveLink}" icon="ui-icon-disk"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{praxisPedagogicaController.prepareList}" value="#{bundle.CreatePraxisPedagogicaShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -63,7 +63,7 @@ public class OcupacionesController implements Serializable {
 
                 @Override
                 public Object getRowKey(Ocupaciones entity) {
-                    return entity.getIdOcupaciones();
+                    return entity.getCodOcu();
                 }
 
                 @Override

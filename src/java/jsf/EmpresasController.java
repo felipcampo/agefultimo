@@ -63,7 +63,7 @@ public class EmpresasController implements Serializable {
 
                 @Override
                 public Object getRowKey(Empresas entity) {
-                    return entity.getIdEmpresas();
+                    return entity.getNitEmp();
                 }
 
                 @Override

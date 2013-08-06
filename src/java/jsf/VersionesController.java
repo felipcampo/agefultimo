@@ -63,7 +63,7 @@ public class VersionesController implements Serializable {
 
                 @Override
                 public Object getRowKey(Versiones entity) {
-                    return entity.getIdVersiones();
+                    return entity.getCodVer();
                 }
 
                 @Override

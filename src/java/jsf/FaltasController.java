@@ -63,7 +63,7 @@ public class FaltasController implements Serializable {
 
                 @Override
                 public Object getRowKey(Faltas entity) {
-                    return entity.getIdFaltas();
+                    return entity.getCodFal();
                 }
 
                 @Override

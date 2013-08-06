@@ -63,7 +63,7 @@ public class LlamadosAtencionVerbalController implements Serializable {
 
                 @Override
                 public Object getRowKey(LlamadosAtencionVerbal entity) {
-                    return entity.getIdLlamadosAtencionVerbal();
+                    return entity.getNumAcc();
                 }
 
                 @Override

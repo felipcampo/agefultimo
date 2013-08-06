@@ -63,7 +63,7 @@ public class CiudadesController implements Serializable {
 
                 @Override
                 public Object getRowKey(Ciudades entity) {
-                    return entity.getIdCiudades();
+                    return entity.getCodCiu();
                 }
 
                 @Override

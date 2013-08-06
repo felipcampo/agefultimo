@@ -63,7 +63,7 @@ public class CriteriosSeguimientoInstructoresController implements Serializable 
 
                 @Override
                 public Object getRowKey(CriteriosSeguimientoInstructores entity) {
-                    return entity.getIdCriteriosSeguimientoInstructores();
+                    return entity.getCodSeg();
                 }
 
                 @Override

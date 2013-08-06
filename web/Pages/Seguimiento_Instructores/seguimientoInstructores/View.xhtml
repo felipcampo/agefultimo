@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewSeguimientoInstructoresTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/> 
+            <h:form>
+                <div id="form" align="center">
+                    <p:panelGrid columns="2">
+                        <f:facet name="header">
+                            <p:row><p:column>#{bundle.ViewSeguimientoInstructoresTitle}</p:column></p:row>                            
+                        </f:facet>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_codSegIns}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.codSegIns}" title="#{bundle.ViewSeguimientoInstructoresTitle_codSegIns}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_fecSegIns}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.fecSegIns}" title="#{bundle.ViewSeguimientoInstructoresTitle_fecSegIns}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_horIni}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.horIni}" title="#{bundle.ViewSeguimientoInstructoresTitle_horIni}">
+                            <f:convertDateTime pattern="HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_horFin}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.horFin}" title="#{bundle.ViewSeguimientoInstructoresTitle_horFin}">
+                            <f:convertDateTime pattern="HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_area}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.area}" title="#{bundle.ViewSeguimientoInstructoresTitle_area}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_nomIns}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.nomIns}" title="#{bundle.ViewSeguimientoInstructoresTitle_nomIns}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_idUsu}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.idUsu}" title="#{bundle.ViewSeguimientoInstructoresTitle_idUsu}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_codTitCri}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.codTitCri}" title="#{bundle.ViewSeguimientoInstructoresTitle_codTitCri}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_codTipJui}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.codTipJui}" title="#{bundle.ViewSeguimientoInstructoresTitle_codTipJui}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_codReg}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.codReg}" title="#{bundle.ViewSeguimientoInstructoresTitle_codReg}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_codPro}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.codPro}" title="#{bundle.ViewSeguimientoInstructoresTitle_codPro}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_codNivFor}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.codNivFor}" title="#{bundle.ViewSeguimientoInstructoresTitle_codNivFor}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_codGraJui}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.codGraJui}" title="#{bundle.ViewSeguimientoInstructoresTitle_codGraJui}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_codFic}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.codFic}" title="#{bundle.ViewSeguimientoInstructoresTitle_codFic}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_codEstJui}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.codEstJui}" title="#{bundle.ViewSeguimientoInstructoresTitle_codEstJui}"/>
+                        <h:outputText value="#{bundle.ViewSeguimientoInstructoresLabel_codCen}"/>
+                        <h:outputText value="#{seguimientoInstructoresController.selected.codCen}" title="#{bundle.ViewSeguimientoInstructoresTitle_codCen}"/>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton oncomplete="confirmationDelete.show();" process="@this" value="#{bundle.ListSeguimientoInstructoresDestroyLink}"
+                                     title="#{bundle.ListSeguimientoInstructoresDestroyLink}" icon="ui-icon-trash">
+                    </p:commandButton>
+                    <p:button outcome="Edit" value="#{bundle.ViewSeguimientoInstructoresEditLink}" icon="ui-icon-pencil"/>
+                    <p:commandButton ajax="false" action="#{seguimientoInstructoresController.prepareCreate}" value="#{bundle.ViewSeguimientoInstructoresCreateLink}" icon="ui-icon-document"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{seguimientoInstructoresController.prepareList}" value="#{bundle.ViewSeguimientoInstructoresShowAllLink}"/>
+                </div>            
+            </h:form>
+        </ui:define>
+        <ui:define name="dialogs">
+            <p:confirmDialog id="confirmDelete" message="#{bundle.DeleteItemTitle}"  
+                             header="#{bundle.DeleteItemMessage}" severity="alert" widgetVar="confirmationDelete">  
+                <p:commandButton id="confirmDeleteButtonYes" value="#{bundle.DeleteButtonYes}" oncomplete="confirmationDelete.hide();"  
+                                 action="#{seguimientoInstructoresController.destroy}"/>  
+                <p:commandButton id="confirmDeleteButtonNot" value="#{bundle.DeleteButtonNot}" onclick="confirmationDelete.hide();" type="button" />   
+            </p:confirmDialog>             
+        </ui:define>
+    </ui:composition>
+
+</html>

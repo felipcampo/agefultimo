@@ -63,7 +63,7 @@ public class DesercionesController implements Serializable {
 
                 @Override
                 public Object getRowKey(Deserciones entity) {
-                    return entity.getIdDeserciones();
+                    return entity.getCodDes();
                 }
 
                 @Override

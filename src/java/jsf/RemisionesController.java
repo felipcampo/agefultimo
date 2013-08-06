@@ -63,7 +63,7 @@ public class RemisionesController implements Serializable {
 
                 @Override
                 public Object getRowKey(Remisiones entity) {
-                    return entity.getIdRemisiones();
+                    return entity.getCodRem();
                 }
 
                 @Override

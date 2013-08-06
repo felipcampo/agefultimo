@@ -63,7 +63,7 @@ public class TiposAlistamientoController implements Serializable {
 
                 @Override
                 public Object getRowKey(TiposAlistamiento entity) {
-                    return entity.getIdTiposAlistamiento();
+                    return entity.getCodTipAli();
                 }
 
                 @Override

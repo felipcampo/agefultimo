@@ -63,7 +63,7 @@ public class SancionesController implements Serializable {
 
                 @Override
                 public Object getRowKey(Sanciones entity) {
-                    return entity.getIdSanciones();
+                    return entity.getCodSan();
                 }
 
                 @Override

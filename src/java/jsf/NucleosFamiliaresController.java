@@ -63,7 +63,7 @@ public class NucleosFamiliaresController implements Serializable {
 
                 @Override
                 public Object getRowKey(NucleosFamiliares entity) {
-                    return entity.getIdNucleosFamiliares();
+                    return entity.getCodNucFam();
                 }
 
                 @Override

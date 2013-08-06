@@ -63,7 +63,7 @@ public class PlanesMejoramientoController implements Serializable {
 
                 @Override
                 public Object getRowKey(PlanesMejoramiento entity) {
-                    return entity.getIdPlanesMejoramiento();
+                    return entity.getCodPlaMej();
                 }
 
                 @Override

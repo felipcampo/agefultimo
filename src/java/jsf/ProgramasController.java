@@ -63,7 +63,7 @@ public class ProgramasController implements Serializable {
 
                 @Override
                 public Object getRowKey(Programas entity) {
-                    return entity.getIdProgramas();
+                    return entity.getCodPrg();
                 }
 
                 @Override

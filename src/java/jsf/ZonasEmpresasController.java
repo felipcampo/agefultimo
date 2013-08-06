@@ -63,7 +63,7 @@ public class ZonasEmpresasController implements Serializable {
 
                 @Override
                 public Object getRowKey(ZonasEmpresas entity) {
-                    return entity.getIdZonasEmpresas();
+                    return entity.getCodZon();
                 }
 
                 @Override

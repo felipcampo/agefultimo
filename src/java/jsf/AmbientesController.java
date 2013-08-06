@@ -63,7 +63,7 @@ public class AmbientesController implements Serializable {
 
                 @Override
                 public Object getRowKey(Ambientes entity) {
-                    return entity.getIdAmbientes();
+                    return entity.getCodAmb();
                 }
 
                 @Override

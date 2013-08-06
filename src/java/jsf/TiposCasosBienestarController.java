@@ -63,7 +63,7 @@ public class TiposCasosBienestarController implements Serializable {
 
                 @Override
                 public Object getRowKey(TiposCasosBienestar entity) {
-                    return entity.getIdTiposCasosBienestar();
+                    return entity.getCodTipBie();
                 }
 
                 @Override

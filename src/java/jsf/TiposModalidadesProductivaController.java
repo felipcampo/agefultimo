@@ -63,7 +63,7 @@ public class TiposModalidadesProductivaController implements Serializable {
 
                 @Override
                 public Object getRowKey(TiposModalidadesProductiva entity) {
-                    return entity.getIdTiposModalidadesProductiva();
+                    return entity.getCodTdm();
                 }
 
                 @Override

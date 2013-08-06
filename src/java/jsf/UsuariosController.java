@@ -63,7 +63,7 @@ public class UsuariosController implements Serializable {
 
                 @Override
                 public Object getRowKey(Usuarios entity) {
-                    return entity.getIdUsuarios();
+                    return entity.getIdUsu();
                 }
 
                 @Override

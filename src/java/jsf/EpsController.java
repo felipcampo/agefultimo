@@ -63,7 +63,7 @@ public class EpsController implements Serializable {
 
                 @Override
                 public Object getRowKey(Eps entity) {
-                    return entity.getIdEps();
+                    return entity.getCodEps();
                 }
 
                 @Override

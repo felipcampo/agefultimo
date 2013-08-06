@@ -63,7 +63,7 @@ public class TiposFormacionController implements Serializable {
 
                 @Override
                 public Object getRowKey(TiposFormacion entity) {
-                    return entity.getIdTiposFormacion();
+                    return entity.getCodTipFor();
                 }
 
                 @Override

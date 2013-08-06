@@ -63,7 +63,7 @@ public class FichasCaracterizacionController implements Serializable {
 
                 @Override
                 public Object getRowKey(FichasCaracterizacion entity) {
-                    return entity.getIdFichasCaracterizacion();
+                    return entity.getCodFic();
                 }
 
                 @Override

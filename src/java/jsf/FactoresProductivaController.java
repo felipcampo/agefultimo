@@ -63,7 +63,7 @@ public class FactoresProductivaController implements Serializable {
 
                 @Override
                 public Object getRowKey(FactoresProductiva entity) {
-                    return entity.getIdFactoresProductiva();
+                    return entity.getIdFep();
                 }
 
                 @Override

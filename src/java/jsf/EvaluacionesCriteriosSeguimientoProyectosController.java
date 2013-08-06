@@ -63,7 +63,7 @@ public class EvaluacionesCriteriosSeguimientoProyectosController implements Seri
 
                 @Override
                 public Object getRowKey(EvaluacionesCriteriosSeguimientoProyectos entity) {
-                    return entity.getIdEvaluacionesCriteriosSeguimientoProyectos();
+                    return entity.getCodEvaCri();
                 }
 
                 @Override

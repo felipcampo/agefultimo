@@ -63,7 +63,7 @@ public class CaracterizacionesPoblacionController implements Serializable {
 
                 @Override
                 public Object getRowKey(CaracterizacionesPoblacion entity) {
-                    return entity.getIdCaracterizacionesPoblacion();
+                    return entity.getCodCarPob();
                 }
 
                 @Override

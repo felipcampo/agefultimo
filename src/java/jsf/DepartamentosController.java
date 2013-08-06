@@ -63,7 +63,7 @@ public class DepartamentosController implements Serializable {
 
                 @Override
                 public Object getRowKey(Departamentos entity) {
-                    return entity.getIdDepartamentos();
+                    return entity.getCodDep();
                 }
 
                 @Override

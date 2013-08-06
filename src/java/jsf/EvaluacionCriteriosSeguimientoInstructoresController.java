@@ -63,7 +63,7 @@ public class EvaluacionCriteriosSeguimientoInstructoresController implements Ser
 
                 @Override
                 public Object getRowKey(EvaluacionCriteriosSeguimientoInstructores entity) {
-                    return entity.getIdEvaluacionCriteriosSeguimientoInstructores();
+                    return entity.getCodEvaCriIns();
                 }
 
                 @Override

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditAlistamientosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formAlistamientos">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditAlistamientosTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditAlistamientosLabel_codAli}" for="codAli" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="codAli" value="#{alistamientosController.selected.codAli}" title="#{bundle.EditAlistamientosTitle_codAli}" required="true" requiredMessage="#{bundle.EditAlistamientosRequiredMessage_codAli}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codAli"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditAlistamientosLabel_nomAli}" for="nomAli" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="nomAli" value="#{alistamientosController.selected.nomAli}" title="#{bundle.EditAlistamientosTitle_nomAli}" required="true" requiredMessage="#{bundle.EditAlistamientosRequiredMessage_nomAli}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomAli"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditAlistamientosLabel_bibliografia}" for="bibliografia" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="bibliografia" value="#{alistamientosController.selected.bibliografia}" title="#{bundle.EditAlistamientosTitle_bibliografia}" required="true" requiredMessage="#{bundle.EditAlistamientosRequiredMessage_bibliografia}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="bibliografia"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditAlistamientosLabel_recDid}" for="recDid" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="recDid" value="#{alistamientosController.selected.recDid}" title="#{bundle.EditAlistamientosTitle_recDid}" required="true" requiredMessage="#{bundle.EditAlistamientosRequiredMessage_recDid}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="recDid"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditAlistamientosLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="idUsu" value="#{alistamientosController.selected.idUsu}" required="true" requiredMessage="#{bundle.EditAlistamientosRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditAlistamientosLabel_codTipAli}" for="codTipAli" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codTipAli" value="#{alistamientosController.selected.codTipAli}" required="true" requiredMessage="#{bundle.EditAlistamientosRequiredMessage_codTipAli}">
+                                    <f:selectItems value="#{tiposAlistamientoController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTipAli"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditAlistamientosLabel_codFasPro}" for="codFasPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codFasPro" value="#{alistamientosController.selected.codFasPro}" required="true" requiredMessage="#{bundle.EditAlistamientosRequiredMessage_codFasPro}">
+                                    <f:selectItems value="#{fasesProyectoController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFasPro"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{alistamientosController.update}" value="#{bundle.EditAlistamientosSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditAlistamientosViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{alistamientosController.prepareList}" value="#{bundle.EditAlistamientosShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

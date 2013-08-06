@@ -63,7 +63,7 @@ public class TituloCriteriosController implements Serializable {
 
                 @Override
                 public Object getRowKey(TituloCriterios entity) {
-                    return entity.getIdTituloCriterios();
+                    return entity.getCodTitCri();
                 }
 
                 @Override

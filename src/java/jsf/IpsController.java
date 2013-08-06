@@ -63,7 +63,7 @@ public class IpsController implements Serializable {
 
                 @Override
                 public Object getRowKey(Ips entity) {
-                    return entity.getIdIps();
+                    return entity.getCodIps();
                 }
 
                 @Override

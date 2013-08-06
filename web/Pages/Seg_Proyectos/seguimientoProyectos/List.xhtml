@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListSeguimientoProyectosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form id="listSeguimientoProyectos" styleClass="jsfcrud_list_form">
+                <div id="list" align="center">
+                    <p:growl id="msgs" showDetail="false" sticky="false"/>
+                    <h:outputText escape="false" value="#{bundle.ListSeguimientoProyectosEmpty}" rendered="#{seguimientoProyectosController.lazyModel.rowCount == 0}"/>
+                    <h:panelGroup rendered="#{seguimientoProyectosController.lazyModel.rowCount > 0}">
+                        <p:dataTable id="tableListSeguimientoProyectos" 
+                                     value="#{seguimientoProyectosController.lazyModel}" 
+                                     var="item" 
+                                     paginator="true" rows="10" paginatorAlwaysVisible="false"
+                                     paginatorTemplate="{FirstPageLink} {PreviousPageLink}
+                                     {PageLinks} {NextPageLink}
+                                     {LastPageLink} {RowsPerPageDropdown}"  
+                                     rowsPerPageTemplate="5,10,15" paginatorPosition="bottom"
+                                     lazy="true"
+                                     emptyMessage="No se encontraron datos con el criterio dado"
+                                     widgetVar="tableSeguimientoProyectos">
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codSeg}"
+                                      filterBy="#{item.codSeg}"
+                                      sortBy="#{item.codSeg}">                        
+                                <h:outputText value="#{item.codSeg}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_fecSeg}"
+                                      filterBy="#{item.fecSeg}"
+                                      sortBy="#{item.fecSeg}">                        
+                                <h:outputText value="#{item.fecSeg}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_horIni}"
+                                      filterBy="#{item.horIni}"
+                                      sortBy="#{item.horIni}">                        
+                                <h:outputText value="#{item.horIni}">
+                                    <f:convertDateTime pattern="HH:mm:ss" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_horFin}"
+                                      filterBy="#{item.horFin}"
+                                      sortBy="#{item.horFin}">                        
+                                <h:outputText value="#{item.horFin}">
+                                    <f:convertDateTime pattern="HH:mm:ss" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_totHor}"
+                                      filterBy="#{item.totHor}"
+                                      sortBy="#{item.totHor}">                        
+                                <h:outputText value="#{item.totHor}">
+                                    <f:convertDateTime pattern="HH:mm:ss" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codPro}"
+                                      filterBy="#{item.codPro}"
+                                      sortBy="#{item.codPro}">                        
+                                <h:outputText value="#{item.codPro}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_area}"
+                                      filterBy="#{item.area}"
+                                      sortBy="#{item.area}">                        
+                                <h:outputText value="#{item.area}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_jornada}"
+                                      filterBy="#{item.jornada}"
+                                      sortBy="#{item.jornada}">                        
+                                <h:outputText value="#{item.jornada}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_nomIns}"
+                                      filterBy="#{item.nomIns}"
+                                      sortBy="#{item.nomIns}">                        
+                                <h:outputText value="#{item.nomIns}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codCom}"
+                                      filterBy="#{item.codCom}"
+                                      sortBy="#{item.codCom}">                        
+                                <h:outputText value="#{item.codCom}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codFasPro}"
+                                      filterBy="#{item.codFasPro}"
+                                      sortBy="#{item.codFasPro}">                        
+                                <h:outputText value="#{item.codFasPro}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codFic}"
+                                      filterBy="#{item.codFic}"
+                                      sortBy="#{item.codFic}">                        
+                                <h:outputText value="#{item.codFic}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codResApr}"
+                                      filterBy="#{item.codResApr}"
+                                      sortBy="#{item.codResApr}">                        
+                                <h:outputText value="#{item.codResApr}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codTitCri}"
+                                      filterBy="#{item.codTitCri}"
+                                      sortBy="#{item.codTitCri}">                        
+                                <h:outputText value="#{item.codTitCri}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codEstJui}"
+                                      filterBy="#{item.codEstJui}"
+                                      sortBy="#{item.codEstJui}">                        
+                                <h:outputText value="#{item.codEstJui}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codGraJui}"
+                                      filterBy="#{item.codGraJui}"
+                                      sortBy="#{item.codGraJui}">                        
+                                <h:outputText value="#{item.codGraJui}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codTipJui}"
+                                      filterBy="#{item.codTipJui}"
+                                      sortBy="#{item.codTipJui}">                        
+                                <h:outputText value="#{item.codTipJui}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codPrg}"
+                                      filterBy="#{item.codPrg}"
+                                      sortBy="#{item.codPrg}">                        
+                                <h:outputText value="#{item.codPrg}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codNivFor}"
+                                      filterBy="#{item.codNivFor}"
+                                      sortBy="#{item.codNivFor}">                        
+                                <h:outputText value="#{item.codNivFor}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codReg}"
+                                      filterBy="#{item.codReg}"
+                                      sortBy="#{item.codReg}">                        
+                                <h:outputText value="#{item.codReg}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codCen}"
+                                      filterBy="#{item.codCen}"
+                                      sortBy="#{item.codCen}">                        
+                                <h:outputText value="#{item.codCen}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_idUsu}"
+                                      filterBy="#{item.idUsu}"
+                                      sortBy="#{item.idUsu}">                        
+                                <h:outputText value="#{item.idUsu}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListSeguimientoProyectosTitle_codEstApr}"
+                                      filterBy="#{item.codEstApr}"
+                                      sortBy="#{item.codEstApr}">                        
+                                <h:outputText value="#{item.codEstApr}"/>
+                            </p:column>
+                            <p:column>                        
+                                <p:commandButton ajax="false" action="#{seguimientoProyectosController.prepareView}" title="#{bundle.ListSeguimientoProyectosViewLink}" icon="ui-icon-search"/>
+                                <p:commandButton ajax="false" action="#{seguimientoProyectosController.prepareEdit}" title="#{bundle.ListSeguimientoProyectosEditLink}" icon="ui-icon-pencil"/>
+                                <p:commandButton oncomplete="confirmationDelete.show();" process="@this"
+                                                 title="#{bundle.ListSeguimientoProyectosDestroyLink}" icon="ui-icon-trash">
+                                    <f:setPropertyActionListener value="#{item}" target="#{seguimientoProyectosController.selected}"/>
+                                </p:commandButton>
+                            </p:column>
+                        </p:dataTable>
+                    </h:panelGroup>
+                    <br />
+                    <p:commandButton ajax="false" action="#{seguimientoProyectosController.prepareCreate}" value="#{bundle.ListSeguimientoProyectosCreateLink}" icon="ui-icon-document"/>
+                </div>        
+            </h:form>
+        </ui:define>
+        <ui:define name="dialogs">
+            <p:confirmDialog id="confirmDelete" message="#{bundle.DeleteItemTitle}"  
+                             header="#{bundle.DeleteItemMessage}" severity="alert" widgetVar="confirmationDelete">  
+                <p:commandButton id="confirmDeleteButtonYes" value="#{bundle.DeleteButtonYes}" update=":listSeguimientoProyectos" oncomplete="confirmationDelete.hide();"  
+                                 action="#{seguimientoProyectosController.destroy}"/>  
+                <p:commandButton id="confirmDeleteButtonNot" value="#{bundle.DeleteButtonNot}" onclick="confirmationDelete.hide();" type="button" />   
+            </p:confirmDialog>             
+        </ui:define>
+    </ui:composition>
+
+</html>

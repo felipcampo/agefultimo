@@ -63,7 +63,7 @@ public class EvidenciasAprendizajeController implements Serializable {
 
                 @Override
                 public Object getRowKey(EvidenciasAprendizaje entity) {
-                    return entity.getIdEvidenciasAprendizaje();
+                    return entity.getCodEviApr();
                 }
 
                 @Override

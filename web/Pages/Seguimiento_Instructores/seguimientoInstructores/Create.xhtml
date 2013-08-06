@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateSeguimientoInstructoresTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formSeguimientoInstructores">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreateSeguimientoInstructoresTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_codSegIns}" for="codSegIns" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="codSegIns" value="#{seguimientoInstructoresController.selected.codSegIns}" title="#{bundle.CreateSeguimientoInstructoresTitle_codSegIns}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_codSegIns}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codSegIns"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_fecSegIns}" for="fecSegIns" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecSegIns" value="#{seguimientoInstructoresController.selected.fecSegIns}" title="#{bundle.CreateSeguimientoInstructoresTitle_fecSegIns}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_fecSegIns}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecSegIns"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_horIni}" for="horIni" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="horIni" value="#{seguimientoInstructoresController.selected.horIni}" title="#{bundle.CreateSeguimientoInstructoresTitle_horIni}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_horIni}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="horIni"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_horFin}" for="horFin" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="horFin" value="#{seguimientoInstructoresController.selected.horFin}" title="#{bundle.CreateSeguimientoInstructoresTitle_horFin}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_horFin}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="horFin"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_area}" for="area" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="area" value="#{seguimientoInstructoresController.selected.area}" title="#{bundle.CreateSeguimientoInstructoresTitle_area}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_area}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="area"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_nomIns}" for="nomIns" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="nomIns" value="#{seguimientoInstructoresController.selected.nomIns}" title="#{bundle.CreateSeguimientoInstructoresTitle_nomIns}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_nomIns}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomIns"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="idUsu" value="#{seguimientoInstructoresController.selected.idUsu}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_codTitCri}" for="codTitCri" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codTitCri" value="#{seguimientoInstructoresController.selected.codTitCri}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_codTitCri}">
+                                    <f:selectItems value="#{tituloCriteriosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTitCri"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_codTipJui}" for="codTipJui" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codTipJui" value="#{seguimientoInstructoresController.selected.codTipJui}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_codTipJui}">
+                                    <f:selectItems value="#{tiposJuicioController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTipJui"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_codReg}" for="codReg" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codReg" value="#{seguimientoInstructoresController.selected.codReg}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_codReg}">
+                                    <f:selectItems value="#{regionalesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codReg"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_codPro}" for="codPro" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codPro" value="#{seguimientoInstructoresController.selected.codPro}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_codPro}">
+                                    <f:selectItems value="#{proyectosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codPro"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_codNivFor}" for="codNivFor" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codNivFor" value="#{seguimientoInstructoresController.selected.codNivFor}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_codNivFor}">
+                                    <f:selectItems value="#{nivelesFormacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codNivFor"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_codGraJui}" for="codGraJui" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codGraJui" value="#{seguimientoInstructoresController.selected.codGraJui}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_codGraJui}">
+                                    <f:selectItems value="#{gradosJuicioController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codGraJui"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_codFic}" for="codFic" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codFic" value="#{seguimientoInstructoresController.selected.codFic}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_codFic}">
+                                    <f:selectItems value="#{fichasCaracterizacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFic"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_codEstJui}" for="codEstJui" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codEstJui" value="#{seguimientoInstructoresController.selected.codEstJui}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_codEstJui}">
+                                    <f:selectItems value="#{estadosJuicioController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codEstJui"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientoInstructoresLabel_codCen}" for="codCen" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codCen" value="#{seguimientoInstructoresController.selected.codCen}" required="true" requiredMessage="#{bundle.CreateSeguimientoInstructoresRequiredMessage_codCen}">
+                                    <f:selectItems value="#{centrosFormacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codCen"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{seguimientoInstructoresController.create}" value="#{bundle.CreateSeguimientoInstructoresSaveLink}" icon="ui-icon-disk"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{seguimientoInstructoresController.prepareList}" value="#{bundle.CreateSeguimientoInstructoresShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

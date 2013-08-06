@@ -63,7 +63,7 @@ public class MatrizCaracterizacionController implements Serializable {
 
                 @Override
                 public Object getRowKey(MatrizCaracterizacion entity) {
-                    return entity.getIdMatrizCaracterizacion();
+                    return entity.getCodMatCar();
                 }
 
                 @Override

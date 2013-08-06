@@ -63,7 +63,7 @@ public class ClubesController implements Serializable {
 
                 @Override
                 public Object getRowKey(Clubes entity) {
-                    return entity.getIdClubes();
+                    return entity.getCodClu();
                 }
 
                 @Override

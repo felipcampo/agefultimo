@@ -63,7 +63,7 @@ public class NivelesFormacionController implements Serializable {
 
                 @Override
                 public Object getRowKey(NivelesFormacion entity) {
-                    return entity.getIdNivelesFormacion();
+                    return entity.getCodNivFor();
                 }
 
                 @Override

@@ -63,7 +63,7 @@ public class EscolaridadesController implements Serializable {
 
                 @Override
                 public Object getRowKey(Escolaridades entity) {
-                    return entity.getIdEscolaridades();
+                    return entity.getCodEsc();
                 }
 
                 @Override

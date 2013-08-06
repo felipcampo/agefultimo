@@ -63,7 +63,7 @@ public class FasesProyectoController implements Serializable {
 
                 @Override
                 public Object getRowKey(FasesProyecto entity) {
-                    return entity.getIdFasesProyecto();
+                    return entity.getCodFasPro();
                 }
 
                 @Override

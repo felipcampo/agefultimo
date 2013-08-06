@@ -1,0 +1,70 @@
+/* 
+    Document   : contenido_index_indicadores
+    Created on : 05-ago-2013, 6:52:33
+    Author     : SENA
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+#Layoutcontenidoindicadores {
+	clear: none;
+	float: left;
+	margin-left: 2.0408%;
+	width:98%;
+	display: block;
+}
+#Layoutcontenidoprincipal {
+	clear: both;
+	float: right;
+	margin-left: 0;
+	width: 50%;
+	display: block;
+}
+#Layoutimagen {
+   
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 400px;
+	display: block;
+}
+#Layoutnoticia {
+    margin-top: -10px;
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 400px;
+	display: block;
+        
+        
+}
+
+#ind {
+    font-family: Myriad Pro;
+    height:400px;
+    width:400px;
+    margin-left: -300px;
+
+}
+
+#ind.legend
+{
+    font-family: Myriad Pro;
+}
+
+#ind2 {
+    font-family: Myriad Pro;
+    height:400px;
+    width:400px;
+    margin-left: -300px;
+ 
+
+}
+
+#ind2.legend
+{
+    font-family: Myriad Pro;
+}

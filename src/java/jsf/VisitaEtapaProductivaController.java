@@ -63,7 +63,7 @@ public class VisitaEtapaProductivaController implements Serializable {
 
                 @Override
                 public Object getRowKey(VisitaEtapaProductiva entity) {
-                    return entity.getIdVisitaEtapaProductiva();
+                    return entity.getCodVis();
                 }
 
                 @Override

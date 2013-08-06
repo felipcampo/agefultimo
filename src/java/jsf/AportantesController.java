@@ -63,7 +63,7 @@ public class AportantesController implements Serializable {
 
                 @Override
                 public Object getRowKey(Aportantes entity) {
-                    return entity.getIdAportantes();
+                    return entity.getCodApo();
                 }
 
                 @Override

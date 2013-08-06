@@ -63,7 +63,7 @@ public class RegionalesController implements Serializable {
 
                 @Override
                 public Object getRowKey(Regionales entity) {
-                    return entity.getIdRegionales();
+                    return entity.getCodReg();
                 }
 
                 @Override

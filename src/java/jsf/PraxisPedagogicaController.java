@@ -63,7 +63,7 @@ public class PraxisPedagogicaController implements Serializable {
 
                 @Override
                 public Object getRowKey(PraxisPedagogica entity) {
-                    return entity.getIdPraxisPedagogica();
+                    return entity.getCodPrx();
                 }
 
                 @Override
