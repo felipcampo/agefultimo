@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditFasesProyectoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formFasesProyecto">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditFasesProyectoTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFasesProyectoLabel_codFasPro}" for="codFasPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="codFasPro" value="#{fasesProyectoController.selected.codFasPro}" title="#{bundle.EditFasesProyectoTitle_codFasPro}" required="true" requiredMessage="#{bundle.EditFasesProyectoRequiredMessage_codFasPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFasPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFasesProyectoLabel_nomFasPro}" for="nomFasPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="nomFasPro" value="#{fasesProyectoController.selected.nomFasPro}" title="#{bundle.EditFasesProyectoTitle_nomFasPro}" required="true" requiredMessage="#{bundle.EditFasesProyectoRequiredMessage_nomFasPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomFasPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFasesProyectoLabel_desFasPro}" for="desFasPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="desFasPro" value="#{fasesProyectoController.selected.desFasPro}" title="#{bundle.EditFasesProyectoTitle_desFasPro}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="desFasPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFasesProyectoLabel_durHorFas}" for="durHorFas" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="durHorFas" value="#{fasesProyectoController.selected.durHorFas}" title="#{bundle.EditFasesProyectoTitle_durHorFas}" required="true" requiredMessage="#{bundle.EditFasesProyectoRequiredMessage_durHorFas}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="durHorFas"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{fasesProyectoController.update}" value="#{bundle.EditFasesProyectoSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditFasesProyectoViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{fasesProyectoController.prepareList}" value="#{bundle.EditFasesProyectoShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

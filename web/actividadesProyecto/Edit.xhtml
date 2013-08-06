@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditActividadesProyectoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formActividadesProyecto">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditActividadesProyectoTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditActividadesProyectoLabel_codActPro}" for="codActPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="codActPro" value="#{actividadesProyectoController.selected.codActPro}" title="#{bundle.EditActividadesProyectoTitle_codActPro}" required="true" requiredMessage="#{bundle.EditActividadesProyectoRequiredMessage_codActPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codActPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditActividadesProyectoLabel_nomActPro}" for="nomActPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="nomActPro" value="#{actividadesProyectoController.selected.nomActPro}" title="#{bundle.EditActividadesProyectoTitle_nomActPro}" required="true" requiredMessage="#{bundle.EditActividadesProyectoRequiredMessage_nomActPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomActPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditActividadesProyectoLabel_codFasPro}" for="codFasPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codFasPro" value="#{actividadesProyectoController.selected.codFasPro}" required="true" requiredMessage="#{bundle.EditActividadesProyectoRequiredMessage_codFasPro}">
+                                    <f:selectItems value="#{fasesProyectoController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFasPro"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{actividadesProyectoController.update}" value="#{bundle.EditActividadesProyectoSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditActividadesProyectoViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{actividadesProyectoController.prepareList}" value="#{bundle.EditActividadesProyectoShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

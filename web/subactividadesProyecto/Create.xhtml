@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateSubactividadesProyectoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formSubactividadesProyecto">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreateSubactividadesProyectoTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSubactividadesProyectoLabel_codSubPro}" for="codSubPro" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="codSubPro" value="#{subactividadesProyectoController.selected.codSubPro}" title="#{bundle.CreateSubactividadesProyectoTitle_codSubPro}" required="true" requiredMessage="#{bundle.CreateSubactividadesProyectoRequiredMessage_codSubPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codSubPro"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSubactividadesProyectoLabel_nomSubPro}" for="nomSubPro" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="nomSubPro" value="#{subactividadesProyectoController.selected.nomSubPro}" title="#{bundle.CreateSubactividadesProyectoTitle_nomSubPro}" required="true" requiredMessage="#{bundle.CreateSubactividadesProyectoRequiredMessage_nomSubPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomSubPro"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSubactividadesProyectoLabel_codActPro}" for="codActPro" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codActPro" value="#{subactividadesProyectoController.selected.codActPro}" required="true" requiredMessage="#{bundle.CreateSubactividadesProyectoRequiredMessage_codActPro}">
+                                    <f:selectItems value="#{actividadesProyectoController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codActPro"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{subactividadesProyectoController.create}" value="#{bundle.CreateSubactividadesProyectoSaveLink}" icon="ui-icon-disk"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{subactividadesProyectoController.prepareList}" value="#{bundle.CreateSubactividadesProyectoShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

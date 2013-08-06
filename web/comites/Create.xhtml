@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateComitesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formComites">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreateComitesTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateComitesLabel_codCom}" for="codCom" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="codCom" value="#{comitesController.selected.codCom}" title="#{bundle.CreateComitesTitle_codCom}" required="true" requiredMessage="#{bundle.CreateComitesRequiredMessage_codCom}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codCom"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateComitesLabel_fecCom}" for="fecCom" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecCom" value="#{comitesController.selected.fecCom}" title="#{bundle.CreateComitesTitle_fecCom}" required="true" requiredMessage="#{bundle.CreateComitesRequiredMessage_fecCom}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecCom"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateComitesLabel_numAct}" for="numAct" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="numAct" value="#{comitesController.selected.numAct}" title="#{bundle.CreateComitesTitle_numAct}" required="true" requiredMessage="#{bundle.CreateComitesRequiredMessage_numAct}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numAct"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateComitesLabel_comentarios}" for="comentarios" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="comentarios" value="#{comitesController.selected.comentarios}" title="#{bundle.CreateComitesTitle_comentarios}" required="true" requiredMessage="#{bundle.CreateComitesRequiredMessage_comentarios}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="comentarios"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateComitesLabel_numRep}" for="numRep" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="numRep" value="#{comitesController.selected.numRep}" required="true" requiredMessage="#{bundle.CreateComitesRequiredMessage_numRep}">
+                                    <f:selectItems value="#{reportesNovedadesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numRep"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateComitesLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="idUsu" value="#{comitesController.selected.idUsu}" required="true" requiredMessage="#{bundle.CreateComitesRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateComitesLabel_codSan}" for="codSan" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codSan" value="#{comitesController.selected.codSan}" required="true" requiredMessage="#{bundle.CreateComitesRequiredMessage_codSan}">
+                                    <f:selectItems value="#{sancionesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codSan"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateComitesLabel_codMedFor}" for="codMedFor" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codMedFor" value="#{comitesController.selected.codMedFor}" required="true" requiredMessage="#{bundle.CreateComitesRequiredMessage_codMedFor}">
+                                    <f:selectItems value="#{medidasFormativasController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codMedFor"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateComitesLabel_codFal}" for="codFal" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codFal" value="#{comitesController.selected.codFal}" required="true" requiredMessage="#{bundle.CreateComitesRequiredMessage_codFal}">
+                                    <f:selectItems value="#{faltasController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFal"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateComitesLabel_codFic}" for="codFic" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codFic" value="#{comitesController.selected.codFic}" required="true" requiredMessage="#{bundle.CreateComitesRequiredMessage_codFic}">
+                                    <f:selectItems value="#{fichasCaracterizacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFic"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{comitesController.create}" value="#{bundle.CreateComitesSaveLink}" icon="ui-icon-disk"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{comitesController.prepareList}" value="#{bundle.CreateComitesShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

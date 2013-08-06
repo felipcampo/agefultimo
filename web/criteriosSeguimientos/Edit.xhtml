@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCriteriosSeguimientosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formCriteriosSeguimientos">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditCriteriosSeguimientosTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditCriteriosSeguimientosLabel_idCsp}" for="idCsp" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="idCsp" value="#{criteriosSeguimientosController.selected.idCsp}" title="#{bundle.EditCriteriosSeguimientosTitle_idCsp}" required="true" requiredMessage="#{bundle.EditCriteriosSeguimientosRequiredMessage_idCsp}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idCsp"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditCriteriosSeguimientosLabel_valCep}" for="valCep" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="valCep" value="#{criteriosSeguimientosController.selected.valCep}" title="#{bundle.EditCriteriosSeguimientosTitle_valCep}" required="true" requiredMessage="#{bundle.EditCriteriosSeguimientosRequiredMessage_valCep}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="valCep"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditCriteriosSeguimientosLabel_obsCep}" for="obsCep" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="obsCep" value="#{criteriosSeguimientosController.selected.obsCep}" title="#{bundle.EditCriteriosSeguimientosTitle_obsCep}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="obsCep"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditCriteriosSeguimientosLabel_codSegPro}" for="codSegPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codSegPro" value="#{criteriosSeguimientosController.selected.codSegPro}" required="true" requiredMessage="#{bundle.EditCriteriosSeguimientosRequiredMessage_codSegPro}">
+                                    <f:selectItems value="#{seguimientosProductivaController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codSegPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditCriteriosSeguimientosLabel_codCri}" for="codCri" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codCri" value="#{criteriosSeguimientosController.selected.codCri}" >
+                                    <f:selectItems value="#{criteriosEvaluacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codCri"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{criteriosSeguimientosController.update}" value="#{bundle.EditCriteriosSeguimientosSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditCriteriosSeguimientosViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{criteriosSeguimientosController.prepareList}" value="#{bundle.EditCriteriosSeguimientosShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

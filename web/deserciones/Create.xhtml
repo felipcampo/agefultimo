@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateDesercionesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formDeserciones">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreateDesercionesTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateDesercionesLabel_codDes}" for="codDes" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="codDes" value="#{desercionesController.selected.codDes}" title="#{bundle.CreateDesercionesTitle_codDes}" required="true" requiredMessage="#{bundle.CreateDesercionesRequiredMessage_codDes}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codDes"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateDesercionesLabel_numDes}" for="numDes" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="numDes" value="#{desercionesController.selected.numDes}" title="#{bundle.CreateDesercionesTitle_numDes}" required="true" requiredMessage="#{bundle.CreateDesercionesRequiredMessage_numDes}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numDes"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateDesercionesLabel_causas}" for="causas" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="causas" value="#{desercionesController.selected.causas}" title="#{bundle.CreateDesercionesTitle_causas}" required="true" requiredMessage="#{bundle.CreateDesercionesRequiredMessage_causas}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="causas"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateDesercionesLabel_observaciones}" for="observaciones" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="observaciones" value="#{desercionesController.selected.observaciones}" title="#{bundle.CreateDesercionesTitle_observaciones}" required="true" requiredMessage="#{bundle.CreateDesercionesRequiredMessage_observaciones}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="observaciones"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateDesercionesLabel_diasDes}" for="diasDes" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="diasDes" value="#{desercionesController.selected.diasDes}" title="#{bundle.CreateDesercionesTitle_diasDes}" required="true" requiredMessage="#{bundle.CreateDesercionesRequiredMessage_diasDes}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="diasDes"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateDesercionesLabel_fecIni}" for="fecIni" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecIni" value="#{desercionesController.selected.fecIni}" title="#{bundle.CreateDesercionesTitle_fecIni}" required="true" requiredMessage="#{bundle.CreateDesercionesRequiredMessage_fecIni}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecIni"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateDesercionesLabel_fecFin}" for="fecFin" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecFin" value="#{desercionesController.selected.fecFin}" title="#{bundle.CreateDesercionesTitle_fecFin}" required="true" requiredMessage="#{bundle.CreateDesercionesRequiredMessage_fecFin}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecFin"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{desercionesController.create}" value="#{bundle.CreateDesercionesSaveLink}" icon="ui-icon-disk"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{desercionesController.prepareList}" value="#{bundle.CreateDesercionesShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

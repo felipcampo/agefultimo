@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListPlanesMejoramientoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form id="listPlanesMejoramiento" styleClass="jsfcrud_list_form">
+                <div id="list" align="center">
+                    <p:growl id="msgs" showDetail="false" sticky="false"/>
+                    <h:outputText escape="false" value="#{bundle.ListPlanesMejoramientoEmpty}" rendered="#{planesMejoramientoController.lazyModel.rowCount == 0}"/>
+                    <h:panelGroup rendered="#{planesMejoramientoController.lazyModel.rowCount > 0}">
+                        <p:dataTable id="tableListPlanesMejoramiento" 
+                                     value="#{planesMejoramientoController.lazyModel}" 
+                                     var="item" 
+                                     paginator="true" rows="10" paginatorAlwaysVisible="false"
+                                     paginatorTemplate="{FirstPageLink} {PreviousPageLink}
+                                     {PageLinks} {NextPageLink}
+                                     {LastPageLink} {RowsPerPageDropdown}"  
+                                     rowsPerPageTemplate="5,10,15" paginatorPosition="bottom"
+                                     lazy="true"
+                                     emptyMessage="No se encontraron datos con el criterio dado"
+                                     widgetVar="tablePlanesMejoramiento">
+                            <p:column headerText="#{bundle.ListPlanesMejoramientoTitle_codPlaMej}"
+                                      filterBy="#{item.codPlaMej}"
+                                      sortBy="#{item.codPlaMej}">                        
+                                <h:outputText value="#{item.codPlaMej}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListPlanesMejoramientoTitle_encargado}"
+                                      filterBy="#{item.encargado}"
+                                      sortBy="#{item.encargado}">                        
+                                <h:outputText value="#{item.encargado}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListPlanesMejoramientoTitle_fecIni}"
+                                      filterBy="#{item.fecIni}"
+                                      sortBy="#{item.fecIni}">                        
+                                <h:outputText value="#{item.fecIni}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListPlanesMejoramientoTitle_fecFin}"
+                                      filterBy="#{item.fecFin}"
+                                      sortBy="#{item.fecFin}">                        
+                                <h:outputText value="#{item.fecFin}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListPlanesMejoramientoTitle_actividades}"
+                                      filterBy="#{item.actividades}"
+                                      sortBy="#{item.actividades}">                        
+                                <h:outputText value="#{item.actividades}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListPlanesMejoramientoTitle_tipPlaMej}"
+                                      filterBy="#{item.tipPlaMej}"
+                                      sortBy="#{item.tipPlaMej}">                        
+                                <h:outputText value="#{item.tipPlaMej}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListPlanesMejoramientoTitle_eviCam}"
+                                      filterBy="#{item.eviCam}"
+                                      sortBy="#{item.eviCam}">                        
+                                <h:outputText value="#{item.eviCam}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListPlanesMejoramientoTitle_recursos}"
+                                      filterBy="#{item.recursos}"
+                                      sortBy="#{item.recursos}">                        
+                                <h:outputText value="#{item.recursos}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListPlanesMejoramientoTitle_fecRev}"
+                                      filterBy="#{item.fecRev}"
+                                      sortBy="#{item.fecRev}">                        
+                                <h:outputText value="#{item.fecRev}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListPlanesMejoramientoTitle_descripcion}"
+                                      filterBy="#{item.descripcion}"
+                                      sortBy="#{item.descripcion}">                        
+                                <h:outputText value="#{item.descripcion}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListPlanesMejoramientoTitle_idUsu}"
+                                      filterBy="#{item.idUsu}"
+                                      sortBy="#{item.idUsu}">                        
+                                <h:outputText value="#{item.idUsu}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListPlanesMejoramientoTitle_codFal}"
+                                      filterBy="#{item.codFal}"
+                                      sortBy="#{item.codFal}">                        
+                                <h:outputText value="#{item.codFal}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListPlanesMejoramientoTitle_codFic}"
+                                      filterBy="#{item.codFic}"
+                                      sortBy="#{item.codFic}">                        
+                                <h:outputText value="#{item.codFic}"/>
+                            </p:column>
+                            <p:column>                        
+                                <p:commandButton ajax="false" action="#{planesMejoramientoController.prepareView}" title="#{bundle.ListPlanesMejoramientoViewLink}" icon="ui-icon-search"/>
+                                <p:commandButton ajax="false" action="#{planesMejoramientoController.prepareEdit}" title="#{bundle.ListPlanesMejoramientoEditLink}" icon="ui-icon-pencil"/>
+                                <p:commandButton oncomplete="confirmationDelete.show();" process="@this"
+                                                 title="#{bundle.ListPlanesMejoramientoDestroyLink}" icon="ui-icon-trash">
+                                    <f:setPropertyActionListener value="#{item}" target="#{planesMejoramientoController.selected}"/>
+                                </p:commandButton>
+                            </p:column>
+                        </p:dataTable>
+                    </h:panelGroup>
+                    <br />
+                    <p:commandButton ajax="false" action="#{planesMejoramientoController.prepareCreate}" value="#{bundle.ListPlanesMejoramientoCreateLink}" icon="ui-icon-document"/>
+                </div>        
+            </h:form>
+        </ui:define>
+        <ui:define name="dialogs">
+            <p:confirmDialog id="confirmDelete" message="#{bundle.DeleteItemTitle}"  
+                             header="#{bundle.DeleteItemMessage}" severity="alert" widgetVar="confirmationDelete">  
+                <p:commandButton id="confirmDeleteButtonYes" value="#{bundle.DeleteButtonYes}" update=":listPlanesMejoramiento" oncomplete="confirmationDelete.hide();"  
+                                 action="#{planesMejoramientoController.destroy}"/>  
+                <p:commandButton id="confirmDeleteButtonNot" value="#{bundle.DeleteButtonNot}" onclick="confirmationDelete.hide();" type="button" />   
+            </p:confirmDialog>             
+        </ui:define>
+    </ui:composition>
+
+</html>

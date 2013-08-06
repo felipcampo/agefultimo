@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTiposFormacionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formTiposFormacion">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditTiposFormacionTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditTiposFormacionLabel_codTipFor}" for="codTipFor" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="codTipFor" value="#{tiposFormacionController.selected.codTipFor}" title="#{bundle.EditTiposFormacionTitle_codTipFor}" required="true" requiredMessage="#{bundle.EditTiposFormacionRequiredMessage_codTipFor}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTipFor"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditTiposFormacionLabel_nomTipFor}" for="nomTipFor" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="nomTipFor" value="#{tiposFormacionController.selected.nomTipFor}" title="#{bundle.EditTiposFormacionTitle_nomTipFor}" required="true" requiredMessage="#{bundle.EditTiposFormacionRequiredMessage_nomTipFor}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomTipFor"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{tiposFormacionController.update}" value="#{bundle.EditTiposFormacionSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditTiposFormacionViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{tiposFormacionController.prepareList}" value="#{bundle.EditTiposFormacionShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

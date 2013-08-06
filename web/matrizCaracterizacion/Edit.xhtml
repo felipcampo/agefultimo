@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditMatrizCaracterizacionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formMatrizCaracterizacion">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditMatrizCaracterizacionTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_codMatCar}" for="codMatCar" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="codMatCar" value="#{matrizCaracterizacionController.selected.codMatCar}" title="#{bundle.EditMatrizCaracterizacionTitle_codMatCar}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_codMatCar}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codMatCar"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_medicamentos}" for="medicamentos" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="medicamentos" value="#{matrizCaracterizacionController.selected.medicamentos}" title="#{bundle.EditMatrizCaracterizacionTitle_medicamentos}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_medicamentos}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="medicamentos"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_alergias}" for="alergias" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="alergias" value="#{matrizCaracterizacionController.selected.alergias}" title="#{bundle.EditMatrizCaracterizacionTitle_alergias}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_alergias}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="alergias"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_tipAle}" for="tipAle" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="tipAle" value="#{matrizCaracterizacionController.selected.tipAle}" title="#{bundle.EditMatrizCaracterizacionTitle_tipAle}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_tipAle}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="tipAle"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_genero}" for="genero" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="genero" value="#{matrizCaracterizacionController.selected.genero}" title="#{bundle.EditMatrizCaracterizacionTitle_genero}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_genero}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="genero"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_estCiv}" for="estCiv" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="estCiv" value="#{matrizCaracterizacionController.selected.estCiv}" title="#{bundle.EditMatrizCaracterizacionTitle_estCiv}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_estCiv}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="estCiv"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_fecNac}" for="fecNac" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecNac" value="#{matrizCaracterizacionController.selected.fecNac}" title="#{bundle.EditMatrizCaracterizacionTitle_fecNac}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_fecNac}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecNac"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="idUsu" value="#{matrizCaracterizacionController.selected.idUsu}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_codApo}" for="codApo" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codApo" value="#{matrizCaracterizacionController.selected.codApo}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_codApo}">
+                                    <f:selectItems value="#{aportantesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codApo"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_codCarPob}" for="codCarPob" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codCarPob" value="#{matrizCaracterizacionController.selected.codCarPob}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_codCarPob}">
+                                    <f:selectItems value="#{caracterizacionesPoblacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codCarPob"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_codClu}" for="codClu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codClu" value="#{matrizCaracterizacionController.selected.codClu}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_codClu}">
+                                    <f:selectItems value="#{clubesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codClu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_codEps}" for="codEps" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codEps" value="#{matrizCaracterizacionController.selected.codEps}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_codEps}">
+                                    <f:selectItems value="#{epsController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codEps"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_codEsc}" for="codEsc" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codEsc" value="#{matrizCaracterizacionController.selected.codEsc}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_codEsc}">
+                                    <f:selectItems value="#{escolaridadesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codEsc"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_codFic}" for="codFic" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codFic" value="#{matrizCaracterizacionController.selected.codFic}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_codFic}">
+                                    <f:selectItems value="#{fichasCaracterizacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFic"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_codIps}" for="codIps" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codIps" value="#{matrizCaracterizacionController.selected.codIps}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_codIps}">
+                                    <f:selectItems value="#{ipsController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codIps"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_codNucFam}" for="codNucFam" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codNucFam" value="#{matrizCaracterizacionController.selected.codNucFam}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_codNucFam}">
+                                    <f:selectItems value="#{nucleosFamiliaresController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codNucFam"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_codOcu}" for="codOcu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codOcu" value="#{matrizCaracterizacionController.selected.codOcu}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_codOcu}">
+                                    <f:selectItems value="#{ocupacionesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codOcu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_codTipFam}" for="codTipFam" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codTipFam" value="#{matrizCaracterizacionController.selected.codTipFam}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_codTipFam}">
+                                    <f:selectItems value="#{tiposFamiliaController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTipFam"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_codTipSan}" for="codTipSan" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codTipSan" value="#{matrizCaracterizacionController.selected.codTipSan}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_codTipSan}">
+                                    <f:selectItems value="#{tiposSangreController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTipSan"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditMatrizCaracterizacionLabel_codTipViv}" for="codTipViv" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codTipViv" value="#{matrizCaracterizacionController.selected.codTipViv}" required="true" requiredMessage="#{bundle.EditMatrizCaracterizacionRequiredMessage_codTipViv}">
+                                    <f:selectItems value="#{tiposViviendaController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTipViv"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{matrizCaracterizacionController.update}" value="#{bundle.EditMatrizCaracterizacionSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditMatrizCaracterizacionViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{matrizCaracterizacionController.prepareList}" value="#{bundle.EditMatrizCaracterizacionShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

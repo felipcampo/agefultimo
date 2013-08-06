@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTiposViviendaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formTiposVivienda">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditTiposViviendaTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditTiposViviendaLabel_codTipViv}" for="codTipViv" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="codTipViv" value="#{tiposViviendaController.selected.codTipViv}" title="#{bundle.EditTiposViviendaTitle_codTipViv}" required="true" requiredMessage="#{bundle.EditTiposViviendaRequiredMessage_codTipViv}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTipViv"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditTiposViviendaLabel_nomTipViv}" for="nomTipViv" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="nomTipViv" value="#{tiposViviendaController.selected.nomTipViv}" title="#{bundle.EditTiposViviendaTitle_nomTipViv}" required="true" requiredMessage="#{bundle.EditTiposViviendaRequiredMessage_nomTipViv}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomTipViv"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{tiposViviendaController.update}" value="#{bundle.EditTiposViviendaSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditTiposViviendaViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{tiposViviendaController.prepareList}" value="#{bundle.EditTiposViviendaShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

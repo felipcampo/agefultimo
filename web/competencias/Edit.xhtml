@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCompetenciasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formCompetencias">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditCompetenciasTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditCompetenciasLabel_codCom}" for="codCom" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="codCom" value="#{competenciasController.selected.codCom}" title="#{bundle.EditCompetenciasTitle_codCom}" required="true" requiredMessage="#{bundle.EditCompetenciasRequiredMessage_codCom}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codCom"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditCompetenciasLabel_nomCom}" for="nomCom" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="nomCom" value="#{competenciasController.selected.nomCom}" title="#{bundle.EditCompetenciasTitle_nomCom}" required="true" requiredMessage="#{bundle.EditCompetenciasRequiredMessage_nomCom}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomCom"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditCompetenciasLabel_durCom}" for="durCom" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="durCom" value="#{competenciasController.selected.durCom}" title="#{bundle.EditCompetenciasTitle_durCom}" required="true" requiredMessage="#{bundle.EditCompetenciasRequiredMessage_durCom}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="durCom"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditCompetenciasLabel_codPrg}" for="codPrg" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codPrg" value="#{competenciasController.selected.codPrg}" required="true" requiredMessage="#{bundle.EditCompetenciasRequiredMessage_codPrg}">
+                                    <f:selectItems value="#{programasController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codPrg"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{competenciasController.update}" value="#{bundle.EditCompetenciasSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditCompetenciasViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{competenciasController.prepareList}" value="#{bundle.EditCompetenciasShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

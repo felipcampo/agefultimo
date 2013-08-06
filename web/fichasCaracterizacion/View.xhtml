@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewFichasCaracterizacionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/> 
+            <h:form>
+                <div id="form" align="center">
+                    <p:panelGrid columns="2">
+                        <f:facet name="header">
+                            <p:row><p:column>#{bundle.ViewFichasCaracterizacionTitle}</p:column></p:row>                            
+                        </f:facet>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_codFic}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.codFic}" title="#{bundle.ViewFichasCaracterizacionTitle_codFic}"/>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_fecIni}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.fecIni}" title="#{bundle.ViewFichasCaracterizacionTitle_fecIni}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_fecFin}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.fecFin}" title="#{bundle.ViewFichasCaracterizacionTitle_fecFin}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_fecIniEtaLec}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.fecIniEtaLec}" title="#{bundle.ViewFichasCaracterizacionTitle_fecIniEtaLec}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_fecFinEtaLec}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.fecFinEtaLec}" title="#{bundle.ViewFichasCaracterizacionTitle_fecFinEtaLec}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_fecIniEtaPro}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.fecIniEtaPro}" title="#{bundle.ViewFichasCaracterizacionTitle_fecIniEtaPro}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_fecFinEtaPro}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.fecFinEtaPro}" title="#{bundle.ViewFichasCaracterizacionTitle_fecFinEtaPro}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_numCupIns}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.numCupIns}" title="#{bundle.ViewFichasCaracterizacionTitle_numCupIns}"/>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_numCupFic}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.numCupFic}" title="#{bundle.ViewFichasCaracterizacionTitle_numCupFic}"/>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_jorFic}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.jorFic}" title="#{bundle.ViewFichasCaracterizacionTitle_jorFic}"/>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_codTipFor}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.codTipFor}" title="#{bundle.ViewFichasCaracterizacionTitle_codTipFor}"/>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_codPro}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.codPro}" title="#{bundle.ViewFichasCaracterizacionTitle_codPro}"/>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_codPrg}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.codPrg}" title="#{bundle.ViewFichasCaracterizacionTitle_codPrg}"/>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_codOfe}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.codOfe}" title="#{bundle.ViewFichasCaracterizacionTitle_codOfe}"/>
+                        <h:outputText value="#{bundle.ViewFichasCaracterizacionLabel_codNivFor}"/>
+                        <h:outputText value="#{fichasCaracterizacionController.selected.codNivFor}" title="#{bundle.ViewFichasCaracterizacionTitle_codNivFor}"/>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton oncomplete="confirmationDelete.show();" process="@this" value="#{bundle.ListFichasCaracterizacionDestroyLink}"
+                                     title="#{bundle.ListFichasCaracterizacionDestroyLink}" icon="ui-icon-trash">
+                    </p:commandButton>
+                    <p:button outcome="Edit" value="#{bundle.ViewFichasCaracterizacionEditLink}" icon="ui-icon-pencil"/>
+                    <p:commandButton ajax="false" action="#{fichasCaracterizacionController.prepareCreate}" value="#{bundle.ViewFichasCaracterizacionCreateLink}" icon="ui-icon-document"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{fichasCaracterizacionController.prepareList}" value="#{bundle.ViewFichasCaracterizacionShowAllLink}"/>
+                </div>            
+            </h:form>
+        </ui:define>
+        <ui:define name="dialogs">
+            <p:confirmDialog id="confirmDelete" message="#{bundle.DeleteItemTitle}"  
+                             header="#{bundle.DeleteItemMessage}" severity="alert" widgetVar="confirmationDelete">  
+                <p:commandButton id="confirmDeleteButtonYes" value="#{bundle.DeleteButtonYes}" oncomplete="confirmationDelete.hide();"  
+                                 action="#{fichasCaracterizacionController.destroy}"/>  
+                <p:commandButton id="confirmDeleteButtonNot" value="#{bundle.DeleteButtonNot}" onclick="confirmationDelete.hide();" type="button" />   
+            </p:confirmDialog>             
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditControlesOperativosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formControlesOperativos">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditControlesOperativosTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlesOperativosLabel_numConOpe}" for="numConOpe" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="numConOpe" value="#{controlesOperativosController.selected.numConOpe}" title="#{bundle.EditControlesOperativosTitle_numConOpe}" required="true" requiredMessage="#{bundle.EditControlesOperativosRequiredMessage_numConOpe}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numConOpe"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlesOperativosLabel_fecDilConOpe}" for="fecDilConOpe" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecDilConOpe" value="#{controlesOperativosController.selected.fecDilConOpe}" title="#{bundle.EditControlesOperativosTitle_fecDilConOpe}" required="true" requiredMessage="#{bundle.EditControlesOperativosRequiredMessage_fecDilConOpe}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecDilConOpe"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlesOperativosLabel_eleConOpe}" for="eleConOpe" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="eleConOpe" value="#{controlesOperativosController.selected.eleConOpe}" title="#{bundle.EditControlesOperativosTitle_eleConOpe}" required="true" requiredMessage="#{bundle.EditControlesOperativosRequiredMessage_eleConOpe}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="eleConOpe"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlesOperativosLabel_sitConOpe}" for="sitConOpe" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="sitConOpe" value="#{controlesOperativosController.selected.sitConOpe}" title="#{bundle.EditControlesOperativosTitle_sitConOpe}" required="true" requiredMessage="#{bundle.EditControlesOperativosRequiredMessage_sitConOpe}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="sitConOpe"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlesOperativosLabel_codAli}" for="codAli" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codAli" value="#{controlesOperativosController.selected.codAli}" required="true" requiredMessage="#{bundle.EditControlesOperativosRequiredMessage_codAli}">
+                                    <f:selectItems value="#{alistamientosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codAli"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{controlesOperativosController.update}" value="#{bundle.EditControlesOperativosSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditControlesOperativosViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{controlesOperativosController.prepareList}" value="#{bundle.EditControlesOperativosShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

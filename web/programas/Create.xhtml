@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateProgramasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formProgramas">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreateProgramasTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateProgramasLabel_codPrg}" for="codPrg" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="codPrg" value="#{programasController.selected.codPrg}" title="#{bundle.CreateProgramasTitle_codPrg}" required="true" requiredMessage="#{bundle.CreateProgramasRequiredMessage_codPrg}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codPrg"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateProgramasLabel_nomPrg}" for="nomPrg" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="nomPrg" value="#{programasController.selected.nomPrg}" title="#{bundle.CreateProgramasTitle_nomPrg}" required="true" requiredMessage="#{bundle.CreateProgramasRequiredMessage_nomPrg}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomPrg"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateProgramasLabel_durPrg}" for="durPrg" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="durPrg" value="#{programasController.selected.durPrg}" title="#{bundle.CreateProgramasTitle_durPrg}" required="true" requiredMessage="#{bundle.CreateProgramasRequiredMessage_durPrg}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="durPrg"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateProgramasLabel_jusPrg}" for="jusPrg" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="jusPrg" value="#{programasController.selected.jusPrg}" title="#{bundle.CreateProgramasTitle_jusPrg}" required="true" requiredMessage="#{bundle.CreateProgramasRequiredMessage_jusPrg}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="jusPrg"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateProgramasLabel_reqIngPrg}" for="reqIngPrg" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="reqIngPrg" value="#{programasController.selected.reqIngPrg}" title="#{bundle.CreateProgramasTitle_reqIngPrg}" required="true" requiredMessage="#{bundle.CreateProgramasRequiredMessage_reqIngPrg}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="reqIngPrg"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateProgramasLabel_desPrg}" for="desPrg" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="desPrg" value="#{programasController.selected.desPrg}" title="#{bundle.CreateProgramasTitle_desPrg}" required="true" requiredMessage="#{bundle.CreateProgramasRequiredMessage_desPrg}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="desPrg"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateProgramasLabel_numTotCom}" for="numTotCom" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="numTotCom" value="#{programasController.selected.numTotCom}" title="#{bundle.CreateProgramasTitle_numTotCom}" required="true" requiredMessage="#{bundle.CreateProgramasRequiredMessage_numTotCom}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numTotCom"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateProgramasLabel_numTotResApr}" for="numTotResApr" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="numTotResApr" value="#{programasController.selected.numTotResApr}" title="#{bundle.CreateProgramasTitle_numTotResApr}" required="true" requiredMessage="#{bundle.CreateProgramasRequiredMessage_numTotResApr}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numTotResApr"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateProgramasLabel_codCen}" for="codCen" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codCen" value="#{programasController.selected.codCen}" required="true" requiredMessage="#{bundle.CreateProgramasRequiredMessage_codCen}">
+                                    <f:selectItems value="#{centrosFormacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codCen"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{programasController.create}" value="#{bundle.CreateProgramasSaveLink}" icon="ui-icon-disk"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{programasController.prepareList}" value="#{bundle.CreateProgramasShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

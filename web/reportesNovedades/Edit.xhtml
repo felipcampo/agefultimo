@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditReportesNovedadesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formReportesNovedades">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditReportesNovedadesTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_numRep}" for="numRep" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="numRep" value="#{reportesNovedadesController.selected.numRep}" title="#{bundle.EditReportesNovedadesTitle_numRep}" required="true" requiredMessage="#{bundle.EditReportesNovedadesRequiredMessage_numRep}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numRep"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_fecRep}" for="fecRep" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecRep" value="#{reportesNovedadesController.selected.fecRep}" title="#{bundle.EditReportesNovedadesTitle_fecRep}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecRep"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_numAccCor}" for="numAccCor" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="numAccCor" value="#{reportesNovedadesController.selected.numAccCor}" title="#{bundle.EditReportesNovedadesTitle_numAccCor}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numAccCor"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_conAccCor}" for="conAccCor" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="conAccCor" value="#{reportesNovedadesController.selected.conAccCor}" title="#{bundle.EditReportesNovedadesTitle_conAccCor}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="conAccCor"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_desAnt}" for="desAnt" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="desAnt" value="#{reportesNovedadesController.selected.desAnt}" title="#{bundle.EditReportesNovedadesTitle_desAnt}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="desAnt"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_fecUltPlaMej}" for="fecUltPlaMej" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecUltPlaMej" value="#{reportesNovedadesController.selected.fecUltPlaMej}" title="#{bundle.EditReportesNovedadesTitle_fecUltPlaMej}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecUltPlaMej"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_hechos}" for="hechos" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="hechos" value="#{reportesNovedadesController.selected.hechos}" title="#{bundle.EditReportesNovedadesTitle_hechos}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="hechos"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_testigos}" for="testigos" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="testigos" value="#{reportesNovedadesController.selected.testigos}" title="#{bundle.EditReportesNovedadesTitle_testigos}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="testigos"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_pruebas}" for="pruebas" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="pruebas" value="#{reportesNovedadesController.selected.pruebas}" title="#{bundle.EditReportesNovedadesTitle_pruebas}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="pruebas"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_desFal}" for="desFal" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="desFal" value="#{reportesNovedadesController.selected.desFal}" title="#{bundle.EditReportesNovedadesTitle_desFal}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="desFal"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_desPru}" for="desPru" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="desPru" value="#{reportesNovedadesController.selected.desPru}" title="#{bundle.EditReportesNovedadesTitle_desPru}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="desPru"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="idUsu" value="#{reportesNovedadesController.selected.idUsu}" required="true" requiredMessage="#{bundle.EditReportesNovedadesRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_codResApr}" for="codResApr" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codResApr" value="#{reportesNovedadesController.selected.codResApr}" required="true" requiredMessage="#{bundle.EditReportesNovedadesRequiredMessage_codResApr}">
+                                    <f:selectItems value="#{resultadosAprendizajeController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codResApr"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_codDes}" for="codDes" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codDes" value="#{reportesNovedadesController.selected.codDes}" required="true" requiredMessage="#{bundle.EditReportesNovedadesRequiredMessage_codDes}">
+                                    <f:selectItems value="#{desercionesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codDes"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditReportesNovedadesLabel_codFic}" for="codFic" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codFic" value="#{reportesNovedadesController.selected.codFic}" required="true" requiredMessage="#{bundle.EditReportesNovedadesRequiredMessage_codFic}">
+                                    <f:selectItems value="#{fichasCaracterizacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFic"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{reportesNovedadesController.update}" value="#{bundle.EditReportesNovedadesSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditReportesNovedadesViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{reportesNovedadesController.prepareList}" value="#{bundle.EditReportesNovedadesShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

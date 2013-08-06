@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditUsuariosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formUsuarios">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditUsuariosTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditUsuariosLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="idUsu" value="#{usuariosController.selected.idUsu}" title="#{bundle.EditUsuariosTitle_idUsu}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_idUsu}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditUsuariosLabel_tipDoc}" for="tipDoc" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="tipDoc" value="#{usuariosController.selected.tipDoc}" title="#{bundle.EditUsuariosTitle_tipDoc}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_tipDoc}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="tipDoc"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditUsuariosLabel_nomUsu}" for="nomUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="nomUsu" value="#{usuariosController.selected.nomUsu}" title="#{bundle.EditUsuariosTitle_nomUsu}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_nomUsu}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditUsuariosLabel_telUsu}" for="telUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="telUsu" value="#{usuariosController.selected.telUsu}" title="#{bundle.EditUsuariosTitle_telUsu}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_telUsu}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="telUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditUsuariosLabel_dirUsu}" for="dirUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="dirUsu" value="#{usuariosController.selected.dirUsu}" title="#{bundle.EditUsuariosTitle_dirUsu}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_dirUsu}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="dirUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditUsuariosLabel_mailUsu}" for="mailUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="mailUsu" value="#{usuariosController.selected.mailUsu}" title="#{bundle.EditUsuariosTitle_mailUsu}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_mailUsu}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="mailUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditUsuariosLabel_tipCon}" for="tipCon" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="tipCon" value="#{usuariosController.selected.tipCon}" title="#{bundle.EditUsuariosTitle_tipCon}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="tipCon"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditUsuariosLabel_apeUsu}" for="apeUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="apeUsu" value="#{usuariosController.selected.apeUsu}" title="#{bundle.EditUsuariosTitle_apeUsu}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_apeUsu}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="apeUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditUsuariosLabel_firUsu}" for="firUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="firUsu" value="#{usuariosController.selected.firUsu}" title="#{bundle.EditUsuariosTitle_firUsu}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_firUsu}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="firUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditUsuariosLabel_iniUsu}" for="iniUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="iniUsu" value="#{usuariosController.selected.iniUsu}" title="#{bundle.EditUsuariosTitle_iniUsu}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_iniUsu}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="iniUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditUsuariosLabel_codBar}" for="codBar" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codBar" value="#{usuariosController.selected.codBar}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_codBar}">
+                                    <f:selectItems value="#{barriosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codBar"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{usuariosController.update}" value="#{bundle.EditUsuariosSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditUsuariosViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{usuariosController.prepareList}" value="#{bundle.EditUsuariosShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

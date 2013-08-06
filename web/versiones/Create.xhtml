@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateVersionesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formVersiones">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreateVersionesTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateVersionesLabel_codVer}" for="codVer" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="codVer" value="#{versionesController.selected.codVer}" title="#{bundle.CreateVersionesTitle_codVer}" required="true" requiredMessage="#{bundle.CreateVersionesRequiredMessage_codVer}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codVer"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateVersionesLabel_nomVer}" for="nomVer" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="nomVer" value="#{versionesController.selected.nomVer}" title="#{bundle.CreateVersionesTitle_nomVer}" required="true" requiredMessage="#{bundle.CreateVersionesRequiredMessage_nomVer}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomVer"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{versionesController.create}" value="#{bundle.CreateVersionesSaveLink}" icon="ui-icon-disk"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{versionesController.prepareList}" value="#{bundle.CreateVersionesShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

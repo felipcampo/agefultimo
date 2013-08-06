@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListReportesNovedadesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form id="listReportesNovedades" styleClass="jsfcrud_list_form">
+                <div id="list" align="center">
+                    <p:growl id="msgs" showDetail="false" sticky="false"/>
+                    <h:outputText escape="false" value="#{bundle.ListReportesNovedadesEmpty}" rendered="#{reportesNovedadesController.lazyModel.rowCount == 0}"/>
+                    <h:panelGroup rendered="#{reportesNovedadesController.lazyModel.rowCount > 0}">
+                        <p:dataTable id="tableListReportesNovedades" 
+                                     value="#{reportesNovedadesController.lazyModel}" 
+                                     var="item" 
+                                     paginator="true" rows="10" paginatorAlwaysVisible="false"
+                                     paginatorTemplate="{FirstPageLink} {PreviousPageLink}
+                                     {PageLinks} {NextPageLink}
+                                     {LastPageLink} {RowsPerPageDropdown}"  
+                                     rowsPerPageTemplate="5,10,15" paginatorPosition="bottom"
+                                     lazy="true"
+                                     emptyMessage="No se encontraron datos con el criterio dado"
+                                     widgetVar="tableReportesNovedades">
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_numRep}"
+                                      filterBy="#{item.numRep}"
+                                      sortBy="#{item.numRep}">                        
+                                <h:outputText value="#{item.numRep}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_fecRep}"
+                                      filterBy="#{item.fecRep}"
+                                      sortBy="#{item.fecRep}">                        
+                                <h:outputText value="#{item.fecRep}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_numAccCor}"
+                                      filterBy="#{item.numAccCor}"
+                                      sortBy="#{item.numAccCor}">                        
+                                <h:outputText value="#{item.numAccCor}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_conAccCor}"
+                                      filterBy="#{item.conAccCor}"
+                                      sortBy="#{item.conAccCor}">                        
+                                <h:outputText value="#{item.conAccCor}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_desAnt}"
+                                      filterBy="#{item.desAnt}"
+                                      sortBy="#{item.desAnt}">                        
+                                <h:outputText value="#{item.desAnt}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_fecUltPlaMej}"
+                                      filterBy="#{item.fecUltPlaMej}"
+                                      sortBy="#{item.fecUltPlaMej}">                        
+                                <h:outputText value="#{item.fecUltPlaMej}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_hechos}"
+                                      filterBy="#{item.hechos}"
+                                      sortBy="#{item.hechos}">                        
+                                <h:outputText value="#{item.hechos}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_testigos}"
+                                      filterBy="#{item.testigos}"
+                                      sortBy="#{item.testigos}">                        
+                                <h:outputText value="#{item.testigos}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_pruebas}"
+                                      filterBy="#{item.pruebas}"
+                                      sortBy="#{item.pruebas}">                        
+                                <h:outputText value="#{item.pruebas}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_desFal}"
+                                      filterBy="#{item.desFal}"
+                                      sortBy="#{item.desFal}">                        
+                                <h:outputText value="#{item.desFal}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_desPru}"
+                                      filterBy="#{item.desPru}"
+                                      sortBy="#{item.desPru}">                        
+                                <h:outputText value="#{item.desPru}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_idUsu}"
+                                      filterBy="#{item.idUsu}"
+                                      sortBy="#{item.idUsu}">                        
+                                <h:outputText value="#{item.idUsu}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_codResApr}"
+                                      filterBy="#{item.codResApr}"
+                                      sortBy="#{item.codResApr}">                        
+                                <h:outputText value="#{item.codResApr}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_codDes}"
+                                      filterBy="#{item.codDes}"
+                                      sortBy="#{item.codDes}">                        
+                                <h:outputText value="#{item.codDes}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListReportesNovedadesTitle_codFic}"
+                                      filterBy="#{item.codFic}"
+                                      sortBy="#{item.codFic}">                        
+                                <h:outputText value="#{item.codFic}"/>
+                            </p:column>
+                            <p:column>                        
+                                <p:commandButton ajax="false" action="#{reportesNovedadesController.prepareView}" title="#{bundle.ListReportesNovedadesViewLink}" icon="ui-icon-search"/>
+                                <p:commandButton ajax="false" action="#{reportesNovedadesController.prepareEdit}" title="#{bundle.ListReportesNovedadesEditLink}" icon="ui-icon-pencil"/>
+                                <p:commandButton oncomplete="confirmationDelete.show();" process="@this"
+                                                 title="#{bundle.ListReportesNovedadesDestroyLink}" icon="ui-icon-trash">
+                                    <f:setPropertyActionListener value="#{item}" target="#{reportesNovedadesController.selected}"/>
+                                </p:commandButton>
+                            </p:column>
+                        </p:dataTable>
+                    </h:panelGroup>
+                    <br />
+                    <p:commandButton ajax="false" action="#{reportesNovedadesController.prepareCreate}" value="#{bundle.ListReportesNovedadesCreateLink}" icon="ui-icon-document"/>
+                </div>        
+            </h:form>
+        </ui:define>
+        <ui:define name="dialogs">
+            <p:confirmDialog id="confirmDelete" message="#{bundle.DeleteItemTitle}"  
+                             header="#{bundle.DeleteItemMessage}" severity="alert" widgetVar="confirmationDelete">  
+                <p:commandButton id="confirmDeleteButtonYes" value="#{bundle.DeleteButtonYes}" update=":listReportesNovedades" oncomplete="confirmationDelete.hide();"  
+                                 action="#{reportesNovedadesController.destroy}"/>  
+                <p:commandButton id="confirmDeleteButtonNot" value="#{bundle.DeleteButtonNot}" onclick="confirmationDelete.hide();" type="button" />   
+            </p:confirmDialog>             
+        </ui:define>
+    </ui:composition>
+
+</html>

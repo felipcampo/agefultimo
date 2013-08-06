@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCentrosFormacionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formCentrosFormacion">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditCentrosFormacionTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditCentrosFormacionLabel_codCen}" for="codCen" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="codCen" value="#{centrosFormacionController.selected.codCen}" title="#{bundle.EditCentrosFormacionTitle_codCen}" required="true" requiredMessage="#{bundle.EditCentrosFormacionRequiredMessage_codCen}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codCen"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditCentrosFormacionLabel_nomCen}" for="nomCen" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="nomCen" value="#{centrosFormacionController.selected.nomCen}" title="#{bundle.EditCentrosFormacionTitle_nomCen}" required="true" requiredMessage="#{bundle.EditCentrosFormacionRequiredMessage_nomCen}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomCen"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditCentrosFormacionLabel_dirCen}" for="dirCen" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="dirCen" value="#{centrosFormacionController.selected.dirCen}" title="#{bundle.EditCentrosFormacionTitle_dirCen}" required="true" requiredMessage="#{bundle.EditCentrosFormacionRequiredMessage_dirCen}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="dirCen"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditCentrosFormacionLabel_codReg}" for="codReg" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codReg" value="#{centrosFormacionController.selected.codReg}" required="true" requiredMessage="#{bundle.EditCentrosFormacionRequiredMessage_codReg}">
+                                    <f:selectItems value="#{regionalesController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codReg"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{centrosFormacionController.update}" value="#{bundle.EditCentrosFormacionSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditCentrosFormacionViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{centrosFormacionController.prepareList}" value="#{bundle.EditCentrosFormacionShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewCriteriosEvaluacionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/> 
+            <h:form>
+                <div id="form" align="center">
+                    <p:panelGrid columns="2">
+                        <f:facet name="header">
+                            <p:row><p:column>#{bundle.ViewCriteriosEvaluacionTitle}</p:column></p:row>                            
+                        </f:facet>
+                        <h:outputText value="#{bundle.ViewCriteriosEvaluacionLabel_codCri}"/>
+                        <h:outputText value="#{criteriosEvaluacionController.selected.codCri}" title="#{bundle.ViewCriteriosEvaluacionTitle_codCri}"/>
+                        <h:outputText value="#{bundle.ViewCriteriosEvaluacionLabel_nomCri}"/>
+                        <h:outputText value="#{criteriosEvaluacionController.selected.nomCri}" title="#{bundle.ViewCriteriosEvaluacionTitle_nomCri}"/>
+                        <h:outputText value="#{bundle.ViewCriteriosEvaluacionLabel_detCri}"/>
+                        <h:outputText value="#{criteriosEvaluacionController.selected.detCri}" title="#{bundle.ViewCriteriosEvaluacionTitle_detCri}"/>
+                        <h:outputText value="#{bundle.ViewCriteriosEvaluacionLabel_idFep}"/>
+                        <h:outputText value="#{criteriosEvaluacionController.selected.idFep}" title="#{bundle.ViewCriteriosEvaluacionTitle_idFep}"/>
+                        <h:outputText value="#{bundle.ViewCriteriosEvaluacionLabel_codTitCri}"/>
+                        <h:outputText value="#{criteriosEvaluacionController.selected.codTitCri}" title="#{bundle.ViewCriteriosEvaluacionTitle_codTitCri}"/>
+                        <h:outputText value="#{bundle.ViewCriteriosEvaluacionLabel_codTipCri}"/>
+                        <h:outputText value="#{criteriosEvaluacionController.selected.codTipCri}" title="#{bundle.ViewCriteriosEvaluacionTitle_codTipCri}"/>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton oncomplete="confirmationDelete.show();" process="@this" value="#{bundle.ListCriteriosEvaluacionDestroyLink}"
+                                     title="#{bundle.ListCriteriosEvaluacionDestroyLink}" icon="ui-icon-trash">
+                    </p:commandButton>
+                    <p:button outcome="Edit" value="#{bundle.ViewCriteriosEvaluacionEditLink}" icon="ui-icon-pencil"/>
+                    <p:commandButton ajax="false" action="#{criteriosEvaluacionController.prepareCreate}" value="#{bundle.ViewCriteriosEvaluacionCreateLink}" icon="ui-icon-document"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{criteriosEvaluacionController.prepareList}" value="#{bundle.ViewCriteriosEvaluacionShowAllLink}"/>
+                </div>            
+            </h:form>
+        </ui:define>
+        <ui:define name="dialogs">
+            <p:confirmDialog id="confirmDelete" message="#{bundle.DeleteItemTitle}"  
+                             header="#{bundle.DeleteItemMessage}" severity="alert" widgetVar="confirmationDelete">  
+                <p:commandButton id="confirmDeleteButtonYes" value="#{bundle.DeleteButtonYes}" oncomplete="confirmationDelete.hide();"  
+                                 action="#{criteriosEvaluacionController.destroy}"/>  
+                <p:commandButton id="confirmDeleteButtonNot" value="#{bundle.DeleteButtonNot}" onclick="confirmationDelete.hide();" type="button" />   
+            </p:confirmDialog>             
+        </ui:define>
+    </ui:composition>
+
+</html>

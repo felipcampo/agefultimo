@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditProyectosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formProyectos">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditProyectosTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_codPro}" for="codPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="codPro" value="#{proyectosController.selected.codPro}" title="#{bundle.EditProyectosTitle_codPro}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_codPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_nomPro}" for="nomPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="nomPro" value="#{proyectosController.selected.nomPro}" title="#{bundle.EditProyectosTitle_nomPro}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_nomPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_numResAprEsp}" for="numResAprEsp" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="numResAprEsp" value="#{proyectosController.selected.numResAprEsp}" title="#{bundle.EditProyectosTitle_numResAprEsp}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_numResAprEsp}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numResAprEsp"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_numResAprTra}" for="numResAprTra" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="numResAprTra" value="#{proyectosController.selected.numResAprTra}" title="#{bundle.EditProyectosTitle_numResAprTra}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_numResAprTra}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numResAprTra"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_numResAprBas}" for="numResAprBas" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="numResAprBas" value="#{proyectosController.selected.numResAprBas}" title="#{bundle.EditProyectosTitle_numResAprBas}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_numResAprBas}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numResAprBas"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_plaPrb}" for="plaPrb" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="plaPrb" value="#{proyectosController.selected.plaPrb}" title="#{bundle.EditProyectosTitle_plaPrb}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_plaPrb}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="plaPrb"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_jusPro}" for="jusPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="jusPro" value="#{proyectosController.selected.jusPro}" title="#{bundle.EditProyectosTitle_jusPro}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_jusPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="jusPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_objGen}" for="objGen" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="objGen" value="#{proyectosController.selected.objGen}" title="#{bundle.EditProyectosTitle_objGen}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_objGen}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="objGen"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_objEsp}" for="objEsp" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="objEsp" value="#{proyectosController.selected.objEsp}" title="#{bundle.EditProyectosTitle_objEsp}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_objEsp}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="objEsp"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_benPro}" for="benPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="benPro" value="#{proyectosController.selected.benPro}" title="#{bundle.EditProyectosTitle_benPro}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_benPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="benPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_impSoc}" for="impSoc" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="impSoc" value="#{proyectosController.selected.impSoc}" title="#{bundle.EditProyectosTitle_impSoc}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_impSoc}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="impSoc"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_impEco}" for="impEco" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="impEco" value="#{proyectosController.selected.impEco}" title="#{bundle.EditProyectosTitle_impEco}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_impEco}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="impEco"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_impAmb}" for="impAmb" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="impAmb" value="#{proyectosController.selected.impAmb}" title="#{bundle.EditProyectosTitle_impAmb}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_impAmb}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="impAmb"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_impTec}" for="impTec" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="impTec" value="#{proyectosController.selected.impTec}" title="#{bundle.EditProyectosTitle_impTec}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_impTec}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="impTec"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_rieAso}" for="rieAso" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="rieAso" value="#{proyectosController.selected.rieAso}" title="#{bundle.EditProyectosTitle_rieAso}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_rieAso}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="rieAso"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_resPro}" for="resPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="resPro" value="#{proyectosController.selected.resPro}" title="#{bundle.EditProyectosTitle_resPro}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_resPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="resPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_gesTec}" for="gesTec" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="gesTec" value="#{proyectosController.selected.gesTec}" title="#{bundle.EditProyectosTitle_gesTec}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_gesTec}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="gesTec"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_valPrd}" for="valPrd" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="valPrd" value="#{proyectosController.selected.valPrd}" title="#{bundle.EditProyectosTitle_valPrd}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_valPrd}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="valPrd"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditProyectosLabel_codEstPro}" for="codEstPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codEstPro" value="#{proyectosController.selected.codEstPro}" required="true" requiredMessage="#{bundle.EditProyectosRequiredMessage_codEstPro}">
+                                    <f:selectItems value="#{estadosProyectosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codEstPro"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{proyectosController.update}" value="#{bundle.EditProyectosSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditProyectosViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{proyectosController.prepareList}" value="#{bundle.EditProyectosShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

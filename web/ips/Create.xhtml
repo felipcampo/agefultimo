@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateIpsTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formIps">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreateIpsTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateIpsLabel_codIps}" for="codIps" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="codIps" value="#{ipsController.selected.codIps}" title="#{bundle.CreateIpsTitle_codIps}" required="true" requiredMessage="#{bundle.CreateIpsRequiredMessage_codIps}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codIps"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateIpsLabel_nomIps}" for="nomIps" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="nomIps" value="#{ipsController.selected.nomIps}" title="#{bundle.CreateIpsTitle_nomIps}" required="true" requiredMessage="#{bundle.CreateIpsRequiredMessage_nomIps}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomIps"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{ipsController.create}" value="#{bundle.CreateIpsSaveLink}" icon="ui-icon-disk"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{ipsController.prepareList}" value="#{bundle.CreateIpsShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

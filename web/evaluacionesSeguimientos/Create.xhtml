@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateEvaluacionesSeguimientosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formEvaluacionesSeguimientos">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreateEvaluacionesSeguimientosTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_observaciones}" for="observaciones" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="observaciones" value="#{evaluacionesSeguimientosController.selected.observaciones}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_observaciones}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_observaciones}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="observaciones"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_carApr}" for="carApr" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="carApr" value="#{evaluacionesSeguimientosController.selected.carApr}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_carApr}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_carApr}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="carApr"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_medio}" for="medio" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="medio" value="#{evaluacionesSeguimientosController.selected.medio}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_medio}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_medio}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="medio"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_tipo}" for="tipo" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="tipo" value="#{evaluacionesSeguimientosController.selected.tipo}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_tipo}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_tipo}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="tipo"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_fecIni}" for="fecIni" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecIni" value="#{evaluacionesSeguimientosController.selected.fecIni}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_fecIni}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_fecIni}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecIni"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_fecFin}" for="fecFin" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecFin" value="#{evaluacionesSeguimientosController.selected.fecFin}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_fecFin}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_fecFin}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecFin"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_fecRecEvi}" for="fecRecEvi" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecRecEvi" value="#{evaluacionesSeguimientosController.selected.fecRecEvi}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_fecRecEvi}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_fecRecEvi}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecRecEvi"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_autenticidad}" for="autenticidad" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="autenticidad" value="#{evaluacionesSeguimientosController.selected.autenticidad}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_autenticidad}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_autenticidad}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="autenticidad"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_calidad}" for="calidad" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="calidad" value="#{evaluacionesSeguimientosController.selected.calidad}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_calidad}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_calidad}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="calidad"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_pertinencia}" for="pertinencia" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="pertinencia" value="#{evaluacionesSeguimientosController.selected.pertinencia}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_pertinencia}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_pertinencia}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="pertinencia"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_vigencia}" for="vigencia" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="vigencia" value="#{evaluacionesSeguimientosController.selected.vigencia}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_vigencia}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_vigencia}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="vigencia"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_aprendizaje}" for="aprendizaje" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="aprendizaje" value="#{evaluacionesSeguimientosController.selected.aprendizaje}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_aprendizaje}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_aprendizaje}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="aprendizaje"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_firApr}" for="firApr" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="firApr" value="#{evaluacionesSeguimientosController.selected.firApr}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_firApr}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_firApr}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="firApr"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_firIns}" for="firIns" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="firIns" value="#{evaluacionesSeguimientosController.selected.firIns}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_firIns}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_firIns}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="firIns"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_codEvaSeg}" for="codEvaSeg" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="codEvaSeg" value="#{evaluacionesSeguimientosController.selected.codEvaSeg}" title="#{bundle.CreateEvaluacionesSeguimientosTitle_codEvaSeg}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_codEvaSeg}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codEvaSeg"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_codActPro}" for="codActPro" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codActPro" value="#{evaluacionesSeguimientosController.selected.codActPro}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_codActPro}">
+                                    <f:selectItems value="#{actividadesProyectoController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codActPro"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_codResApr}" for="codResApr" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codResApr" value="#{evaluacionesSeguimientosController.selected.codResApr}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_codResApr}">
+                                    <f:selectItems value="#{resultadosAprendizajeController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codResApr"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_codFic}" for="codFic" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codFic" value="#{evaluacionesSeguimientosController.selected.codFic}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_codFic}">
+                                    <f:selectItems value="#{fichasCaracterizacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFic"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_idUsu1}" for="idUsu1" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="idUsu1" value="#{evaluacionesSeguimientosController.selected.idUsu1}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_idUsu1}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu1"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="idUsu" value="#{evaluacionesSeguimientosController.selected.idUsu}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateEvaluacionesSeguimientosLabel_codEviApr}" for="codEviApr" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codEviApr" value="#{evaluacionesSeguimientosController.selected.codEviApr}" required="true" requiredMessage="#{bundle.CreateEvaluacionesSeguimientosRequiredMessage_codEviApr}">
+                                    <f:selectItems value="#{evidenciasAprendizajeController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codEviApr"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{evaluacionesSeguimientosController.create}" value="#{bundle.CreateEvaluacionesSeguimientosSaveLink}" icon="ui-icon-disk"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{evaluacionesSeguimientosController.prepareList}" value="#{bundle.CreateEvaluacionesSeguimientosShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

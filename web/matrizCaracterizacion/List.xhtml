@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListMatrizCaracterizacionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form id="listMatrizCaracterizacion" styleClass="jsfcrud_list_form">
+                <div id="list" align="center">
+                    <p:growl id="msgs" showDetail="false" sticky="false"/>
+                    <h:outputText escape="false" value="#{bundle.ListMatrizCaracterizacionEmpty}" rendered="#{matrizCaracterizacionController.lazyModel.rowCount == 0}"/>
+                    <h:panelGroup rendered="#{matrizCaracterizacionController.lazyModel.rowCount > 0}">
+                        <p:dataTable id="tableListMatrizCaracterizacion" 
+                                     value="#{matrizCaracterizacionController.lazyModel}" 
+                                     var="item" 
+                                     paginator="true" rows="10" paginatorAlwaysVisible="false"
+                                     paginatorTemplate="{FirstPageLink} {PreviousPageLink}
+                                     {PageLinks} {NextPageLink}
+                                     {LastPageLink} {RowsPerPageDropdown}"  
+                                     rowsPerPageTemplate="5,10,15" paginatorPosition="bottom"
+                                     lazy="true"
+                                     emptyMessage="No se encontraron datos con el criterio dado"
+                                     widgetVar="tableMatrizCaracterizacion">
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_codMatCar}"
+                                      filterBy="#{item.codMatCar}"
+                                      sortBy="#{item.codMatCar}">                        
+                                <h:outputText value="#{item.codMatCar}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_medicamentos}"
+                                      filterBy="#{item.medicamentos}"
+                                      sortBy="#{item.medicamentos}">                        
+                                <h:outputText value="#{item.medicamentos}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_alergias}"
+                                      filterBy="#{item.alergias}"
+                                      sortBy="#{item.alergias}">                        
+                                <h:outputText value="#{item.alergias}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_tipAle}"
+                                      filterBy="#{item.tipAle}"
+                                      sortBy="#{item.tipAle}">                        
+                                <h:outputText value="#{item.tipAle}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_genero}"
+                                      filterBy="#{item.genero}"
+                                      sortBy="#{item.genero}">                        
+                                <h:outputText value="#{item.genero}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_estCiv}"
+                                      filterBy="#{item.estCiv}"
+                                      sortBy="#{item.estCiv}">                        
+                                <h:outputText value="#{item.estCiv}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_fecNac}"
+                                      filterBy="#{item.fecNac}"
+                                      sortBy="#{item.fecNac}">                        
+                                <h:outputText value="#{item.fecNac}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_idUsu}"
+                                      filterBy="#{item.idUsu}"
+                                      sortBy="#{item.idUsu}">                        
+                                <h:outputText value="#{item.idUsu}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_codApo}"
+                                      filterBy="#{item.codApo}"
+                                      sortBy="#{item.codApo}">                        
+                                <h:outputText value="#{item.codApo}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_codCarPob}"
+                                      filterBy="#{item.codCarPob}"
+                                      sortBy="#{item.codCarPob}">                        
+                                <h:outputText value="#{item.codCarPob}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_codClu}"
+                                      filterBy="#{item.codClu}"
+                                      sortBy="#{item.codClu}">                        
+                                <h:outputText value="#{item.codClu}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_codEps}"
+                                      filterBy="#{item.codEps}"
+                                      sortBy="#{item.codEps}">                        
+                                <h:outputText value="#{item.codEps}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_codEsc}"
+                                      filterBy="#{item.codEsc}"
+                                      sortBy="#{item.codEsc}">                        
+                                <h:outputText value="#{item.codEsc}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_codFic}"
+                                      filterBy="#{item.codFic}"
+                                      sortBy="#{item.codFic}">                        
+                                <h:outputText value="#{item.codFic}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_codIps}"
+                                      filterBy="#{item.codIps}"
+                                      sortBy="#{item.codIps}">                        
+                                <h:outputText value="#{item.codIps}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_codNucFam}"
+                                      filterBy="#{item.codNucFam}"
+                                      sortBy="#{item.codNucFam}">                        
+                                <h:outputText value="#{item.codNucFam}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_codOcu}"
+                                      filterBy="#{item.codOcu}"
+                                      sortBy="#{item.codOcu}">                        
+                                <h:outputText value="#{item.codOcu}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_codTipFam}"
+                                      filterBy="#{item.codTipFam}"
+                                      sortBy="#{item.codTipFam}">                        
+                                <h:outputText value="#{item.codTipFam}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_codTipSan}"
+                                      filterBy="#{item.codTipSan}"
+                                      sortBy="#{item.codTipSan}">                        
+                                <h:outputText value="#{item.codTipSan}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListMatrizCaracterizacionTitle_codTipViv}"
+                                      filterBy="#{item.codTipViv}"
+                                      sortBy="#{item.codTipViv}">                        
+                                <h:outputText value="#{item.codTipViv}"/>
+                            </p:column>
+                            <p:column>                        
+                                <p:commandButton ajax="false" action="#{matrizCaracterizacionController.prepareView}" title="#{bundle.ListMatrizCaracterizacionViewLink}" icon="ui-icon-search"/>
+                                <p:commandButton ajax="false" action="#{matrizCaracterizacionController.prepareEdit}" title="#{bundle.ListMatrizCaracterizacionEditLink}" icon="ui-icon-pencil"/>
+                                <p:commandButton oncomplete="confirmationDelete.show();" process="@this"
+                                                 title="#{bundle.ListMatrizCaracterizacionDestroyLink}" icon="ui-icon-trash">
+                                    <f:setPropertyActionListener value="#{item}" target="#{matrizCaracterizacionController.selected}"/>
+                                </p:commandButton>
+                            </p:column>
+                        </p:dataTable>
+                    </h:panelGroup>
+                    <br />
+                    <p:commandButton ajax="false" action="#{matrizCaracterizacionController.prepareCreate}" value="#{bundle.ListMatrizCaracterizacionCreateLink}" icon="ui-icon-document"/>
+                </div>        
+            </h:form>
+        </ui:define>
+        <ui:define name="dialogs">
+            <p:confirmDialog id="confirmDelete" message="#{bundle.DeleteItemTitle}"  
+                             header="#{bundle.DeleteItemMessage}" severity="alert" widgetVar="confirmationDelete">  
+                <p:commandButton id="confirmDeleteButtonYes" value="#{bundle.DeleteButtonYes}" update=":listMatrizCaracterizacion" oncomplete="confirmationDelete.hide();"  
+                                 action="#{matrizCaracterizacionController.destroy}"/>  
+                <p:commandButton id="confirmDeleteButtonNot" value="#{bundle.DeleteButtonNot}" onclick="confirmationDelete.hide();" type="button" />   
+            </p:confirmDialog>             
+        </ui:define>
+    </ui:composition>
+
+</html>

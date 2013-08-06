@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListControlesOperativosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form id="listControlesOperativos" styleClass="jsfcrud_list_form">
+                <div id="list" align="center">
+                    <p:growl id="msgs" showDetail="false" sticky="false"/>
+                    <h:outputText escape="false" value="#{bundle.ListControlesOperativosEmpty}" rendered="#{controlesOperativosController.lazyModel.rowCount == 0}"/>
+                    <h:panelGroup rendered="#{controlesOperativosController.lazyModel.rowCount > 0}">
+                        <p:dataTable id="tableListControlesOperativos" 
+                                     value="#{controlesOperativosController.lazyModel}" 
+                                     var="item" 
+                                     paginator="true" rows="10" paginatorAlwaysVisible="false"
+                                     paginatorTemplate="{FirstPageLink} {PreviousPageLink}
+                                     {PageLinks} {NextPageLink}
+                                     {LastPageLink} {RowsPerPageDropdown}"  
+                                     rowsPerPageTemplate="5,10,15" paginatorPosition="bottom"
+                                     lazy="true"
+                                     emptyMessage="No se encontraron datos con el criterio dado"
+                                     widgetVar="tableControlesOperativos">
+                            <p:column headerText="#{bundle.ListControlesOperativosTitle_numConOpe}"
+                                      filterBy="#{item.numConOpe}"
+                                      sortBy="#{item.numConOpe}">                        
+                                <h:outputText value="#{item.numConOpe}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListControlesOperativosTitle_fecDilConOpe}"
+                                      filterBy="#{item.fecDilConOpe}"
+                                      sortBy="#{item.fecDilConOpe}">                        
+                                <h:outputText value="#{item.fecDilConOpe}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListControlesOperativosTitle_eleConOpe}"
+                                      filterBy="#{item.eleConOpe}"
+                                      sortBy="#{item.eleConOpe}">                        
+                                <h:outputText value="#{item.eleConOpe}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListControlesOperativosTitle_sitConOpe}"
+                                      filterBy="#{item.sitConOpe}"
+                                      sortBy="#{item.sitConOpe}">                        
+                                <h:outputText value="#{item.sitConOpe}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListControlesOperativosTitle_codAli}"
+                                      filterBy="#{item.codAli}"
+                                      sortBy="#{item.codAli}">                        
+                                <h:outputText value="#{item.codAli}"/>
+                            </p:column>
+                            <p:column>                        
+                                <p:commandButton ajax="false" action="#{controlesOperativosController.prepareView}" title="#{bundle.ListControlesOperativosViewLink}" icon="ui-icon-search"/>
+                                <p:commandButton ajax="false" action="#{controlesOperativosController.prepareEdit}" title="#{bundle.ListControlesOperativosEditLink}" icon="ui-icon-pencil"/>
+                                <p:commandButton oncomplete="confirmationDelete.show();" process="@this"
+                                                 title="#{bundle.ListControlesOperativosDestroyLink}" icon="ui-icon-trash">
+                                    <f:setPropertyActionListener value="#{item}" target="#{controlesOperativosController.selected}"/>
+                                </p:commandButton>
+                            </p:column>
+                        </p:dataTable>
+                    </h:panelGroup>
+                    <br />
+                    <p:commandButton ajax="false" action="#{controlesOperativosController.prepareCreate}" value="#{bundle.ListControlesOperativosCreateLink}" icon="ui-icon-document"/>
+                </div>        
+            </h:form>
+        </ui:define>
+        <ui:define name="dialogs">
+            <p:confirmDialog id="confirmDelete" message="#{bundle.DeleteItemTitle}"  
+                             header="#{bundle.DeleteItemMessage}" severity="alert" widgetVar="confirmationDelete">  
+                <p:commandButton id="confirmDeleteButtonYes" value="#{bundle.DeleteButtonYes}" update=":listControlesOperativos" oncomplete="confirmationDelete.hide();"  
+                                 action="#{controlesOperativosController.destroy}"/>  
+                <p:commandButton id="confirmDeleteButtonNot" value="#{bundle.DeleteButtonNot}" onclick="confirmationDelete.hide();" type="button" />   
+            </p:confirmDialog>             
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePlanesMejoramientoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formPlanesMejoramiento">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreatePlanesMejoramientoTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePlanesMejoramientoLabel_codPlaMej}" for="codPlaMej" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="codPlaMej" value="#{planesMejoramientoController.selected.codPlaMej}" title="#{bundle.CreatePlanesMejoramientoTitle_codPlaMej}" required="true" requiredMessage="#{bundle.CreatePlanesMejoramientoRequiredMessage_codPlaMej}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codPlaMej"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePlanesMejoramientoLabel_encargado}" for="encargado" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="encargado" value="#{planesMejoramientoController.selected.encargado}" title="#{bundle.CreatePlanesMejoramientoTitle_encargado}" required="true" requiredMessage="#{bundle.CreatePlanesMejoramientoRequiredMessage_encargado}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="encargado"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePlanesMejoramientoLabel_fecIni}" for="fecIni" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecIni" value="#{planesMejoramientoController.selected.fecIni}" title="#{bundle.CreatePlanesMejoramientoTitle_fecIni}" required="true" requiredMessage="#{bundle.CreatePlanesMejoramientoRequiredMessage_fecIni}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecIni"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePlanesMejoramientoLabel_fecFin}" for="fecFin" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecFin" value="#{planesMejoramientoController.selected.fecFin}" title="#{bundle.CreatePlanesMejoramientoTitle_fecFin}" required="true" requiredMessage="#{bundle.CreatePlanesMejoramientoRequiredMessage_fecFin}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecFin"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePlanesMejoramientoLabel_actividades}" for="actividades" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="actividades" value="#{planesMejoramientoController.selected.actividades}" title="#{bundle.CreatePlanesMejoramientoTitle_actividades}" required="true" requiredMessage="#{bundle.CreatePlanesMejoramientoRequiredMessage_actividades}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="actividades"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePlanesMejoramientoLabel_tipPlaMej}" for="tipPlaMej" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="tipPlaMej" value="#{planesMejoramientoController.selected.tipPlaMej}" title="#{bundle.CreatePlanesMejoramientoTitle_tipPlaMej}" required="true" requiredMessage="#{bundle.CreatePlanesMejoramientoRequiredMessage_tipPlaMej}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="tipPlaMej"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePlanesMejoramientoLabel_eviCam}" for="eviCam" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="eviCam" value="#{planesMejoramientoController.selected.eviCam}" title="#{bundle.CreatePlanesMejoramientoTitle_eviCam}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="eviCam"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePlanesMejoramientoLabel_recursos}" for="recursos" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="recursos" value="#{planesMejoramientoController.selected.recursos}" title="#{bundle.CreatePlanesMejoramientoTitle_recursos}" />
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="recursos"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePlanesMejoramientoLabel_fecRev}" for="fecRev" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecRev" value="#{planesMejoramientoController.selected.fecRev}" title="#{bundle.CreatePlanesMejoramientoTitle_fecRev}" required="true" requiredMessage="#{bundle.CreatePlanesMejoramientoRequiredMessage_fecRev}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecRev"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePlanesMejoramientoLabel_descripcion}" for="descripcion" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="descripcion" value="#{planesMejoramientoController.selected.descripcion}" title="#{bundle.CreatePlanesMejoramientoTitle_descripcion}" required="true" requiredMessage="#{bundle.CreatePlanesMejoramientoRequiredMessage_descripcion}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="descripcion"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePlanesMejoramientoLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="idUsu" value="#{planesMejoramientoController.selected.idUsu}" required="true" requiredMessage="#{bundle.CreatePlanesMejoramientoRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePlanesMejoramientoLabel_codFal}" for="codFal" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codFal" value="#{planesMejoramientoController.selected.codFal}" >
+                                    <f:selectItems value="#{faltasController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFal"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreatePlanesMejoramientoLabel_codFic}" for="codFic" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codFic" value="#{planesMejoramientoController.selected.codFic}" required="true" requiredMessage="#{bundle.CreatePlanesMejoramientoRequiredMessage_codFic}">
+                                    <f:selectItems value="#{fichasCaracterizacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFic"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{planesMejoramientoController.create}" value="#{bundle.CreatePlanesMejoramientoSaveLink}" icon="ui-icon-disk"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{planesMejoramientoController.prepareList}" value="#{bundle.CreatePlanesMejoramientoShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

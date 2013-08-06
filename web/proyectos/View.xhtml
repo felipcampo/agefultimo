@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewProyectosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/> 
+            <h:form>
+                <div id="form" align="center">
+                    <p:panelGrid columns="2">
+                        <f:facet name="header">
+                            <p:row><p:column>#{bundle.ViewProyectosTitle}</p:column></p:row>                            
+                        </f:facet>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_codPro}"/>
+                        <h:outputText value="#{proyectosController.selected.codPro}" title="#{bundle.ViewProyectosTitle_codPro}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_nomPro}"/>
+                        <h:outputText value="#{proyectosController.selected.nomPro}" title="#{bundle.ViewProyectosTitle_nomPro}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_numResAprEsp}"/>
+                        <h:outputText value="#{proyectosController.selected.numResAprEsp}" title="#{bundle.ViewProyectosTitle_numResAprEsp}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_numResAprTra}"/>
+                        <h:outputText value="#{proyectosController.selected.numResAprTra}" title="#{bundle.ViewProyectosTitle_numResAprTra}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_numResAprBas}"/>
+                        <h:outputText value="#{proyectosController.selected.numResAprBas}" title="#{bundle.ViewProyectosTitle_numResAprBas}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_plaPrb}"/>
+                        <h:outputText value="#{proyectosController.selected.plaPrb}" title="#{bundle.ViewProyectosTitle_plaPrb}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_jusPro}"/>
+                        <h:outputText value="#{proyectosController.selected.jusPro}" title="#{bundle.ViewProyectosTitle_jusPro}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_objGen}"/>
+                        <h:outputText value="#{proyectosController.selected.objGen}" title="#{bundle.ViewProyectosTitle_objGen}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_objEsp}"/>
+                        <h:outputText value="#{proyectosController.selected.objEsp}" title="#{bundle.ViewProyectosTitle_objEsp}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_benPro}"/>
+                        <h:outputText value="#{proyectosController.selected.benPro}" title="#{bundle.ViewProyectosTitle_benPro}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_impSoc}"/>
+                        <h:outputText value="#{proyectosController.selected.impSoc}" title="#{bundle.ViewProyectosTitle_impSoc}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_impEco}"/>
+                        <h:outputText value="#{proyectosController.selected.impEco}" title="#{bundle.ViewProyectosTitle_impEco}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_impAmb}"/>
+                        <h:outputText value="#{proyectosController.selected.impAmb}" title="#{bundle.ViewProyectosTitle_impAmb}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_impTec}"/>
+                        <h:outputText value="#{proyectosController.selected.impTec}" title="#{bundle.ViewProyectosTitle_impTec}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_rieAso}"/>
+                        <h:outputText value="#{proyectosController.selected.rieAso}" title="#{bundle.ViewProyectosTitle_rieAso}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_resPro}"/>
+                        <h:outputText value="#{proyectosController.selected.resPro}" title="#{bundle.ViewProyectosTitle_resPro}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_gesTec}"/>
+                        <h:outputText value="#{proyectosController.selected.gesTec}" title="#{bundle.ViewProyectosTitle_gesTec}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_valPrd}"/>
+                        <h:outputText value="#{proyectosController.selected.valPrd}" title="#{bundle.ViewProyectosTitle_valPrd}"/>
+                        <h:outputText value="#{bundle.ViewProyectosLabel_codEstPro}"/>
+                        <h:outputText value="#{proyectosController.selected.codEstPro}" title="#{bundle.ViewProyectosTitle_codEstPro}"/>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton oncomplete="confirmationDelete.show();" process="@this" value="#{bundle.ListProyectosDestroyLink}"
+                                     title="#{bundle.ListProyectosDestroyLink}" icon="ui-icon-trash">
+                    </p:commandButton>
+                    <p:button outcome="Edit" value="#{bundle.ViewProyectosEditLink}" icon="ui-icon-pencil"/>
+                    <p:commandButton ajax="false" action="#{proyectosController.prepareCreate}" value="#{bundle.ViewProyectosCreateLink}" icon="ui-icon-document"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{proyectosController.prepareList}" value="#{bundle.ViewProyectosShowAllLink}"/>
+                </div>            
+            </h:form>
+        </ui:define>
+        <ui:define name="dialogs">
+            <p:confirmDialog id="confirmDelete" message="#{bundle.DeleteItemTitle}"  
+                             header="#{bundle.DeleteItemMessage}" severity="alert" widgetVar="confirmationDelete">  
+                <p:commandButton id="confirmDeleteButtonYes" value="#{bundle.DeleteButtonYes}" oncomplete="confirmationDelete.hide();"  
+                                 action="#{proyectosController.destroy}"/>  
+                <p:commandButton id="confirmDeleteButtonNot" value="#{bundle.DeleteButtonNot}" onclick="confirmationDelete.hide();" type="button" />   
+            </p:confirmDialog>             
+        </ui:define>
+    </ui:composition>
+
+</html>

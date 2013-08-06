@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateModalidadesProductivaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formModalidadesProductiva">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreateModalidadesProductivaTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateModalidadesProductivaLabel_codMod}" for="codMod" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="codMod" value="#{modalidadesProductivaController.selected.codMod}" title="#{bundle.CreateModalidadesProductivaTitle_codMod}" required="true" requiredMessage="#{bundle.CreateModalidadesProductivaRequiredMessage_codMod}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codMod"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateModalidadesProductivaLabel_detMod}" for="detMod" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="detMod" value="#{modalidadesProductivaController.selected.detMod}" title="#{bundle.CreateModalidadesProductivaTitle_detMod}" required="true" requiredMessage="#{bundle.CreateModalidadesProductivaRequiredMessage_detMod}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="detMod"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateModalidadesProductivaLabel_durMod}" for="durMod" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="durMod" value="#{modalidadesProductivaController.selected.durMod}" title="#{bundle.CreateModalidadesProductivaTitle_durMod}" required="true" requiredMessage="#{bundle.CreateModalidadesProductivaRequiredMessage_durMod}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="durMod"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateModalidadesProductivaLabel_infReq}" for="infReq" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="infReq" value="#{modalidadesProductivaController.selected.infReq}" title="#{bundle.CreateModalidadesProductivaTitle_infReq}" required="true" requiredMessage="#{bundle.CreateModalidadesProductivaRequiredMessage_infReq}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="infReq"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateModalidadesProductivaLabel_codTdm}" for="codTdm" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codTdm" value="#{modalidadesProductivaController.selected.codTdm}" required="true" requiredMessage="#{bundle.CreateModalidadesProductivaRequiredMessage_codTdm}">
+                                    <f:selectItems value="#{tiposModalidadesProductivaController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTdm"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateModalidadesProductivaLabel_codCop}" for="codCop" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codCop" value="#{modalidadesProductivaController.selected.codCop}" required="true" requiredMessage="#{bundle.CreateModalidadesProductivaRequiredMessage_codCop}">
+                                    <f:selectItems value="#{contratosProyectosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codCop"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{modalidadesProductivaController.create}" value="#{bundle.CreateModalidadesProductivaSaveLink}" icon="ui-icon-disk"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{modalidadesProductivaController.prepareList}" value="#{bundle.CreateModalidadesProductivaShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

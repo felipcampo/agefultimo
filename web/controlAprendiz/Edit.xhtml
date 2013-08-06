@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditControlAprendizTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formControlAprendiz">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditControlAprendizTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlAprendizLabel_consec}" for="consec" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="consec" value="#{controlAprendizController.selected.consec}" title="#{bundle.EditControlAprendizTitle_consec}" required="true" requiredMessage="#{bundle.EditControlAprendizRequiredMessage_consec}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="consec"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlAprendizLabel_numSegBie}" for="numSegBie" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="numSegBie" value="#{controlAprendizController.selected.numSegBie}" title="#{bundle.EditControlAprendizTitle_numSegBie}" required="true" requiredMessage="#{bundle.EditControlAprendizRequiredMessage_numSegBie}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numSegBie"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlAprendizLabel_fecConBie}" for="fecConBie" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecConBie" value="#{controlAprendizController.selected.fecConBie}" title="#{bundle.EditControlAprendizTitle_fecConBie}" required="true" requiredMessage="#{bundle.EditControlAprendizRequiredMessage_fecConBie}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecConBie"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlAprendizLabel_objSes}" for="objSes" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="objSes" value="#{controlAprendizController.selected.objSes}" title="#{bundle.EditControlAprendizTitle_objSes}" required="true" requiredMessage="#{bundle.EditControlAprendizRequiredMessage_objSes}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="objSes"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlAprendizLabel_temAbo}" for="temAbo" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="temAbo" value="#{controlAprendizController.selected.temAbo}" title="#{bundle.EditControlAprendizTitle_temAbo}" required="true" requiredMessage="#{bundle.EditControlAprendizRequiredMessage_temAbo}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="temAbo"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlAprendizLabel_logObj}" for="logObj" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="logObj" value="#{controlAprendizController.selected.logObj}" title="#{bundle.EditControlAprendizTitle_logObj}" required="true" requiredMessage="#{bundle.EditControlAprendizRequiredMessage_logObj}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="logObj"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlAprendizLabel_fecHorCon}" for="fecHorCon" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy HH:mm:ss" showOn="button" id="fecHorCon" value="#{controlAprendizController.selected.fecHorCon}" title="#{bundle.EditControlAprendizTitle_fecHorCon}" required="true" requiredMessage="#{bundle.EditControlAprendizRequiredMessage_fecHorCon}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecHorCon"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlAprendizLabel_firIns}" for="firIns" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="firIns" value="#{controlAprendizController.selected.firIns}" title="#{bundle.EditControlAprendizTitle_firIns}" required="true" requiredMessage="#{bundle.EditControlAprendizRequiredMessage_firIns}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="firIns"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlAprendizLabel_comIns}" for="comIns" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputTextarea rows="4" cols="30" id="comIns" value="#{controlAprendizController.selected.comIns}" title="#{bundle.EditControlAprendizTitle_comIns}" required="true" requiredMessage="#{bundle.EditControlAprendizRequiredMessage_comIns}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="comIns"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlAprendizLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="idUsu" value="#{controlAprendizController.selected.idUsu}" required="true" requiredMessage="#{bundle.EditControlAprendizRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlAprendizLabel_codEstBie}" for="codEstBie" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codEstBie" value="#{controlAprendizController.selected.codEstBie}" required="true" requiredMessage="#{bundle.EditControlAprendizRequiredMessage_codEstBie}">
+                                    <f:selectItems value="#{estadosCasosBienestarController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codEstBie"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{controlAprendizController.update}" value="#{bundle.EditControlAprendizSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditControlAprendizViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{controlAprendizController.prepareList}" value="#{bundle.EditControlAprendizShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

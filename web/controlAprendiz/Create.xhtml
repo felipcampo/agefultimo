@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateControlAprendizTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formControlAprendiz">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreateControlAprendizTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateControlAprendizLabel_consec}" for="consec" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="consec" value="#{controlAprendizController.selected.consec}" title="#{bundle.CreateControlAprendizTitle_consec}" required="true" requiredMessage="#{bundle.CreateControlAprendizRequiredMessage_consec}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="consec"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateControlAprendizLabel_numSegBie}" for="numSegBie" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="numSegBie" value="#{controlAprendizController.selected.numSegBie}" title="#{bundle.CreateControlAprendizTitle_numSegBie}" required="true" requiredMessage="#{bundle.CreateControlAprendizRequiredMessage_numSegBie}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numSegBie"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateControlAprendizLabel_fecConBie}" for="fecConBie" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecConBie" value="#{controlAprendizController.selected.fecConBie}" title="#{bundle.CreateControlAprendizTitle_fecConBie}" required="true" requiredMessage="#{bundle.CreateControlAprendizRequiredMessage_fecConBie}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecConBie"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateControlAprendizLabel_objSes}" for="objSes" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="objSes" value="#{controlAprendizController.selected.objSes}" title="#{bundle.CreateControlAprendizTitle_objSes}" required="true" requiredMessage="#{bundle.CreateControlAprendizRequiredMessage_objSes}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="objSes"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateControlAprendizLabel_temAbo}" for="temAbo" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="temAbo" value="#{controlAprendizController.selected.temAbo}" title="#{bundle.CreateControlAprendizTitle_temAbo}" required="true" requiredMessage="#{bundle.CreateControlAprendizRequiredMessage_temAbo}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="temAbo"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateControlAprendizLabel_logObj}" for="logObj" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="logObj" value="#{controlAprendizController.selected.logObj}" title="#{bundle.CreateControlAprendizTitle_logObj}" required="true" requiredMessage="#{bundle.CreateControlAprendizRequiredMessage_logObj}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="logObj"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateControlAprendizLabel_fecHorCon}" for="fecHorCon" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy HH:mm:ss" showOn="button" id="fecHorCon" value="#{controlAprendizController.selected.fecHorCon}" title="#{bundle.CreateControlAprendizTitle_fecHorCon}" required="true" requiredMessage="#{bundle.CreateControlAprendizRequiredMessage_fecHorCon}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecHorCon"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateControlAprendizLabel_firIns}" for="firIns" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="firIns" value="#{controlAprendizController.selected.firIns}" title="#{bundle.CreateControlAprendizTitle_firIns}" required="true" requiredMessage="#{bundle.CreateControlAprendizRequiredMessage_firIns}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="firIns"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateControlAprendizLabel_comIns}" for="comIns" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="comIns" value="#{controlAprendizController.selected.comIns}" title="#{bundle.CreateControlAprendizTitle_comIns}" required="true" requiredMessage="#{bundle.CreateControlAprendizRequiredMessage_comIns}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="comIns"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateControlAprendizLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="idUsu" value="#{controlAprendizController.selected.idUsu}" required="true" requiredMessage="#{bundle.CreateControlAprendizRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateControlAprendizLabel_codEstBie}" for="codEstBie" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codEstBie" value="#{controlAprendizController.selected.codEstBie}" required="true" requiredMessage="#{bundle.CreateControlAprendizRequiredMessage_codEstBie}">
+                                    <f:selectItems value="#{estadosCasosBienestarController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codEstBie"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{controlAprendizController.create}" value="#{bundle.CreateControlAprendizSaveLink}" icon="ui-icon-disk"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{controlAprendizController.prepareList}" value="#{bundle.CreateControlAprendizShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

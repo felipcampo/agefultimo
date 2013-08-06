@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTiposCasosBienestarTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formTiposCasosBienestar">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditTiposCasosBienestarTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditTiposCasosBienestarLabel_codTipBie}" for="codTipBie" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="codTipBie" value="#{tiposCasosBienestarController.selected.codTipBie}" title="#{bundle.EditTiposCasosBienestarTitle_codTipBie}" required="true" requiredMessage="#{bundle.EditTiposCasosBienestarRequiredMessage_codTipBie}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTipBie"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditTiposCasosBienestarLabel_nomTipBie}" for="nomTipBie" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="nomTipBie" value="#{tiposCasosBienestarController.selected.nomTipBie}" title="#{bundle.EditTiposCasosBienestarTitle_nomTipBie}" required="true" requiredMessage="#{bundle.EditTiposCasosBienestarRequiredMessage_nomTipBie}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomTipBie"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{tiposCasosBienestarController.update}" value="#{bundle.EditTiposCasosBienestarSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditTiposCasosBienestarViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{tiposCasosBienestarController.prepareList}" value="#{bundle.EditTiposCasosBienestarShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditFichasCaracterizacionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formFichasCaracterizacion">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditFichasCaracterizacionTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_codFic}" for="codFic" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="codFic" value="#{fichasCaracterizacionController.selected.codFic}" title="#{bundle.EditFichasCaracterizacionTitle_codFic}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_codFic}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFic"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_fecIni}" for="fecIni" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecIni" value="#{fichasCaracterizacionController.selected.fecIni}" title="#{bundle.EditFichasCaracterizacionTitle_fecIni}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_fecIni}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecIni"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_fecFin}" for="fecFin" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecFin" value="#{fichasCaracterizacionController.selected.fecFin}" title="#{bundle.EditFichasCaracterizacionTitle_fecFin}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_fecFin}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecFin"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_fecIniEtaLec}" for="fecIniEtaLec" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecIniEtaLec" value="#{fichasCaracterizacionController.selected.fecIniEtaLec}" title="#{bundle.EditFichasCaracterizacionTitle_fecIniEtaLec}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_fecIniEtaLec}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecIniEtaLec"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_fecFinEtaLec}" for="fecFinEtaLec" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecFinEtaLec" value="#{fichasCaracterizacionController.selected.fecFinEtaLec}" title="#{bundle.EditFichasCaracterizacionTitle_fecFinEtaLec}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_fecFinEtaLec}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecFinEtaLec"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_fecIniEtaPro}" for="fecIniEtaPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecIniEtaPro" value="#{fichasCaracterizacionController.selected.fecIniEtaPro}" title="#{bundle.EditFichasCaracterizacionTitle_fecIniEtaPro}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_fecIniEtaPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecIniEtaPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_fecFinEtaPro}" for="fecFinEtaPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecFinEtaPro" value="#{fichasCaracterizacionController.selected.fecFinEtaPro}" title="#{bundle.EditFichasCaracterizacionTitle_fecFinEtaPro}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_fecFinEtaPro}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecFinEtaPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_numCupIns}" for="numCupIns" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="numCupIns" value="#{fichasCaracterizacionController.selected.numCupIns}" title="#{bundle.EditFichasCaracterizacionTitle_numCupIns}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_numCupIns}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numCupIns"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_numCupFic}" for="numCupFic" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="numCupFic" value="#{fichasCaracterizacionController.selected.numCupFic}" title="#{bundle.EditFichasCaracterizacionTitle_numCupFic}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_numCupFic}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="numCupFic"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_jorFic}" for="jorFic" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="jorFic" value="#{fichasCaracterizacionController.selected.jorFic}" title="#{bundle.EditFichasCaracterizacionTitle_jorFic}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_jorFic}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="jorFic"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_codTipFor}" for="codTipFor" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codTipFor" value="#{fichasCaracterizacionController.selected.codTipFor}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_codTipFor}">
+                                    <f:selectItems value="#{tiposFormacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTipFor"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_codPro}" for="codPro" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codPro" value="#{fichasCaracterizacionController.selected.codPro}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_codPro}">
+                                    <f:selectItems value="#{proyectosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codPro"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_codPrg}" for="codPrg" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codPrg" value="#{fichasCaracterizacionController.selected.codPrg}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_codPrg}">
+                                    <f:selectItems value="#{programasController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codPrg"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_codOfe}" for="codOfe" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codOfe" value="#{fichasCaracterizacionController.selected.codOfe}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_codOfe}">
+                                    <f:selectItems value="#{tiposOfertaController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codOfe"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditFichasCaracterizacionLabel_codNivFor}" for="codNivFor" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codNivFor" value="#{fichasCaracterizacionController.selected.codNivFor}" required="true" requiredMessage="#{bundle.EditFichasCaracterizacionRequiredMessage_codNivFor}">
+                                    <f:selectItems value="#{nivelesFormacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codNivFor"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{fichasCaracterizacionController.update}" value="#{bundle.EditFichasCaracterizacionSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditFichasCaracterizacionViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{fichasCaracterizacionController.prepareList}" value="#{bundle.EditFichasCaracterizacionShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
