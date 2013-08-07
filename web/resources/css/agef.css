@@ -38,6 +38,8 @@ img, object, embed, video {
 	padding-left: 1.6333%;
 	padding-right: 1.6333%;
 	margin-top: 1.6%;
+        font-family: "Myriad Pro";
+	
 }
 #agefl{
 	max-width: 100%;
@@ -88,6 +90,7 @@ img, object, embed, video {
 	clear: both;
 	float: left;
 	margin-left: 0;
+        margin-top: 1%;
 	width: 100%;
 	display: block;
 	background-color: #000;
@@ -139,6 +142,41 @@ img, object, embed, video {
 	height: 15%;
 	z-index: 1;
 }
+
+#LayoutTitulo_Seg_Ap_prod {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+        font-family: "Myriad Pro";
+	background-color: #fc7323;
+	text-align: justify;
+	margin-top: 2%;
+	color: #FFF;
+        text-align: center;
+        font-size: 11px;
+}
+#Layoutimg_seg_ap_prod {
+	clear: both;
+	float: left;
+        margin-top: 4%;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutContenidomod_seg_ap_prod {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+        font-family: "Myriad Pro";
+	font-size: 14px;
+	text-align: justify;
+	margin-top: 2%;
+	color: #FFF;
+	background-color: #238276;}
 
 /* Diseño tableta: de 481 px a 768 px. Hereda estilos de: Diseño móvil. */
 
@@ -199,6 +237,7 @@ img, object, embed, video {
 	margin-left: 0;
 	width: 100%;
 	display: block;
+        margin-top: 1%;
 }
 #Layoutpie1 {
 	clear: both;
@@ -245,6 +284,40 @@ img, object, embed, video {
 	height: 23%;
 	z-index: 1;
 }
+
+#LayoutTitulo_Seg_Ap_prod {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background-color: #fc7323;
+	text-align: center;
+        color: #FFF;
+}
+#Layoutimg_seg_ap_prod {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+        margin-top: 2%;
+	display: block;
+}
+#LayoutContenidomod_seg_ap_prod {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	font-family: "Myriad Pro";
+	font-size: 16px;
+	background-color: #238276;
+	text-align: justify;
+	margin-top: 2%;
+	color: #FFF;
+}
+
+
 }
 
 /* Diseño escritorio: de 769 px hasta un máximo de 1232 px.  Hereda estilos de: Diseño móvil y Diseño tableta. */
@@ -307,6 +380,7 @@ img, object, embed, video {
 	margin-left: 0;
 	width: 100%;
 	display: block;
+        margin-top: 1%;
 }
 #Layoutpie1 {
 	clear: both;
@@ -355,4 +429,97 @@ img, object, embed, video {
 	height: 20%;
 	z-index: 1;
 }
+
+
+#LayoutTitulo_Seg_Ap_prod {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+        color: #FFF
+}
+#Layoutimg_seg_ap_prod {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 36.7088%;
+        margin-top: 1.7%;
+	display: block;
+}
+#LayoutContenidomod_seg_ap_prod {
+	clear: none;
+	float: left;
+	margin-left: 1%;
+	width: 62.1%;
+	display: block;
+	color: #FFF;
+        font-family: "Myriad Pro";
+	text-align: justify;
+	margin-top: 1%;
+        font-size: 18px;
+}
+#Layouttitulo_seg_et_prod_form {
+	clear: none;
+	float: left;
+	margin-left: 1.2658%;
+	width: 93.6708%;
+	display: block;
+       color: #fff;
+       text-align: center;
+	top: 2%;
+	background-color: #FC7323;
+
+}
+
+#Layoutformulario_seg_ap_eta_prod {
+	clear: none;
+	float: left;
+	margin-left: 1.2658%;
+	width: 74.6835%;
+	display: block;
+	font-family: "Myriad Pro";
+	font-size: 16px;
+	margin-top: 1%;
+        background-color: #CFCFCF;
+	border-radius: 0px;
+	text-align: center;
+}
+
+#Layout_form_seg_et_prod {
+	clear: both;
+	float: left;
+	margin-left: 10px;
+	width: 98%;
+	display: block;
+	margin-top: 10px;
+        font-size: 18px;
+	margin-right: 10px;
+	background-color: #59B548;
+	color: #FFF;
+	border-radius: 0px;
+	margin: 10px;
+        
+	margin-bottom: 10px;
+	text-decoration: blink;
+	font-size: 14px;
+}
+
+#LayoutInfo_seg_et_prod {
+	clear: none;
+	float: left;
+        margin-top: 1%;
+	margin-left: 1.2658%;
+	width: 17.7215%;
+	display: block;
+	text-align: center;
+	font-family: "Myriad Pro";
+	background-color: #238276;
+	border-radius: 0px;
+	color: #FFF;
+}
+}
+
+#margen{margin:1.6%;
+text-align:justify;
 }

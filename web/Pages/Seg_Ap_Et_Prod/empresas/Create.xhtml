@@ -11,6 +11,19 @@
             <h:outputText value="#{bundle.CreateEmpresasTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
+
+            <div id="Layouttitulo_seg_et_prod_form"><h1>SEGUIMIENTO APRENDIZ ETAPA PRODUCTIVA</h1>
+
+            </div>
+
+
+            <div id="Layoutformulario_seg_ap_eta_prod">
+                <div id="Layout_form_seg_et_prod">
+                    <p>FORMULARIO - CONSULTAS</p> 
+                    <hr> </hr>
+
+                
+
             <p:growl id="msgs" showDetail="false" sticky="false"/>
             <h:form id="formEmpresas">
                 <div id="form" align="center">
@@ -118,6 +131,20 @@
                     <p:commandButton ajax="false" action="#{empresasController.prepareList}" value="#{bundle.CreateEmpresasShowAllLink}" immediate="true"/>
                 </div>
             </h:form>
+            </div>
+
+            </div>
+            
+            
+             <div id="LayoutInfo_seg_et_prod">
+    <p>INFORMACION</p>
+    <hr/>
+    <p>Informacion de ayuda para formularios</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
         </ui:define>
     </ui:composition>
 
