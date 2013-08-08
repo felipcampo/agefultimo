@@ -42,15 +42,15 @@
                                       sortBy="#{item.obsCep}">                        
                                 <h:outputText value="#{item.obsCep}"/>
                             </p:column>
-                            <p:column headerText="#{bundle.ListCriteriosSeguimientosTitle_codCri}"
-                                      filterBy="#{item.codCri}"
-                                      sortBy="#{item.codCri}">                        
-                                <h:outputText value="#{item.codCri}"/>
-                            </p:column>
                             <p:column headerText="#{bundle.ListCriteriosSeguimientosTitle_codSegPro}"
                                       filterBy="#{item.codSegPro}"
                                       sortBy="#{item.codSegPro}">                        
                                 <h:outputText value="#{item.codSegPro}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListCriteriosSeguimientosTitle_codCri}"
+                                      filterBy="#{item.codCri}"
+                                      sortBy="#{item.codCri}">                        
+                                <h:outputText value="#{item.codCri}"/>
                             </p:column>
                             <p:column>                        
                                 <p:commandButton ajax="false" action="#{criteriosSeguimientosController.prepareView}" title="#{bundle.ListCriteriosSeguimientosViewLink}" icon="ui-icon-search"/>

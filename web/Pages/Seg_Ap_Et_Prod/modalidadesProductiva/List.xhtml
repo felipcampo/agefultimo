@@ -47,15 +47,15 @@
                                       sortBy="#{item.infReq}">                        
                                 <h:outputText value="#{item.infReq}"/>
                             </p:column>
-                            <p:column headerText="#{bundle.ListModalidadesProductivaTitle_codCop}"
-                                      filterBy="#{item.codCop}"
-                                      sortBy="#{item.codCop}">                        
-                                <h:outputText value="#{item.codCop}"/>
-                            </p:column>
                             <p:column headerText="#{bundle.ListModalidadesProductivaTitle_codTdm}"
                                       filterBy="#{item.codTdm}"
                                       sortBy="#{item.codTdm}">                        
                                 <h:outputText value="#{item.codTdm}"/>
+                            </p:column>
+                            <p:column headerText="#{bundle.ListModalidadesProductivaTitle_codCop}"
+                                      filterBy="#{item.codCop}"
+                                      sortBy="#{item.codCop}">                        
+                                <h:outputText value="#{item.codCop}"/>
                             </p:column>
                             <p:column>                        
                                 <p:commandButton ajax="false" action="#{modalidadesProductivaController.prepareView}" title="#{bundle.ListModalidadesProductivaViewLink}" icon="ui-icon-search"/>
