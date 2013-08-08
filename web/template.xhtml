@@ -5,9 +5,11 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
+        <link rel="shortcut icon" href="faviconlogo.PNG"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title><ui:insert name="title">Default Title</ui:insert></title>
+        <title><ui:insert name="title">AGEF</ui:insert></title>
+        <h:outputStylesheet name="css/iniciomod_seg_ap.css"/>
         <h:outputStylesheet name="css/agef_theme.css"/>
         <h:outputStylesheet name="css/menuvertical.css"/>
         <h:outputStylesheet name="css/boilerplate.css"/>
@@ -80,7 +82,11 @@
   </div>
   <div id="Layoutsubmenu">Submenu</div>
   <div id="Layoutmenuver"><ul id="navigationMenu">
-    <li><a  href="faces/usuarios/List.xhtml">
+     <li><a  href="#">
+             <span>Inicio</span><h:graphicImage library="images" name="icono_inicio.png" />
+      </a>
+    </li>
+          <li><a  href="/agefultimo/faces/Pages/Seguimiento_Evaluacion_Aprendices/index_seg_ap.xhtml">
             <span>Seguimiento y Evaluación Aprendices</span><h:graphicImage library="images/icoseguimiento" name="seguimiento.png" />
       </a>
     </li>
@@ -92,7 +98,7 @@
     
     <li>
     	<a href="#">
-            <span>Seguimiento y Evaluación a Instructores</span><img src="images/icono11.png" alt=""  />
+            <span>Seguimiento y Evaluación a Instructores</span><h:graphicImage library="images/icoseguimientoinstructores" name="seguimientoinstructores.png" />
         </a>
     </li>
     
