@@ -54,6 +54,8 @@ public class EstadosAprendiz implements Serializable {
     @ManyToMany
     private List<Roles> rolesList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "codEstApr")
+    private List<ControlesAsistencia> controlesAsistenciaList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codEstApr")
     private List<FichasUsuarios> fichasUsuariosList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "codEstApr")
     private List<SeguimientoProyectos> seguimientoProyectosList;
@@ -93,6 +95,15 @@ public class EstadosAprendiz implements Serializable {
 
     public void setRolesList(List<Roles> rolesList) {
         this.rolesList = rolesList;
+    }
+
+    @XmlTransient
+    public List<ControlesAsistencia> getControlesAsistenciaList() {
+        return controlesAsistenciaList;
+    }
+
+    public void setControlesAsistenciaList(List<ControlesAsistencia> controlesAsistenciaList) {
+        this.controlesAsistenciaList = controlesAsistenciaList;
     }
 
     @XmlTransient

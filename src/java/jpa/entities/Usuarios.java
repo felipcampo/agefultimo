@@ -111,6 +111,12 @@ public class Usuarios implements Serializable {
     private List<ContratosProyectos> contratosProyectosList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUsu")
     private List<MatrizCaracterizacion> matrizCaracterizacionList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUsu2")
+    private List<ControlesAsistencia> controlesAsistenciaList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUsu1")
+    private List<ControlesAsistencia> controlesAsistenciaList1;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUsu")
+    private List<ControlesAsistencia> controlesAsistenciaList2;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUsu")
     private List<LlamadosAtencionVerbal> llamadosAtencionVerbalList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuarios")
@@ -308,6 +314,33 @@ public class Usuarios implements Serializable {
 
     public void setMatrizCaracterizacionList(List<MatrizCaracterizacion> matrizCaracterizacionList) {
         this.matrizCaracterizacionList = matrizCaracterizacionList;
+    }
+
+    @XmlTransient
+    public List<ControlesAsistencia> getControlesAsistenciaList() {
+        return controlesAsistenciaList;
+    }
+
+    public void setControlesAsistenciaList(List<ControlesAsistencia> controlesAsistenciaList) {
+        this.controlesAsistenciaList = controlesAsistenciaList;
+    }
+
+    @XmlTransient
+    public List<ControlesAsistencia> getControlesAsistenciaList1() {
+        return controlesAsistenciaList1;
+    }
+
+    public void setControlesAsistenciaList1(List<ControlesAsistencia> controlesAsistenciaList1) {
+        this.controlesAsistenciaList1 = controlesAsistenciaList1;
+    }
+
+    @XmlTransient
+    public List<ControlesAsistencia> getControlesAsistenciaList2() {
+        return controlesAsistenciaList2;
+    }
+
+    public void setControlesAsistenciaList2(List<ControlesAsistencia> controlesAsistenciaList2) {
+        this.controlesAsistenciaList2 = controlesAsistenciaList2;
     }
 
     @XmlTransient
