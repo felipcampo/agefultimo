@@ -51,13 +51,13 @@ padding-left:0px;
 	display: block;
 	position: relative;
 	background-color: #FD8E4D;
-	padding-left:: 0px;
+	padding-left: 0px;
 	top: 0;
 }
 
 /* General hover styles */
 
-#navigationMenu a:hover span{ width:auto; padding:0 20px;overflow:visible; }
+#navigationMenu a:hover span{ width:auto; padding:0 20px;overflow:visible; z-index: 999;}
 #navigationMenu a:hover{
 	text-decoration: none;
 	/* CSS outer glow with the box-shadow property */
