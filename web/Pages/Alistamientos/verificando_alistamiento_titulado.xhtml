@@ -8,6 +8,7 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     
  
@@ -180,7 +181,107 @@ fecha validado
   </tr>
 </table>
         
-  </div>      
+  </div> 
+                 
+                 
+                 
+                 
+                 
+                 
+      <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreateAlistamientosTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="Control Operatiivo" for="codAli" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="codAli" value="#{alistamientosController.selected.codAli}" title="#{bundle.CreateAlistamientosTitle_codAli}" required="true" requiredMessage="#{bundle.CreateAlistamientosRequiredMessage_codAli}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codAli"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="Diagrama de Gantt" for="nomAli" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="nomAli" value="#{alistamientosController.selected.nomAli}" title="#{bundle.CreateAlistamientosTitle_nomAli}" required="true" requiredMessage="#{bundle.CreateAlistamientosRequiredMessage_nomAli}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="nomAli"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="Formato Bogota" for="bibliografia" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="bibliografia" value="#{alistamientosController.selected.bibliografia}" title="#{bundle.CreateAlistamientosTitle_bibliografia}" required="true" requiredMessage="#{bundle.CreateAlistamientosRequiredMessage_bibliografia}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="bibliografia"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="Formato de Evaluación y Seguimiento" for="recDid" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputTextarea rows="4" cols="30" id="recDid" value="#{alistamientosController.selected.recDid}" title="#{bundle.CreateAlistamientosTitle_recDid}" required="true" requiredMessage="#{bundle.CreateAlistamientosRequiredMessage_recDid}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="recDid"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="Guía integrada" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="idUsu" value="#{alistamientosController.selected.idUsu}" required="true" requiredMessage="#{bundle.CreateAlistamientosRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="Horarios de Ambientes" for="codTipAli" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codTipAli" value="#{alistamientosController.selected.codTipAli}" required="true" requiredMessage="#{bundle.CreateAlistamientosRequiredMessage_codTipAli}">
+                                    <f:selectItems value="#{tiposAlistamientoController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codTipAli"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="Programacion del Proyecto" for="codFasPro" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codFasPro" value="#{alistamientosController.selected.codFasPro}" required="true" requiredMessage="#{bundle.CreateAlistamientosRequiredMessage_codFasPro}">
+                                    <f:selectItems value="#{fasesProyectoController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFasPro"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>            
+                 
+                 
+    
+                 
+                 
+                 
            </div>  
         </ui:define>
     </ui:composition>
