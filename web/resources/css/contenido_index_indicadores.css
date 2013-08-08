@@ -19,7 +19,7 @@ root {
 #Layoutcontenidoprincipal {
 	clear: both;
 	float: right;
-	margin-left: 0;
+margin-top:-50 ;
 	width: 50%;
 	display: block;
 }
@@ -68,3 +68,10 @@ root {
 {
     font-family: Myriad Pro;
 }
+#Layoutfoto{
+    
+   
+    width:40%;
+    float: left;
+    position: absolute;
+ }

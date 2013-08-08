@@ -16,19 +16,37 @@
                 <div id="form" align="center">
                     <p:panelGrid>
                         <f:facet name="header">
-                            <p:row><p:column colspan="3">#{bundle.CreateSeguimientosProductivaTitle}</p:column></p:row>                            
+                            <p:row><p:column colspan="6">1. INFORMACIÓN GENERAL</p:column></p:row>
                         </f:facet>                        
+
                         <p:row>
                             <p:column>
-                                <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codSegPro}" for="codSegPro" />
+                                <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codFic}" for="codFic" />
                             </p:column>
                             <p:column style="border-right: white">    
-                                <p:inputText id="codSegPro" value="#{seguimientosProductivaController.selected.codSegPro}" title="#{bundle.CreateSeguimientosProductivaTitle_codSegPro}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_codSegPro}"/>
+                                <p:selectOneMenu id="codFic" value="#{seguimientosProductivaController.selected.codFic}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_codFic}">
+                                    <f:selectItems value="#{fichasCaracterizacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
                             </p:column>
                             <p:column style="border-left: white;">
-                                <p:message for="codSegPro"/>
+                                <p:message for="codFic"/>
                             </p:column>
                         </p:row>
+
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="idUsu" value="#{seguimientosProductivaController.selected.idUsu}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>
+
                         <p:row>
                             <p:column>
                                 <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_juiEva}" for="juiEva" />
@@ -119,19 +137,7 @@
                                 <p:message for="nitEmp"/>
                             </p:column>
                         </p:row>
-                        <p:row>
-                            <p:column>
-                                <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_idUsu}" for="idUsu" />
-                            </p:column>
-                            <p:column style="border-right: white">    
-                                <p:selectOneMenu id="idUsu" value="#{seguimientosProductivaController.selected.idUsu}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_idUsu}">
-                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu>
-                            </p:column>
-                            <p:column style="border-left: white;">
-                                <p:message for="idUsu"/>
-                            </p:column>
-                        </p:row>
+
                         <p:row>
                             <p:column>
                                 <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codMod}" for="codMod" />
@@ -145,33 +151,7 @@
                                 <p:message for="codMod"/>
                             </p:column>
                         </p:row>
-                        <p:row>
-                            <p:column>
-                                <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codFic}" for="codFic" />
-                            </p:column>
-                            <p:column style="border-right: white">    
-                                <p:selectOneMenu id="codFic" value="#{seguimientosProductivaController.selected.codFic}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_codFic}">
-                                    <f:selectItems value="#{fichasCaracterizacionController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu>
-                            </p:column>
-                            <p:column style="border-left: white;">
-                                <p:message for="codFic"/>
-                            </p:column>
-                        </p:row>
 
-                        <p:row>
-                            <p:column>
-                                <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codCen}" for="codCen" />
-                            </p:column>
-                            <p:column style="border-right: white">    
-                                <p:selectOneMenu id="codCen" value="#{seguimientosProductivaController.selected.codCen}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_codCen}">
-                                    <f:selectItems value="#{centrosFormacionController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu>
-                            </p:column>
-                            <p:column style="border-left: white;">
-                                <p:message for="codCen"/>
-                            </p:column>
-                        </p:row>
                         <p:row>
                             <p:column>
                                 <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codInc}" for="codInc" />
@@ -190,17 +170,15 @@
                             <p:column>
                                 <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codCpt}" for="codCpt" />
                             </p:column>
-                            <p:column style="border-right: white">    
-
+                            <p:column style="border-right: white">
                                 <p:commandButton id="codCpt" value="Modal" oncomplete="dlg.show();" process="@none"/>                          
-
                             </p:column>
                             <p:column style="border-left: white;">
                                 <p:message for="codCpt"/>
                             </p:column>
                         </p:row>
-
                     </p:panelGrid>
+
                     <br />
                     <br />
                     <p:commandButton process="@this, @form" update="@form, :msgs"
@@ -212,10 +190,65 @@
                     <p:dialog  id="dialog" header="#{bundle.CreateConcertacionPlanTrabajoProductivaTitle}" widgetVar="dlg" minHeight="300" minWidth="450" 
                                resizable="true" modal="true" >
                         <ui:include src="/Pages/Seg_Ap_Et_Prod/concertacionPlanTrabajoProductiva/Create.xhtml" />
-
                     </p:dialog> 
                 </div>
             </h:form>
+
+
+            <p:panelGrid>
+                <f:facet name="header">
+                    <p:row><p:column colspan="6">1. INFORMACIÓN GENERAL</p:column></p:row>
+                </f:facet>                        
+
+                <p:row>
+                    <p:column>
+                        <h:outputLabel value="#{bundle.CreateCentrosFormacionLabel_codReg}" for="codReg" />
+                    </p:column>  
+
+                    <p:column>
+                        <p:selectOneMenu id="codReg" value="#{centrosFormacionController.selected.codReg}" required="true" requiredMessage="#{bundle.CreateCentrosFormacionRequiredMessage_codReg}">
+                            <f:selectItems value="#{regionalesController.itemsAvailableSelectOne}"/>
+                        </p:selectOneMenu>
+                    </p:column>
+                </p:row>
+
+                <p:row>
+                    <p:column>
+                        <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codCen}" for="codCen" />
+                    </p:column>
+
+                    <p:column>
+                        <p:selectOneMenu id="codCen" value="#{seguimientosProductivaController.selected.codCen}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_codCen}">
+                            <f:selectItems value="#{centrosFormacionController.itemsAvailableSelectOne}"/>
+                        </p:selectOneMenu>
+                    </p:column> 
+                </p:row>
+
+                <p:row>
+                    <p:column>
+                        <h:outputLabel value="#{bundle.CreateFichasCaracterizacionLabel_codPro}" for="codPro" />
+                    </p:column>
+
+                    <p:column>
+                        <p:selectOneMenu id="codPro" value="#{fichasCaracterizacionController.selected.codPro}" required="true" requiredMessage="#{bundle.CreateFichasCaracterizacionRequiredMessage_codPro}">
+                            <f:selectItems value="#{proyectosController.itemsAvailableSelectOne}"/>
+                        </p:selectOneMenu>
+                    </p:column>                    
+                </p:row>
+
+                <p:row>
+                    <p:column>
+                        <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codSegPro}" for="codSegPro" />
+                    </p:column>
+                    <p:column style="border-right: white">    
+                        <p:inputText id="codSegPro" value="#{seguimientosProductivaController.selected.codSegPro}" title="#{bundle.CreateSeguimientosProductivaTitle_codSegPro}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_codSegPro}"/>
+                    </p:column>
+                    <p:column style="border-left: white;">
+                        <p:message for="codSegPro"/>
+                    </p:column>
+                </p:row>
+
+            </p:panelGrid>            
 
         </ui:define>
 

@@ -64,19 +64,6 @@
                         </p:row>
                         <p:row>
                             <p:column>
-                                <h:outputLabel value="#{bundle.CreateModalidadesProductivaLabel_codCop}" for="codCop" />
-                            </p:column>
-                            <p:column style="border-right: white">    
-                                <p:selectOneMenu id="codCop" value="#{modalidadesProductivaController.selected.codCop}" requiredMessage="#{bundle.CreateModalidadesProductivaRequiredMessage_codCop}">
-                                    <f:selectItems value="#{contratosProyectosController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu>
-                            </p:column>
-                            <p:column style="border-left: white;">
-                                <p:message for="codCop"/>
-                            </p:column>
-                        </p:row>
-                        <p:row>
-                            <p:column>
                                 <h:outputLabel value="#{bundle.CreateModalidadesProductivaLabel_codTdm}" for="codTdm" />
                             </p:column>
                             <p:column style="border-right: white">    
@@ -86,6 +73,19 @@
                             </p:column>
                             <p:column style="border-left: white;">
                                 <p:message for="codTdm"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateModalidadesProductivaLabel_codCop}" for="codCop" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:selectOneMenu id="codCop" value="#{modalidadesProductivaController.selected.codCop}" required="true" requiredMessage="#{bundle.CreateModalidadesProductivaRequiredMessage_codCop}">
+                                    <f:selectItems value="#{contratosProyectosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codCop"/>
                             </p:column>
                         </p:row>
                     </p:panelGrid>

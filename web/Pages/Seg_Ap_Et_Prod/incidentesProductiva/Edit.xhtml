@@ -78,7 +78,9 @@
                                 <h:outputLabel value="#{bundle.EditIncidentesProductivaLabel_codVis}" for="codVis" />
                             </p:column>
                             <p:column style="border-right: white"> 
-                                <p:inputText id="codVis" value="#{incidentesProductivaController.selected.codVis}" title="#{bundle.EditIncidentesProductivaTitle_codVis}" required="true" requiredMessage="#{bundle.EditIncidentesProductivaRequiredMessage_codVis}"/>
+                                <p:selectOneMenu id="codVis" value="#{incidentesProductivaController.selected.codVis}" required="true" requiredMessage="#{bundle.EditIncidentesProductivaRequiredMessage_codVis}">
+                                    <f:selectItems value="#{visitaEtapaProductivaController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
                             </p:column>
                             <p:column style="border-left: white;">
                                 <p:message for="codVis"/>

@@ -147,6 +147,19 @@
                         </p:row>      
                         <p:row>
                             <p:column>
+                                <h:outputLabel value="#{bundle.EditSeguimientosProductivaLabel_codInc}" for="codInc" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codInc" value="#{seguimientosProductivaController.selected.codInc}" required="true" requiredMessage="#{bundle.EditSeguimientosProductivaRequiredMessage_codInc}">
+                                    <f:selectItems value="#{incidentesProductivaController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codInc"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
                                 <h:outputLabel value="#{bundle.EditSeguimientosProductivaLabel_codFic}" for="codFic" />
                             </p:column>
                             <p:column style="border-right: white"> 
@@ -182,19 +195,6 @@
                             </p:column>
                             <p:column style="border-left: white;">
                                 <p:message for="codCen"/>
-                            </p:column>
-                        </p:row>      
-                        <p:row>
-                            <p:column>
-                                <h:outputLabel value="#{bundle.EditSeguimientosProductivaLabel_codInc}" for="codInc" />
-                            </p:column>
-                            <p:column style="border-right: white"> 
-                                <p:selectOneMenu id="codInc" value="#{seguimientosProductivaController.selected.codInc}" required="true" requiredMessage="#{bundle.EditSeguimientosProductivaRequiredMessage_codInc}">
-                                    <f:selectItems value="#{incidentesProductivaController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu>
-                            </p:column>
-                            <p:column style="border-left: white;">
-                                <p:message for="codInc"/>
                             </p:column>
                         </p:row>      
                     </p:panelGrid>
