@@ -11,14 +11,25 @@
     </h:head>
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.NameApp}"></h:outputText>
+            <h:outputText value="Consulta-Ficha"></h:outputText>
         </ui:define>
         <ui:define name="body">
         <div><center>
-        <p><font size="50px">Formulario ficha</font></p>
-        <p>Ingrese numero de ficha:</p>
-        <p><input name="consultar" type="text" value="" size="6" maxlength="6" /></p>
+                 <table align="right" style="margin-top: 50px;">  
+                    <tr>
+                        <td><img src="imagenes/tierra2.png" /></td>
+                    </tr>    
+                </table>
+                <table align="center" style="margin-top: 50px; border: 2;">
+        <tr>Ingrese numero de ficha:
+        </tr>
+        <tr>
+         <input name="consultar" type="text" value="" size="6" maxlength="6" />
+        </tr>
+        <td>
         <p:button id="botona" value="Consultar" href="Consultaficha.xhtml"/>
+        </td>
+        </table>
     
             </center>
       </div>

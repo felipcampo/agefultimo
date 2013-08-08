@@ -5,14 +5,136 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui">
 
-    <ui:composition template="/template.xhtml">
-        <ui:define name="title">
-            <h:outputText value="#{bundle.NameApp}"></h:outputText>
-        </ui:define>
-        <ui:define name="body">
-            <p:growl id="msgs" showDetail="false" sticky="false"/>
-            <h:outputText value="#{bundle.WelcomeApp}"></h:outputText>
-            </ui:define>
-    </ui:composition>
+    <h:head>
+        <meta charset="utf-8"/>
+        <link rel="shortcut icon" href="images/favicon.PNG"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>BIENVENIDO A AGEF</title>
+
+
+        <h:outputStylesheet name="css/boilerplateinicio.css" />
+        <h:outputStylesheet name="css/agefinicio.css"/>
+
+
+        <h:outputStylesheet name="css/style.css"/>
+
+
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png"/>
+        <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png"/>
+        <link rel="shortcut icon" href="img/favicon.png"/>
+
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script src="resources/css/respondinicio.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
+    </h:head>
+
+    <h:body>
+        <div class="gridContainer clearfix">
+
+            <div id="Layoutbanner">
+                <div id="logo">
+                    <h:graphicImage library="images" name="logogrande.png" id="agefl"></h:graphicImage>
+                </div>
+                <h:graphicImage library="images" name="banner.JPG"/></div>
+            <div id="Layoutmenu"> .</div>
+
+            <div id="Layoutcontenido">
+                <div id="Layoutmodulos">
+                    <div id="Layoutituloip"><h1>Bienvenidos al Aplicativo AGEF</h1></div>
+                    <center>   <div  class="slider" align="center">
+                            <input type="radio" class="boton" name="boton" checked="checked"/>
+                            <label>1</label> 
+                            <input type="radio" class="boton" name="boton"/>
+                            <label>2</label>
+                            <input type="radio" class="boton" name="boton"/>
+                            <label>3</label>
+
+
+                            <div class="contenedor-img cuatro-imagenes">
+
+                                <h:graphicImage library="images/inicio" name="imagen1.jpg"></h:graphicImage>
+                                <h:graphicImage library="images/inicio" name="imagen2.jpg"></h:graphicImage>
+                                <h:graphicImage library="images/inicio" name="imagen3.jpg"></h:graphicImage>
+
+
+                            </div>
+
+
+                        </div>
+
+                    </center>
+
+                    <div id="Layoutlogin">
+                        <fieldset>
+                            <p id="titulologin">Ingresar</p>
+                            <form name="form1" method="post" action="">
+                                <p>Tipo documento<br></br>
+                                    <label for="tipodoc"></label>
+                                    <select name="tipodoc" id="tipodoc">
+                                        <option>Cedula de Ciudadania</option>
+                                        <option>Tarjeta de Identidad</option>
+                                        <option>Cedula de Extranjeria</option>
+                                    </select></p>
+                                <p>Numero<br></br>
+
+                                    <label for="numero"></label>
+                                    <input type="text" name="numero" id="numero"/>
+                                </p>
+                                <p>Password<br></br>
+                                    <label for="pass"></label>
+
+                                    <input type="password" name="pass" id="pass"/>
+                                </p>
+                                <p>
+                                    <input type="submit" name="enviar" id="enviar" value="Ingresar"/>
+                                    <label><a href="#"><br></br>
+                                            Registrarse</a></label>
+                                    <label><a href="#"><br></br>
+                                            Olvidó su contraseña?</a></label>
+                                </p>
+                                <p>&nbsp;</p>
+                            </form>
+                        </fieldset>
+
+                    </div>
+                    <p>&nbsp;</p>
+                    <div id="Layoutmoduloprincipal"> <hr></hr>
+                        <div id="Layoutm1">
+                            <h:graphicImage library="images/inicio" name="Alistamiento.png"></h:graphicImage> </div>
+                        <div id="Layoutm2">
+                            <h:graphicImage library="images/inicio" name="bienestar.jpg"></h:graphicImage> </div>
+                        <div id="Layoutm3">
+                            <h:graphicImage library="images/inicio" name="Img_modulo_seg_eva.JPG"></h:graphicImage> </div>
+                        <div id="Layoutm4">
+                            <h:graphicImage library="images/inicio" name="indicadores-copia.jpg"></h:graphicImage> </div>
+                        <div id="Layoutm5">
+                            <h:graphicImage library="images/inicio" name="Seguimiento_inst.jpg"></h:graphicImage> </div>
+                        <div id="Layoutm6">
+                            <h:graphicImage library="images/inicio" name="seguimiento_pro_form.jpg"></h:graphicImage> </div>
+                        <div id="Layoutm7">
+                            <h:graphicImage library="images/inicio" name="seguimiento_et_prod.jpg"></h:graphicImage> </div>
+                    </div>
+                    <div id="Layoutpieprincipal">
+                        <div id="Layoutpie1">
+                            <p>Servicio Nacional de Aprendizaje SENA<br></br>
+                                Dir. General Calle 57 No. 8-69, Bogotá D.C.<br></br>
+                                PBX (57 1) 5461500</p>
+                        </div>
+                        <div id="Layoutpie3">Línea gratuita de atención al ciudadano<br></br>
+                            Bogotá 5925555 - Resto del país 018000 910270</div>
+                        <div id="Layoutpie4">Horario de atención: Lunes a Viernes 8:00 am - 5:30 pm<br></br>
+                            Todos los derechos reservados - 2006 | 2013</div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </h:body>
 
 </html>

@@ -11,19 +11,37 @@
             <h:outputText value="#{bundle.CreateSeguimientosProductivaTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <p:growl id="msgs" showDetail="false" sticky="false"/>
-            <h:form id="formSeguimientosProductiva">
-                <div id="form" align="center">
-                    <br />
-                    <br />                   
-                    <p:accordionPanel>  
-                        <p:tab title="1. INFORMACIÓN GENERAL">  
-                            <p:panelGrid> 
+
+            <div id="LayoutTitulo_Form_Seg_Ap_Et_Prod">
+                <h3>SEGUIMIENTO AL APRENDIZ EN ETAPA PRODUCTIVA y</h3>
+            </div>
+
+            <div id="LayoutForm_Seg_Ap_Et_Prod">
+                <div id="LayoutFormularios_Seg_Et_Prod">
+                    <h4>#{bundle.CreateSeguimientosProductivaTitle}</h4>
+
+                    <p:growl id="msgs" showDetail="false" sticky="false"/>
+                    <h:form id="formSeguimientosProductiva">
+                        <div id="form" align="center">
+
+                            <p:panelGrid>
+                                <f:facet name="header">
+                                    <p:row><p:column colspan="3">0. POR UTILIZAR</p:column></p:row>                            
+                                </f:facet> 
+
+                                <p:row>
+                                    <p:column>
+                                        <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codSegPro}" for="codSegPro" />
+                                    </p:column>
+                                    <p:column>    
+                                        <p:inputText id="codSegPro" value="#{seguimientosProductivaController.selected.codSegPro}" title="#{bundle.CreateSeguimientosProductivaTitle_codSegPro}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_codSegPro}"/>
+                                    </p:column>                                    
+                                </p:row>
                                 <p:row>
                                     <p:column>
                                         <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_juiEva}" for="juiEva" />
                                     </p:column>
-                                    <p:column style="border-right: white">    
+                                    <p:column>    
                                         <p:inputText id="juiEva" value="#{seguimientosProductivaController.selected.juiEva}" title="#{bundle.CreateSeguimientosProductivaTitle_juiEva}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_juiEva}"/>
                                     </p:column>                                    
                                 </p:row>
@@ -31,7 +49,7 @@
                                     <p:column>
                                         <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_reqMej}" for="reqMej" />
                                     </p:column>
-                                    <p:column style="border-right: white">    
+                                    <p:column>    
                                         <p:inputText id="reqMej" value="#{seguimientosProductivaController.selected.reqMej}" title="#{bundle.CreateSeguimientosProductivaTitle_reqMej}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_reqMej}"/>
                                     </p:column>                                    
                                 </p:row>
@@ -39,7 +57,7 @@
                                     <p:column>
                                         <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_recEsp}" for="recEsp" />
                                     </p:column>
-                                    <p:column style="border-right: white">    
+                                    <p:column >    
                                         <p:inputText id="recEsp" value="#{seguimientosProductivaController.selected.recEsp}" title="#{bundle.CreateSeguimientosProductivaTitle_recEsp}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_recEsp}"/>
                                     </p:column>                                    
                                 </p:row>
@@ -47,7 +65,7 @@
                                     <p:column>
                                         <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_espRec}" for="espRec" />
                                     </p:column>
-                                    <p:column style="border-right: white">    
+                                    <p:column>    
                                         <p:inputTextarea rows="4" cols="30" id="espRec" value="#{seguimientosProductivaController.selected.espRec}" title="#{bundle.CreateSeguimientosProductivaTitle_espRec}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_espRec}"/>
                                     </p:column>                                    
                                 </p:row>                        
@@ -56,21 +74,25 @@
                                     <p:column>
                                         <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codInc}" for="codInc" />
                                     </p:column>
-                                    <p:column style="border-right: white">    
+                                    <p:column>    
                                         <p:selectOneMenu id="codInc" value="#{seguimientosProductivaController.selected.codInc}" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_codInc}">
                                             <f:selectItems value="#{incidentesProductivaController.itemsAvailableSelectOne}"/>
                                         </p:selectOneMenu>
                                     </p:column>                                    
                                 </p:row>
-                            </p:panelGrid>
-                        </p:tab>
+                            </p:panelGrid> 
+
+                            <br />
+                            <br />
+                            <br />
 
 
-                        <p:tab title="1. INFORMACIÓN GENERAL">
-                            <p:panelGrid>                                                      
-
+                            <p:panelGrid>
+                                <f:facet name="header">
+                                    <p:row><p:column colspan="2">1. INFORMACIÓN GENERAL</p:column></p:row>                            
+                                </f:facet>                        
                                 <p:row>
-                                    <p:column>
+                                    <p:column> 
                                         <h:outputLabel value="#{bundle.CreateCentrosFormacionLabel_codReg}" for="codReg" />
                                     </p:column>  
                                     <p:column>
@@ -112,8 +134,16 @@
                                         </p:selectOneMenu>
                                     </p:column>                           
                                 </p:row>
-                            
-                            
+                            </p:panelGrid>
+
+                            <br />
+                            <br />
+                            <br />
+
+                            <p:panelGrid columns="2">
+                                <f:facet name="header">
+                                    <p:row><p:column>DATOS USUARIO</p:column></p:row>                            
+                                </f:facet>
                                 <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_idUsu}" for="idUsu" />
                                 <p:selectOneMenu id="idUsu" value="#{seguimientosProductivaController.selected.idUsu}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_idUsu}">
                                     <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
@@ -128,9 +158,16 @@
                                 <h:outputText value="#{usuariosController.selected.telUsu}" title="#{bundle.ViewUsuariosTitle_telUsu}"/>                        
                                 <h:outputText value="#{bundle.ViewUsuariosLabel_mailUsu}"/>
                                 <h:outputText value="#{usuariosController.selected.mailUsu}" title="#{bundle.ViewUsuariosTitle_mailUsu}"/> 
-                          
+                            </p:panelGrid>
 
-                             
+                            <br />
+                            <br />
+                            <br />
+
+                            <p:panelGrid columns="2">
+                                <f:facet name="header">
+                                    <p:row><p:column>ENTE CO-FORMADOR</p:column></p:row>                            
+                                </f:facet>
                                 <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_nitEmp}" for="nitEmp" />
                                 <p:selectOneMenu id="nitEmp" value="#{seguimientosProductivaController.selected.nitEmp}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_nitEmp}">
                                     <f:selectItems value="#{empresasController.itemsAvailableSelectOne}"/>
@@ -147,14 +184,18 @@
                                 <h:outputText value="#{empresasController.selected.emaEmp}" title="#{bundle.ViewEmpresasTitle_emaEmp}"/>
                                 <h:outputText value="#{bundle.ViewEmpresasLabel_wwwEmp}"/>
                                 <h:outputText value="#{empresasController.selected.wwwEmp}" title="#{bundle.ViewEmpresasTitle_wwwEmp}"/>
-                             </p:panelGrid>
-                        </p:tab>
+                            </p:panelGrid>      
 
+                            <br />
+                            <br />
+                            <br />
 
-                        <p:tab title="2. PLANEACIÓN ETAPA PRODUCTIVA"> 
-                            <p:panelGrid>                                
+                            <p:panelGrid>
+                                <f:facet name="header">
+                                    <p:row><p:column colspan="2">2. PLANEACIÓN ETAPA PRODUCTIVA</p:column></p:row>                            
+                                </f:facet>                        
                                 <p:row>
-                                    <p:column>
+                                    <p:column> 
                                         <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codMod}" for="codMod" />
                                     </p:column>
                                     <p:column>    
@@ -172,24 +213,19 @@
                                         <p:commandButton id="codCpt" value="Modal" oncomplete="dlg.show();" process="@none"/>                          
                                     </p:column>
 
-                                    <p:dialog  id="dialog" header="#{bundle.CreateConcertacionPlanTrabajoProductivaTitle}" widgetVar="dlg" minHeight="300" minWidth="450" 
-                                               resizable="true" modal="true" >
-                                        <ui:include src="/Pages/Seg_Ap_Et_Prod/concertacionPlanTrabajoProductiva/Create.xhtml" />
-                                    </p:dialog>
-
                                 </p:row>
+                            </p:panelGrid>  
 
+                            <br />
+                            <br />
+                            <br />
 
-
-                            </p:panelGrid>
-                        </p:tab>
-
-
-                        <p:tab title="3. SEGUIMIENTO Y EVALUACIÓN DE LA ETAPA PRODUCTIVA"> 
-                            <p:panelGrid>                           
-
+                            <p:panelGrid>
+                                <f:facet name="header">
+                                    <p:row><p:column colspan="2">3. SEGUIMIENTO Y EVALUACIÓN DE LA ETAPA PRODUCTIVA</p:column></p:row>                            
+                                </f:facet>                        
                                 <p:row>
-                                    <p:column>
+                                    <p:column>  
                                         <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_tipInf}" for="tipInf" />
                                     </p:column>
                                     <p:column>    
@@ -214,54 +250,39 @@
                                         <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecRepFin" value="#{seguimientosProductivaController.selected.fecRepFin}" title="#{bundle.CreateSeguimientosProductivaTitle_fecRepFin}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_fecRepFin}"/>
                                     </p:column>                            
                                 </p:row> 
-
                             </p:panelGrid>
-                        </p:tab>                        
 
-                        <p:dialog  id="dialog2" header="#{bundle.CreateConcertacionPlanTrabajoProductivaTitle}" widgetVar="dlg2" minHeight="300" minWidth="450" 
-                                   resizable="true" modal="true" >
-                            <ui:include src="/Pages/Seg_Ap_Et_Prod/criteriosSeguimientos/Create.xhtml" />
-                        </p:dialog>
+                            <br />
+                            <br />
+                            <br />                      
 
-                    </p:accordionPanel>
+                            <p:commandButton process="@this, @form" update="@form, :msgs"
+                                             action="#{seguimientosProductivaController.create}" value="#{bundle.CreateSeguimientosProductivaSaveLink}" icon="ui-icon-disk"/>
+                            <br />
+                            <br />
+                            <p:commandButton ajax="false" action="#{seguimientosProductivaController.prepareList}" value="#{bundle.CreateSeguimientosProductivaShowAllLink}" immediate="true"/>
+                            <br />
+                            <br />
+                            <br /> 
 
-                    <br />
-                    <br />
-                    <br />
+                            <p:dialog  id="dialog" header="#{bundle.CreateConcertacionPlanTrabajoProductivaTitle}" widgetVar="dlg" minHeight="300" minWidth="450" 
+                                       resizable="true" modal="true" >
+                                <ui:include src="/Pages/Seg_Ap_Et_Prod/concertacionPlanTrabajoProductiva/Create.xhtml" />
+                            </p:dialog>
 
-
-
-
-                    <p:commandButton process="@this, @form" update="@form, :msgs"
-                                     action="#{seguimientosProductivaController.create}" value="#{bundle.CreateSeguimientosProductivaSaveLink}" icon="ui-icon-disk"/>
-                    <br />
-                    <br />
-                    <p:commandButton ajax="false" action="#{seguimientosProductivaController.prepareList}" value="#{bundle.CreateSeguimientosProductivaShowAllLink}" immediate="true"/>
-
-
-
+                        </div>
+                    </h:form>
                 </div>
-            </h:form>
-
-            <p:row>
-                <p:column>
-                    <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codSegPro}" for="codSegPro" />
-                </p:column>
-                <p:column style="border-right: white">    
-                    <p:inputText id="codSegPro" value="#{seguimientosProductivaController.selected.codSegPro}" title="#{bundle.CreateSeguimientosProductivaTitle_codSegPro}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_codSegPro}"/>
-                </p:column>
-                <p:column style="border-left: white;">
-                    <p:message for="codSegPro"/>
-                </p:column>
-            </p:row>
 
 
 
+            </div>
+            <div id="LayoutInformacion_Seg_Ap_Et_Prod">
+                <h4>INFORMACION</h4>
+                <hr></hr>
+                <p id="margen">Informacion de ayuda para formularios</p>
+            </div>
         </ui:define>
-
-        <ui:define name="dialogs">
-
-        </ui:define> 
     </ui:composition>
 
 </html>
