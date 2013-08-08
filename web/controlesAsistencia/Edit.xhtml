@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditControlesAsistenciaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/>
+            <h:form id="formControlesAsistencia">
+                <div id="form" align="center">
+                    <p:panelGrid>
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.EditControlesAsistenciaTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlesAsistenciaLabel_fecAsi}" for="fecAsi" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecAsi" value="#{controlesAsistenciaController.selected.fecAsi}" title="#{bundle.EditControlesAsistenciaTitle_fecAsi}" required="true" requiredMessage="#{bundle.EditControlesAsistenciaRequiredMessage_fecAsi}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecAsi"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlesAsistenciaLabel_asistencia}" for="asistencia" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="asistencia" value="#{controlesAsistenciaController.selected.asistencia}" title="#{bundle.EditControlesAsistenciaTitle_asistencia}" required="true" requiredMessage="#{bundle.EditControlesAsistenciaRequiredMessage_asistencia}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="asistencia"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlesAsistenciaLabel_idConAsi}" for="idConAsi" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:inputText id="idConAsi" value="#{controlesAsistenciaController.selected.idConAsi}" title="#{bundle.EditControlesAsistenciaTitle_idConAsi}" required="true" requiredMessage="#{bundle.EditControlesAsistenciaRequiredMessage_idConAsi}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idConAsi"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlesAsistenciaLabel_idUsu2}" for="idUsu2" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="idUsu2" value="#{controlesAsistenciaController.selected.idUsu2}" required="true" requiredMessage="#{bundle.EditControlesAsistenciaRequiredMessage_idUsu2}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu2"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlesAsistenciaLabel_idUsu1}" for="idUsu1" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="idUsu1" value="#{controlesAsistenciaController.selected.idUsu1}" required="true" requiredMessage="#{bundle.EditControlesAsistenciaRequiredMessage_idUsu1}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu1"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlesAsistenciaLabel_idUsu}" for="idUsu" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="idUsu" value="#{controlesAsistenciaController.selected.idUsu}" required="true" requiredMessage="#{bundle.EditControlesAsistenciaRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="idUsu"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlesAsistenciaLabel_codFic}" for="codFic" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codFic" value="#{controlesAsistenciaController.selected.codFic}" required="true" requiredMessage="#{bundle.EditControlesAsistenciaRequiredMessage_codFic}">
+                                    <f:selectItems value="#{fichasCaracterizacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codFic"/>
+                            </p:column>
+                        </p:row>      
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.EditControlesAsistenciaLabel_codEstApr}" for="codEstApr" />
+                            </p:column>
+                            <p:column style="border-right: white"> 
+                                <p:selectOneMenu id="codEstApr" value="#{controlesAsistenciaController.selected.codEstApr}" required="true" requiredMessage="#{bundle.EditControlesAsistenciaRequiredMessage_codEstApr}">
+                                    <f:selectItems value="#{estadosAprendizController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codEstApr"/>
+                            </p:column>
+                        </p:row>      
+                    </p:panelGrid>
+                    <br />
+                    <br />                
+                    <p:commandButton process="@this, @form" update="@form, :msgs"
+                                     action="#{controlesAsistenciaController.update}" value="#{bundle.EditControlesAsistenciaSaveLink}" icon="ui-icon-disk"/>
+                    <p:button outcome="View" value="#{bundle.EditControlesAsistenciaViewLink}" icon="ui-icon-searh"/>
+                    <br />
+                    <p:commandButton ajax="false" action="#{controlesAsistenciaController.prepareList}" value="#{bundle.EditControlesAsistenciaShowAllLink}" immediate="true"/>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

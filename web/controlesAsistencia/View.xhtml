@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewControlesAsistenciaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <p:growl id="msgs" showDetail="false" sticky="false"/> 
+            <h:form>
+                <div id="form" align="center">
+                    <p:panelGrid columns="2">
+                        <f:facet name="header">
+                            <p:row><p:column>#{bundle.ViewControlesAsistenciaTitle}</p:column></p:row>                            
+                        </f:facet>
+                        <h:outputText value="#{bundle.ViewControlesAsistenciaLabel_fecAsi}"/>
+                        <h:outputText value="#{controlesAsistenciaController.selected.fecAsi}" title="#{bundle.ViewControlesAsistenciaTitle_fecAsi}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewControlesAsistenciaLabel_asistencia}"/>
+                        <h:outputText value="#{controlesAsistenciaController.selected.asistencia}" title="#{bundle.ViewControlesAsistenciaTitle_asistencia}"/>
+                        <h:outputText value="#{bundle.ViewControlesAsistenciaLabel_idConAsi}"/>
+                        <h:outputText value="#{controlesAsistenciaController.selected.idConAsi}" title="#{bundle.ViewControlesAsistenciaTitle_idConAsi}"/>
+                        <h:outputText value="#{bundle.ViewControlesAsistenciaLabel_idUsu2}"/>
+                        <h:outputText value="#{controlesAsistenciaController.selected.idUsu2}" title="#{bundle.ViewControlesAsistenciaTitle_idUsu2}"/>
+                        <h:outputText value="#{bundle.ViewControlesAsistenciaLabel_idUsu1}"/>
+                        <h:outputText value="#{controlesAsistenciaController.selected.idUsu1}" title="#{bundle.ViewControlesAsistenciaTitle_idUsu1}"/>
+                        <h:outputText value="#{bundle.ViewControlesAsistenciaLabel_idUsu}"/>
+                        <h:outputText value="#{controlesAsistenciaController.selected.idUsu}" title="#{bundle.ViewControlesAsistenciaTitle_idUsu}"/>
+                        <h:outputText value="#{bundle.ViewControlesAsistenciaLabel_codFic}"/>
+                        <h:outputText value="#{controlesAsistenciaController.selected.codFic}" title="#{bundle.ViewControlesAsistenciaTitle_codFic}"/>
+                        <h:outputText value="#{bundle.ViewControlesAsistenciaLabel_codEstApr}"/>
+                        <h:outputText value="#{controlesAsistenciaController.selected.codEstApr}" title="#{bundle.ViewControlesAsistenciaTitle_codEstApr}"/>
+                    </p:panelGrid>
+                    <br />
+                    <br />
+                    <p:commandButton oncomplete="confirmationDelete.show();" process="@this" value="#{bundle.ListControlesAsistenciaDestroyLink}"
+                                     title="#{bundle.ListControlesAsistenciaDestroyLink}" icon="ui-icon-trash">
+                    </p:commandButton>
+                    <p:button outcome="Edit" value="#{bundle.ViewControlesAsistenciaEditLink}" icon="ui-icon-pencil"/>
+                    <p:commandButton ajax="false" action="#{controlesAsistenciaController.prepareCreate}" value="#{bundle.ViewControlesAsistenciaCreateLink}" icon="ui-icon-document"/>
+                    <br />
+                    <br />
+                    <p:commandButton ajax="false" action="#{controlesAsistenciaController.prepareList}" value="#{bundle.ViewControlesAsistenciaShowAllLink}"/>
+                </div>            
+            </h:form>
+        </ui:define>
+        <ui:define name="dialogs">
+            <p:confirmDialog id="confirmDelete" message="#{bundle.DeleteItemTitle}"  
+                             header="#{bundle.DeleteItemMessage}" severity="alert" widgetVar="confirmationDelete">  
+                <p:commandButton id="confirmDeleteButtonYes" value="#{bundle.DeleteButtonYes}" oncomplete="confirmationDelete.hide();"  
+                                 action="#{controlesAsistenciaController.destroy}"/>  
+                <p:commandButton id="confirmDeleteButtonNot" value="#{bundle.DeleteButtonNot}" onclick="confirmationDelete.hide();" type="button" />   
+            </p:confirmDialog>             
+        </ui:define>
+    </ui:composition>
+
+</html>
