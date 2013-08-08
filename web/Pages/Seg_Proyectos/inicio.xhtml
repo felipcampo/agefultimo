@@ -7,18 +7,64 @@
       xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="/template.xhtml">
+    
         <ui:define name="title">
             <h:outputText value="#{bundle.Seg_ProyectosinicioTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <div id="slide">
-  <h1 align="center">Bienvenido al módulo de seguimiento a proyectos  </h1>
-    <p><img src="images/Slide.jpg"/></p>
-    <p>&nbsp;</p>
-    <p>terapia.........................................................................................................................</p>
-  </div>
+            <div align="center" id="LayoutDiv2">
+                <div class="container-fluid">
+                    <div align="center" class="row-fluid">
+                        <div class="span12">
+                            <div class="hero-unit">
+                                <p><font color="#Fc7323" size="16" face="Myriad Pro" class="negra" >
+                                        Bienvenido al Modúlo Seguimiento a Proyectos
+                                    </font></p>
+                                <p>&nbsp; </p>
+                                <div>
+                                    <iframe id="fr1" src="resources/slideinicio/slide.html"  width="1050" height="270" scrolling="no" frameborder="0"></iframe>
+                                </div>
+                            </div>
+                            <ul class="thumbnails">
+                                <li class="span4"><span class="thumbnail"><img alt="300x200" src="images/DSCN0017.JPG" /></span>
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <div align="center"><font size="3" face="Myriad Pro" color="#fc7323">OBJETIVO GENERAL</font><br/>	
+                                                <font  face="Myriad Pro" class="justifi1">
+                                                    El objetivo general del mudulo Seguimiento a Proyectos es crear un informe detallado de seguimiento a cada proyecto de formacion del sena, para generar estadisticas y resultados evaluativos en cada etapa de la formacion del proyecto.
+                                                </font><br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="span4">
+                                    <span class="thumbnail"><img src="images/DSCN0001.JPG" alt="350x200"/> </span>
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <div align="center"><font size="3" face="Myriad Pro" color="#fc7323">MODULO SEGUIMIENTO A PROYECTOS</font><br/>
+                                                <font  face="Myriad Pro" class="justifi">
+                                                    El mudulo Seguimiento a Proyectos identificara todas las actividades realizadas en periodos de planeacion ya establecido para buscar y verificar los resultados del proyecto de formacion.
+                                                </font></div>
+                                        </div>                    
+                                    </div>
+                                </li>
+                                <li class="span4">
+                                    <span class="thumbnail">
+                                        <img alt="300x200" src="images/DSCN9994.JPG"  /></span>
+                                    <div class="thumbnail">
+                                        <div class="caption">
+                                            <div align="center"><font size="3" face="Myriad Pro" color="#fc7323">COMPORTAMIENTO SEGUIMIENTO A PROYECTOS</font><br/>
+                                                <font face="Myriad Pro" class="justifi2">
+                                                    El comportamiento del proyecto reflejara porcentajes y graficos de cumplimiento y desempeño, describiendo cada una de las actividades que se realizara para poder ser evaluado posteriormente por el comite a proyectos de acuerdo a las estadisticas este calificara.   
+                                                </font></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </ui:define>
-      
     </ui:composition>
-
 </html>
