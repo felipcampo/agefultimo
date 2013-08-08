@@ -39,6 +39,7 @@ img, object, embed, video {
 	padding-right: 1.6333%;
 	margin-top: 1.6%;
         font-family: "Myriad Pro";
+        
 	
 }
 #agefl{
@@ -436,8 +437,9 @@ img, object, embed, video {
 	float: left;
 	margin-left: 0;
 	width: 100%;
+        color: #fff;
 	display: block;
-        color: #FFF
+        
 }
 #Layoutimg_seg_ap_prod {
 	clear: both;
@@ -459,67 +461,56 @@ img, object, embed, video {
 	margin-top: 1%;
         font-size: 18px;
 }
-#Layouttitulo_seg_et_prod_form {
-	clear: none;
-	float: left;
-	margin-left: 1.2658%;
-	width: 93.6708%;
-	display: block;
-       color: #fff;
-       text-align: center;
-	top: 2%;
-	background-color: #FC7323;
-
-}
-
-#Layoutformulario_seg_ap_eta_prod {
-	clear: none;
-	float: left;
-	margin-left: 1.2658%;
-	width: 74.6835%;
-	display: block;
-	font-family: "Myriad Pro";
-	font-size: 16px;
-	margin-top: 1%;
-        background-color: #CFCFCF;
-	border-radius: 0px;
-	text-align: center;
-}
-
-#Layout_form_seg_et_prod {
+#LayoutTitulo_Form_Seg_Ap_Et_Prod
+{
 	clear: both;
 	float: left;
-	margin-left: 10px;
-	width: 98%;
+	margin-left: 0;
+	width: 100%;
 	display: block;
-	margin-top: 10px;
-        font-size: 18px;
-	margin-right: 10px;
-	background-color: #59B548;
-	color: #FFF;
-	border-radius: 0px;
-	margin: 10px;
-        
-	margin-bottom: 10px;
-	text-decoration: blink;
-	font-size: 14px;
-}
-
-#LayoutInfo_seg_et_prod {
-	clear: none;
+	background-color: #fc7322;
+	color: #fff;
+	text-align: center;
+	}
+#LayoutForm_Seg_Ap_Et_Prod
+{
+	clear: both;
 	float: left;
-        margin-top: 1%;
-	margin-left: 1.2658%;
-	width: 17.7215%;
+	margin-left: 0;
+	width: 74.6835%;
+	display: block;
+	background-color: #FC7323;
+	margin-top: 0.5%;
+	}
+#LayoutFormularios_Seg_Et_Prod
+{
+	clear: both;
+	float: left;
+	width: 99%;
 	display: block;
 	text-align: center;
-	font-family: "Myriad Pro";
+	background-color: #fff;
+	color: #000;
+	margin: 0.5%;
+	}
+
+#LayoutInformacion_Seg_Ap_Et_Prod
+{
+	clear: none;
+	float: left;
+	margin-left: 1.2658%;
+	width: 24.0506%;
+	display: block;
+	margin-top: 1%;
 	background-color: #238276;
-	border-radius: 0px;
-	color: #FFF;
-}
+	text-align: center;
+	color: #fff;
+	}
 }
 
 #margen{margin:1.6%;
 text-align:justify;
+}
+#titulo{
+    color: #fff;
 }

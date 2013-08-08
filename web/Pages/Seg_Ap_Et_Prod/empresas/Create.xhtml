@@ -11,113 +11,132 @@
             <h:outputText value="#{bundle.CreateEmpresasTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <p:growl id="msgs" showDetail="false" sticky="false"/>
-            <h:form id="formEmpresas">
-                <div id="form" align="center">
-                    <p:panelGrid>
-                        <f:facet name="header">
-                            <p:row><p:column colspan="3">#{bundle.CreateEmpresasTitle}</p:column></p:row>                            
-                        </f:facet>                        
-                        <p:row>
-                            <p:column>
-                                <h:outputLabel value="#{bundle.CreateEmpresasLabel_nitEmp}" for="nitEmp" />
-                            </p:column>
-                            <p:column style="border-right: white">    
-                                <p:inputText id="nitEmp" value="#{empresasController.selected.nitEmp}" title="#{bundle.CreateEmpresasTitle_nitEmp}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_nitEmp}"/>
-                            </p:column>
-                            <p:column style="border-left: white;">
-                                <p:message for="nitEmp"/>
-                            </p:column>
-                        </p:row>
-                        <p:row>
-                            <p:column>
-                                <h:outputLabel value="#{bundle.CreateEmpresasLabel_razSocEmp}" for="razSocEmp" />
-                            </p:column>
-                            <p:column style="border-right: white">    
-                                <p:inputText id="razSocEmp" value="#{empresasController.selected.razSocEmp}" title="#{bundle.CreateEmpresasTitle_razSocEmp}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_razSocEmp}"/>
-                            </p:column>
-                            <p:column style="border-left: white;">
-                                <p:message for="razSocEmp"/>
-                            </p:column>
-                        </p:row>
-                        <p:row>
-                            <p:column>
-                                <h:outputLabel value="#{bundle.CreateEmpresasLabel_dirEmp}" for="dirEmp" />
-                            </p:column>
-                            <p:column style="border-right: white">    
-                                <p:inputText id="dirEmp" value="#{empresasController.selected.dirEmp}" title="#{bundle.CreateEmpresasTitle_dirEmp}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_dirEmp}"/>
-                            </p:column>
-                            <p:column style="border-left: white;">
-                                <p:message for="dirEmp"/>
-                            </p:column>
-                        </p:row>
-                        <p:row>
-                            <p:column>
-                                <h:outputLabel value="#{bundle.CreateEmpresasLabel_tel1Emp}" for="tel1Emp" />
-                            </p:column>
-                            <p:column style="border-right: white">    
-                                <p:inputText id="tel1Emp" value="#{empresasController.selected.tel1Emp}" title="#{bundle.CreateEmpresasTitle_tel1Emp}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_tel1Emp}"/>
-                            </p:column>
-                            <p:column style="border-left: white;">
-                                <p:message for="tel1Emp"/>
-                            </p:column>
-                        </p:row>
-                        <p:row>
-                            <p:column>
-                                <h:outputLabel value="#{bundle.CreateEmpresasLabel_tel2Emp}" for="tel2Emp" />
-                            </p:column>
-                            <p:column style="border-right: white">    
-                                <p:inputText id="tel2Emp" value="#{empresasController.selected.tel2Emp}" title="#{bundle.CreateEmpresasTitle_tel2Emp}" />
-                            </p:column>
-                            <p:column style="border-left: white;">
-                                <p:message for="tel2Emp"/>
-                            </p:column>
-                        </p:row>
-                        <p:row>
-                            <p:column>
-                                <h:outputLabel value="#{bundle.CreateEmpresasLabel_emaEmp}" for="emaEmp" />
-                            </p:column>
-                            <p:column style="border-right: white">    
-                                <p:inputText id="emaEmp" value="#{empresasController.selected.emaEmp}" title="#{bundle.CreateEmpresasTitle_emaEmp}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_emaEmp}"/>
-                            </p:column>
-                            <p:column style="border-left: white;">
-                                <p:message for="emaEmp"/>
-                            </p:column>
-                        </p:row>
-                        <p:row>
-                            <p:column>
-                                <h:outputLabel value="#{bundle.CreateEmpresasLabel_wwwEmp}" for="wwwEmp" />
-                            </p:column>
-                            <p:column style="border-right: white">    
-                                <p:inputText id="wwwEmp" value="#{empresasController.selected.wwwEmp}" title="#{bundle.CreateEmpresasTitle_wwwEmp}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_wwwEmp}"/>
-                            </p:column>
-                            <p:column style="border-left: white;">
-                                <p:message for="wwwEmp"/>
-                            </p:column>
-                        </p:row>
-                        <p:row>
-                            <p:column>
-                                <h:outputLabel value="#{bundle.CreateEmpresasLabel_codZon}" for="codZon" />
-                            </p:column>
-                            <p:column style="border-right: white">    
-                                <p:selectOneMenu id="codZon" value="#{empresasController.selected.codZon}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_codZon}">
-                                    <f:selectItems value="#{zonasEmpresasController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu>
-                            </p:column>
-                            <p:column style="border-left: white;">
-                                <p:message for="codZon"/>
-                            </p:column>
-                        </p:row>
-                    </p:panelGrid>
-                    <br />
-                    <br />
-                    <p:commandButton process="@this, @form" update="@form, :msgs"
-                                     action="#{empresasController.create}" value="#{bundle.CreateEmpresasSaveLink}" icon="ui-icon-disk"/>
-                    <br />
-                    <br />
-                    <p:commandButton ajax="false" action="#{empresasController.prepareList}" value="#{bundle.CreateEmpresasShowAllLink}" immediate="true"/>
+
+            <div id="LayoutTitulo_Form_Seg_Ap_Et_Prod">
+                <h3>SEGUIMIENTO AL APRENDIZ EN ETAPA PRODUCTIVA y</h3>
+            </div>
+
+            <div id="LayoutForm_Seg_Ap_Et_Prod">
+                <div id="LayoutFormularios_Seg_Et_Prod">
+                    <h4>Nombre del Formulario</h4>
+
+
+
+                    <p:growl id="msgs" showDetail="false" sticky="false"/>
+                    <h:form id="formEmpresas">
+                        <div id="form" align="center">
+                            <p:panelGrid>
+                                <f:facet name="header">
+                                    <p:row><p:column colspan="3">#{bundle.CreateEmpresasTitle}</p:column></p:row>                            
+                                </f:facet>                        
+                                <p:row>
+                                    <p:column>
+                                        <h:outputLabel value="#{bundle.CreateEmpresasLabel_nitEmp}" for="nitEmp" />
+                                    </p:column>
+                                    <p:column style="border-right: white">    
+                                        <p:inputText id="nitEmp" value="#{empresasController.selected.nitEmp}" title="#{bundle.CreateEmpresasTitle_nitEmp}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_nitEmp}"/>
+                                    </p:column>
+                                    <p:column style="border-left: white;">
+                                        <p:message for="nitEmp"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <h:outputLabel value="#{bundle.CreateEmpresasLabel_razSocEmp}" for="razSocEmp" />
+                                    </p:column>
+                                    <p:column style="border-right: white">    
+                                        <p:inputText id="razSocEmp" value="#{empresasController.selected.razSocEmp}" title="#{bundle.CreateEmpresasTitle_razSocEmp}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_razSocEmp}"/>
+                                    </p:column>
+                                    <p:column style="border-left: white;">
+                                        <p:message for="razSocEmp"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <h:outputLabel value="#{bundle.CreateEmpresasLabel_dirEmp}" for="dirEmp" />
+                                    </p:column>
+                                    <p:column style="border-right: white">    
+                                        <p:inputText id="dirEmp" value="#{empresasController.selected.dirEmp}" title="#{bundle.CreateEmpresasTitle_dirEmp}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_dirEmp}"/>
+                                    </p:column>
+                                    <p:column style="border-left: white;">
+                                        <p:message for="dirEmp"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <h:outputLabel value="#{bundle.CreateEmpresasLabel_tel1Emp}" for="tel1Emp" />
+                                    </p:column>
+                                    <p:column style="border-right: white">    
+                                        <p:inputText id="tel1Emp" value="#{empresasController.selected.tel1Emp}" title="#{bundle.CreateEmpresasTitle_tel1Emp}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_tel1Emp}"/>
+                                    </p:column>
+                                    <p:column style="border-left: white;">
+                                        <p:message for="tel1Emp"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <h:outputLabel value="#{bundle.CreateEmpresasLabel_tel2Emp}" for="tel2Emp" />
+                                    </p:column>
+                                    <p:column style="border-right: white">    
+                                        <p:inputText id="tel2Emp" value="#{empresasController.selected.tel2Emp}" title="#{bundle.CreateEmpresasTitle_tel2Emp}" />
+                                    </p:column>
+                                    <p:column style="border-left: white;">
+                                        <p:message for="tel2Emp"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <h:outputLabel value="#{bundle.CreateEmpresasLabel_emaEmp}" for="emaEmp" />
+                                    </p:column>
+                                    <p:column style="border-right: white">    
+                                        <p:inputText id="emaEmp" value="#{empresasController.selected.emaEmp}" title="#{bundle.CreateEmpresasTitle_emaEmp}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_emaEmp}"/>
+                                    </p:column>
+                                    <p:column style="border-left: white;">
+                                        <p:message for="emaEmp"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <h:outputLabel value="#{bundle.CreateEmpresasLabel_wwwEmp}" for="wwwEmp" />
+                                    </p:column>
+                                    <p:column style="border-right: white">    
+                                        <p:inputText id="wwwEmp" value="#{empresasController.selected.wwwEmp}" title="#{bundle.CreateEmpresasTitle_wwwEmp}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_wwwEmp}"/>
+                                    </p:column>
+                                    <p:column style="border-left: white;">
+                                        <p:message for="wwwEmp"/>
+                                    </p:column>
+                                </p:row>
+                                <p:row>
+                                    <p:column>
+                                        <h:outputLabel value="#{bundle.CreateEmpresasLabel_codZon}" for="codZon" />
+                                    </p:column>
+                                    <p:column style="border-right: white">    
+                                        <p:selectOneMenu id="codZon" value="#{empresasController.selected.codZon}" required="true" requiredMessage="#{bundle.CreateEmpresasRequiredMessage_codZon}">
+                                            <f:selectItems value="#{zonasEmpresasController.itemsAvailableSelectOne}"/>
+                                        </p:selectOneMenu>
+                                    </p:column>
+                                    <p:column style="border-left: white;">
+                                        <p:message for="codZon"/>
+                                    </p:column>
+                                </p:row>
+                            </p:panelGrid>
+                            <br />
+                            <br />
+                            <p:commandButton process="@this, @form" update="@form, :msgs"
+                                             action="#{empresasController.create}" value="#{bundle.CreateEmpresasSaveLink}" icon="ui-icon-disk"/>
+                            <br />
+                            <br />
+                            <p:commandButton ajax="false" action="#{empresasController.prepareList}" value="#{bundle.CreateEmpresasShowAllLink}" immediate="true"/>
+                            <p/>
+                        </div>
+                    </h:form>
                 </div>
-            </h:form>
+            </div>
+            <div id="LayoutInformacion_Seg_Ap_Et_Prod">
+                <h4>INFORMACION</h4>
+                <hr></hr>
+                <p id="margen">Informacion de ayuda para formularios</p>
+            </div>
         </ui:define>
     </ui:composition>
 
