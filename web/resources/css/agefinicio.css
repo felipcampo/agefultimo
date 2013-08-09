@@ -738,6 +738,7 @@ font-size:25px;
 #Layoutbanner {
 	clear: both;
 	float: left;
+        margin-top: 0%;
 	margin-left: 0;
 	width: 100%;
 	display: block;
@@ -821,13 +822,13 @@ font-size:25px;
 	clear: both;
 	float: inherit;
 	margin-left: 0;
-	width: 30.3797%;
+	width: 20.3797%;
 	display: block;
 }
 #logo {
 	position: absolute;
-	width: 19%;
-	height: 19%;
+	width: 16%;
+	height: 16%;
 	z-index: 1;
 }
 /*#Layoutcontenido {
@@ -845,15 +846,15 @@ font-size:25px;
 #Layoutlogin {
 	clear: none;
 	float: right;
-	margin-left: 1.2658%;
-	width: 24.0506%;
+	margin-right: 8.2658%;
+	width: 19.0506%;
 	display: block;
 	margin-top: 0%;
 	font-family: "Myriad Pro";
 	background-color: #59B548;
 	border-radius: 0px;
-	font-size: 18px;
-	color: #FFF;
+	font-size: 13px;
+	color: #000;
 	text-align: center;
 }
 #Layoutm1 {
@@ -930,9 +931,9 @@ font-size:25px;
 	display: block;
 	position: relative;
 	width: 74.6835%;
-	max-width: 57%;
+	max-width: 50%;
 	max-height: 55%;
-        margin-left: 9%;
+        margin-left: 12.7%;
 	overflow: hidden;
 	clear: both;
 	float: left;
@@ -1039,6 +1040,7 @@ font-size:25px;
 	float: left;
 	margin-left: 0;
 	width: 100%;
+        
 	display: block;
 }
 
@@ -1054,6 +1056,7 @@ font-size:25px;
 	clear: both;
 	float: left;
 	margin-left: 0;
+        margin-top: -3%;
 	width: 74.6835%;
 	display: block;
 }
