@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="Indicador-Demanda"></h:outputText>
+        </ui:define>
+        <ui:define name="menumodulo">
+            <ui:include src="menu_indicadores.xhtml"/>
+        </ui:define>
+        <ui:define name="body">
+            <div id="Layoutcontenidoindicadores">
+              
+            <div align="center">
+                
+                <p style="margin-right: 170px; font-size:20px;">Reporte indicador de: ###</p><br/>
+                <img src="imagenes/imag_excel.jpg" />
+        
+        <p:button style="left: -220px; top:150px;" value="Ver reporte"/>  
+         <p:button style="left: -190px; top:150px;" value="Descargar"/> 
+                 
+                <table align="right" style="margin-top:-50px; margin-left: -1000px;">  
+                  <tr>
+                        <td><img src="imagenes/tierra2.png" /></td>
+                  </tr>    
+                   </table>  
+                <h:outputText style="margin-left: 920px;" value="La alegría de ver y entender, "></h:outputText> 
+                <h:outputText style="margin-left: 920px;" value="es el más perfecto "></h:outputText>
+                <h:outputText style="margin-left: 920px;" value="don de la naturaleza "></h:outputText>
+                       
+               
+            </div>
+            <br/>
+            </div>
+            </ui:define>
+    </ui:composition>
+
+
+
+</html>
