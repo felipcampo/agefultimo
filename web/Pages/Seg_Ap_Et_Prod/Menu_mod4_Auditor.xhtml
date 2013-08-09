@@ -9,21 +9,44 @@
     <ui:composition>
         <h:form id="Menu_Auditor">
             <div id="Layoutmenu">
-             <p:menubar  style="float: right">
+                <p:menubar  style="float: right">
+
+                    <p:submenu label="Generar Informes"  >
+                        
+                        <p:submenu label="por Seguimientos Realizados">
+                            <p:menuitem value="Tipo de Informe"/>
+                            <p:menuitem value="Estados"/>
+                            <p:menuitem value="Fechas"/>
+                        </p:submenu> 
+                        <p:submenu label="por Seguimientos Pendientes">
+                            <p:menuitem value="Tipo de Informe"/>
+                            <p:menuitem value="Estados"/>
+                            <p:menuitem value="Fechas"/>
+                        </p:submenu> 
+
+                    </p:submenu>
+
+
                     <p:submenu label="Seguimientos" >
                         <p:menuitem value="Crear" url="/faces/Pages/Seg_Ap_Et_Prod/seguimientosProductiva/Create.xhtml" />
                         <p:menuitem value="Ver" url="/faces/Pages/Seg_Ap_Et_Prod/seguimientosProductiva/View.xhtml"/>
                         <p:menuitem value="Consultar" url="/faces/Pages/Seg_Ap_Et_Prod/seguimientosProductiva/List.xhtml" />
-                       
+
                     </p:submenu>
+
+
+
                     <p:submenu label="Incidentes"  >
                         <p:menuitem value="Crear" url="/faces/Pages/Seg_Ap_Et_Prod/incidentesProductiva/Create.xhtml" />
                         <p:menuitem value="Ver" url="/faces/Pages/Seg_Ap_Et_Prod/incidentesProductiva/View.xhtml"/>
                         <p:menuitem value="Consultar"  url="/faces/Pages/Seg_Ap_Et_Prod/incidentesProductiva/List.xhtml"/>
-                      
+
                     </p:submenu>
-                 
-                 
+
+
+
+
+
                 </p:menubar>
 
             </div>
