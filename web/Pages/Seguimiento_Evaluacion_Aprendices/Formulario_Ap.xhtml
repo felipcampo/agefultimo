@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.NameApp}"></h:outputText>
+        </ui:define>
+        <ui:define name="menumodulo">
+            <ui:include src="Menu_Coordinacion.xhtml"/>
+        </ui:define>
+        <ui:define name="body">
+<div id="Layoutconsul_seg_ap1">
+    <div id="Layoutimg_consul"><h:graphicImage library="images/Seg_Ap_Lectiva" name="Ambientate.jpg"/></div>
+      <div id="Layoutcont_cont">
+        <p>Sabias Que...?</p>
+        <p>Cada segundo, se cortan en el mundo espacios de bosques y selvas del tamaño de una cancha de futbol.</p>
+      </div>
+      <div id="Layoutimg_consul2"><h:graphicImage library="images/Seg_Ap_Lectiva" name="ambiente1.jpg"/></div>
+    </div>
+    <div id="Layoutform_seg_ap">
+      <p>Diligenciar Formatos</p>
+      <ul>
+        <li>Llamado de Atención Verbal/Escrito</li>
+        <li>Condicionamiento</li>
+        <li>Citación a Comité{</li>
+        <li>Acta Comite</li>
+        <li>Plan de Mejoramiento</li>
+      
+      </ul>
+          
+              
+                  
+                  
+      </div>
+    <div id="Layouttweet"><a class="twitter-timeline" href="https://twitter.com/SENAComunica" data-widget-id="365469380219371520">Tweets by @SENAComunica</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
+ 
+            </ui:define>
+    </ui:composition>
+
+</html>

@@ -18,9 +18,9 @@ root {
 }
 #Layoutcontenidoprincipal {
 	clear: both;
-	float: right;
-	margin-left: 0;
-	width: 50%;
+	position: absolute;
+    margin-top: 20px;
+	width: 40%;
 	display: block;
 }
 #Layoutimagen {
@@ -67,4 +67,9 @@ root {
 #ind2.legend
 {
     font-family: Myriad Pro;
+}
+#Layoutslide{
+    
+    float:right ;
+    
 }

@@ -1,0 +1,452 @@
+@charset "utf-8";
+/* Medios fluidos sencillos
+   Nota: Los medios fluidos exigen la eliminación de los atributos de altura y anchura de los medios del código HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+@font-face {
+
+font-family: "myriad-pro";
+	font-style: normal;
+	font-weight: normal;
+	src: local("MYRIADPRO-REGULAR");
+
+}
+
+body, p, h1, h2, h3 {
+font-family: "myriad-pro";
+margin: justify;
+}
+h2{
+color:#238276;	
+}
+img, object, embed, video {
+	
+}
+/* IE 6 no admite max-width (anchura máxima), por lo que usa de manera predeterminada una anchura del 100% */
+
+
+/*
+	Propiedades de cuadrícula fluida de Dreamweaver
+	----------------------------------
+	dw-num-cols-mobile:		6;
+	dw-num-cols-tablet:		10;
+	dw-num-cols-desktop:	16;
+	dw-gutter-percentage:	25;
+	
+	Inspiración obtenida de "Responsive Web Design" de Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	y Golden Grid System de Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+/* Diseño móvil: 480 px e inferior. */
+   #img_alistamiento{
+	width: 50%;
+	
+}
+.gridContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 94.7333%;
+	padding-left: 1.6333%;
+	padding-right: 1.6333%;
+}
+
+
+#Layoutbanner {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutmenu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutsubmenu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutmenuver {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 13.7931%;
+	display: block;
+}
+#Layoutcontenido {
+	clear: none;
+	float: left;
+	margin-left: 3.4482%;
+	width: 82.7586%;
+	display: block;
+}
+#Layoutpieprincipal {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutpie1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+#Layoutpie2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutpie3 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 48.2758%;
+	display: block;
+}
+#Layoutpie4 {
+	clear: none;
+	float: left;
+	margin-left: 3.4482%;
+	width: 48.2758%;
+	display: block;
+	text-align: right;
+}
+#Layouttitulo {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutacordeon {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutimagen {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutTips {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+
+/* Diseño tableta: de 481 px a 768 px. Hereda estilos de: Diseño móvil. */
+
+@media only screen and (min-width: 481px) {
+     #img_alistamiento{
+	width: 80%;
+	
+}
+ 
+.gridContainer {
+	width: 96.04%;
+	padding-left: 0.98%;
+	padding-right: 0.98%;
+}
+#Layoutbanner {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutmenu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutsubmenu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	text-align: right;
+	background-color: #BCBCBC;
+}
+#Layoutmenuver {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 18.3673%;
+	display: block;
+}
+#Layoutcontenido {
+	clear: none;
+	float: left;
+	margin-left: 2.0408%;
+	width: 79.5918%;
+	display: block;
+}
+#Layoutpieprincipal {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutpie1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutpie2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutpie3 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 48.9795%;
+	display: block;
+}
+#Layoutpie4 {
+	clear: none;
+	float: left;
+	margin-left: 2.0408%;
+	width: 48.9795%;
+	display: block;
+}
+#Layouttitulo {
+	clear: both;
+	display: block;
+	height: 50px;
+	width: 100%;
+        
+}
+#Layoutacordeon {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutimagen {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 79.5918%;
+	display: block;
+}
+#LayoutTips {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+}
+
+/* Diseño escritorio: de 769 px hasta un máximo de 1232 px.  Hereda estilos de: Diseño móvil y Diseño tableta. */
+
+@media only screen and (min-width: 769px) {
+       #img_alistamiento{
+	width: 100%;
+	
+}
+.gridContainer {
+	width: 96.775%;
+	max-width: 1232px;
+	padding-left: 0.6125%;
+	padding-right: 0.6125%;
+	margin: auto;
+}
+#Layoutbanner {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutmenu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background-color: #FC7323;
+}
+#Layoutsubmenu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	text-align: right;
+	background-color: #BCBCBC;
+}
+#Layoutmenuver {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 5.0632%;
+	display: block;
+}
+
+#Layoutpieprincipal {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutpie1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+#Layoutpie2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutpie3 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 49.367%;
+	display: block;
+	text-align: left;
+}
+#Layoutpie4 {
+	clear: none;
+	float: left;
+	margin-left: 1.2658%;
+	width: 49.367%;
+	display: block;
+}
+#Layouttitulo {
+    
+	clear: both;
+	
+	margin-left: 0%;
+	width: 100%;
+	display: block;
+	background-color: #238276;
+	margin-bottom: 15px;
+	margin-top: 2px;
+	color: #FFFFFF;
+        
+}
+#Layoutcontenido {
+	clear: none;
+	float: left;
+	margin-left: 1.2658%;
+	width: 93.6708%;
+	display: block;
+        padding-bottom: 70px;
+}
+#Layoutacordeon {
+       position: relative;
+	clear: both;
+	float: right;
+	margin-left: 0;
+	width: 60%;
+	display: block;
+}
+#Layoutimagen {
+     z-index: -10;
+      position: absolute;
+       margin-top: 80px;
+       margin-bottom: 30px;
+	clear: both;
+	float: left;
+	width: 60%;
+        height: 100%;
+	display: block;
+	
+	}
+#contenido{
+		
+}
+		#otros
+	{
+	float: left;
+	position: absolute;
+	top: 7px;
+	left: 117px;
+	width: 24;
+	height: 24;
+	border: none;
+	}
+#real
+	{
+	float: left;
+	position: absolute;
+	top: 5px;
+	left: 17px;
+	width: 24;
+	height: 24;
+	border: none;
+	}
+#veri
+	{
+	float: left;
+	position: absolute;
+	top: 6px;
+	left: 19px;
+	width: 24;
+	height: 24;
+	border: none;
+	}
+#ini
+	{
+	float: left;
+	position: absolute;
+	top: 3px;
+	left: 114px;
+	width: 24;
+	height: 24;
+	border: none;
+	}	
+#LayoutTips
+	{
+        margin-top: -350px;    
+	clear: none;
+	float: right;
+	margin-left: 1.2658%;
+	width: 24.0506%;
+	display: block;
+	}
+ 
+}

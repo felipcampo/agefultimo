@@ -12,7 +12,10 @@ and open the template in the editor.
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.NameApp}"></h:outputText>
+            <h:outputText value="Indicador-Efectividad"></h:outputText>
+        </ui:define>
+        <ui:define name="menumodulo">
+            <ui:include src="menu_indicadores.xhtml"/>
         </ui:define>
         <ui:define name="body">
             <div id="Layoutcontenidoindicadores">
@@ -41,7 +44,7 @@ and open the template in the editor.
                     <tr>
                         <td><img src="imagenes/tierra.png" /></td>
                     </tr>    
-                </table>
+                </table><br/>
                 <h:outputText style="margin-left: 920px;" value="Cuida el ambiente que es "></h:outputText> 
                 <h:outputText style="margin-left: 920px;" value="la fuente de la vida."></h:outputText>
             </div>

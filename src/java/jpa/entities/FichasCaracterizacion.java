@@ -117,6 +117,8 @@ public class FichasCaracterizacion implements Serializable {
     @ManyToOne(optional = false)
     private NivelesFormacion codNivFor;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "codFic")
+    private List<ControlesAsistencia> controlesAsistenciaList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codFic")
     private List<LlamadosAtencionVerbal> llamadosAtencionVerbalList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "fichasCaracterizacion")
     private List<FichasUsuarios> fichasUsuariosList;
@@ -298,6 +300,15 @@ public class FichasCaracterizacion implements Serializable {
 
     public void setCodNivFor(NivelesFormacion codNivFor) {
         this.codNivFor = codNivFor;
+    }
+
+    @XmlTransient
+    public List<ControlesAsistencia> getControlesAsistenciaList() {
+        return controlesAsistenciaList;
+    }
+
+    public void setControlesAsistenciaList(List<ControlesAsistencia> controlesAsistenciaList) {
+        this.controlesAsistenciaList = controlesAsistenciaList;
     }
 
     @XmlTransient
