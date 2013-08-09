@@ -1,0 +1,1076 @@
+@charset "utf-8";
+/* Medios fluidos sencillos
+   Nota: Los medios fluidos exigen la eliminación de los atributos de altura y anchura de los medios del código HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+	margin-top: -8px;
+	margin-right: 4px;
+}
+/* IE 6 no admite max-width (anchura máxima), por lo que usa de manera predeterminada una anchura del 100% */
+.ie6 img {
+	width:100%;
+}
+
+/*
+	Propiedades de cuadrícula fluida de Dreamweaver
+	----------------------------------
+	dw-num-cols-mobile:		6;
+	dw-num-cols-tablet:		10;
+	dw-num-cols-desktop:	16;
+	dw-gutter-percentage:	25;
+	
+	Inspiración obtenida de "Responsive Web Design" de Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	y Golden Grid System de Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+/* Diseño móvil: 480 px e inferior. */
+
+.gridContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 94.7333%;
+	padding-left: 1.6333%;
+	padding-right: 1.6333%;
+	margin-top: 1.6%;
+}
+#agefl{
+	max-width: 100%;
+	margin: -10%;
+}
+
+#Layoutbanner {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	margin-top: 1.6%;
+}
+#logoagef {
+	position: absolute;
+	width: 200px;
+	height: 115px;
+	z-index: 1;
+}
+#Layoutmenu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background-color: #FC7323;
+}
+#Layoutsubmenu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	text-align: right;
+	background-color: #BCBCBC;
+}
+#Layoutmenuver {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 13.7931%;
+	display: block;
+	text-align: right;
+}
+#Layoutcontenido {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutpieprincipal {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background-color: #000;
+}
+#Layoutpie1 {
+	clear: both;
+	float: left;
+	margin-left: 0px;
+	width: 100%;
+	display: block;
+	text-align: center;
+	margin-bottom: 0.1%;
+	background-color: #EBEBEB;
+	margin-top: 0%;
+}
+#Layoutpie2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutpie3 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 50%;
+	display: block;
+	background-color: #EBEBEB;
+	margin-top: 0px;
+}
+#Layoutpie4 {
+	clear: none;
+	float: left;
+	margin-left: 0%;
+	width: 50%;
+	display: block;
+	text-align: right;
+	background-color: #EBEBEB;
+}
+#Layoutlogo {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 13.7931%;
+	display: block;
+}
+#logo {
+	position: absolute;
+	width: 16%;
+	height: 16%;
+	z-index: 1;
+}
+#Layoutcontenido {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	font-family: "Myriad Pro";
+	border-radius: 0px;
+	margin-top: 1%;
+}
+#Layoutlogin {
+	clear: both;
+	float: left;
+	margin-left: 17.2413%;
+	width: 65.5172%;
+	display: block;
+	font-family: "Myriad Pro";
+	background-color: #59B548;
+	font-size: 18px;
+	color: #FFF;
+	text-align: center;
+	margin-top: 1%;
+}
+#Layoutm1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background-color: #CFA43C;
+	margin-top: 1%;
+}
+#Layoutm2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background-color: #45C953;
+}
+#Layoutm3 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background-color: #CFA43C;
+}
+#Layoutm4 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background-color: #45C953;
+}
+#Layoutm5 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background-color: #CFA43C;
+}
+#Layoutm6 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background-color: #45C953;
+}
+#Layoutm7 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background-color: #CFA43C;
+}
+#Layoutmoduloprincipal {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#titulologin{
+font:bold;
+font-size:25px;
+}
+/*----------------------------------------slider-------------------------------*/
+
+.slider{
+	display: block;
+	position: relative;
+	margin: auto;
+	width: 100%;
+	max-width: 70%;
+	max-height: 70%;
+	overflow: hidden;
+}
+
+.boton{
+	position:absolute;
+	display:block;
+	bottom:30px;
+	margin:0;
+	padding:0;
+	z-index:999;
+	cursor:pointer;
+	opacity:0;
+}
+
+.boton:nth-child(1){
+	left:30px;
+}
+.boton:nth-child(3){
+	left:60px;
+}
+.boton:nth-child(5){
+	left:90px;
+}
+
+
+.slider label{
+	position:absolute;
+	bottom:30px;
+	width:12px;
+	height:12px;
+	/*background: rgba (50,50,50,.5);*//*color de fondo transparente*/
+	border-radius:7px;
+	z-index:100;
+	border: 2px solid #777;
+	background-color:rgb(0,128,128);
+	text-align:center;
+	color:#ffffff;
+	font-family:arial;
+	margin:0;
+	padding:0;
+	font-size:10px;
+		}
+
+.slider label:nth-child(2){
+	left:30px;
+}
+.slider label:nth-child(4){
+	left:60px;
+}
+.slider label:nth-child(6){
+	left:90px;
+}
+
+
+.boton:checked + label{
+	background: rgba(224,108,0,1);
+	border-color: #eee;
+}
+
+.contenedor-img img {
+	display: block;
+	float: left;
+}
+
+
+.cuatro-imagenes {
+	margin-left:0px;
+	margin-right:0px;
+	width: 400%;
+}
+
+.cuatro-imagenes img {
+	margin-right:0px;
+	margin-left:0px;
+	width: 25%;
+}
+
+.contenedor-img {
+	position: relative;
+	left: 0;
+	-webkit-transition: left .3s ease-in;
+	-ms-transition: left .3s ease-in;
+	-moz-transition: left .3s ease-in;
+	-o-transition: left .3s ease-in;
+	transition: left .3s ease-in;
+}
+
+.boton:nth-child(1):checked ~ .contenedor-img {
+	left: 0;
+}
+
+.boton:nth-child(3):checked ~ .contenedor-img {
+	left: -100%;
+}
+
+.boton:nth-child(5):checked ~ .contenedor-img {
+	left: -200%;
+}
+
+#LayoutTitulo {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#Layoutmodulos {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#Layoutituloip {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+
+
+/*----------------------------------------slider-------------------------------*/
+/* Diseño tableta: de 481 px a 768 px. Hereda estilos de: Diseño móvil. */
+
+@media only screen and (min-width: 481px) {
+.gridContainer {
+	width: 96.04%;
+	padding-left: 0.98%;
+	padding-right: 0.98%;
+	margin-top: 1.6%;
+}
+#agefl{
+	max-width: 100%;
+	margin: -10%;
+}
+#Layoutbanner {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+/*#logoagef {
+	position: absolute;
+	width: 200px;
+	height: 115px;
+	z-index: 1;
+}*/
+#Layoutmenu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background-color: #FC7323;
+}
+#Layoutsubmenu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	text-align: right;
+	background-color: #BCBCBC;
+}
+#Layoutmenuver {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 18.3673%;
+	display: block;
+}
+#Layoutcontenido {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutpieprincipal {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	margin-top: 1.6%;
+}
+#Layoutpie1 {
+	clear: both;
+	float: left;
+	margin-left: 0px;
+	width: 100%;
+	display: block;
+	background-color: #EBEBEB;
+	margin-bottom: 0.1%;
+}
+#Layoutpie2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutpie3 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 50%;
+	display: block;
+	background-color: #EBEBEB;
+}
+#Layoutpie4 {
+	clear: none;
+	float: left;
+	margin-left: 0%;
+	width: 50%;
+	display: block;
+	background-color: #EBEBEB;
+}
+#Layoutlogo {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 28.5714%;
+	display: block;
+}
+#logo {
+	position: absolute;
+	width: 17%;
+	height: 17%;
+	z-index: 1;
+}
+
+#Layoutcontenido {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	text-align: center;
+	font-family: "Myriad Pro";
+	border-radius: 0px;
+	margin-top: 1.6%;
+}
+#Layoutlogin {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 38.7755%;
+	display: block;
+	font-family: "Myriad Pro";
+	background-color: #59B548;
+	font-size: 18px;
+	color: #FFF;
+	text-align: center;
+	margin-top: 1.6%;
+}
+#Layoutm1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 38.7755%;
+	display: block;
+	background-color: #CFA43C;
+	margin-top: 2%;
+}
+#Layoutm2 {
+	clear: none;
+	float: left;
+	margin-left: 2.0408%;
+	width: 38.7755%;
+	display: block;
+	background-color: #45C953;
+	margin-top: 2%;
+}
+#Layoutm3 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 38.7755%;
+	display: block;
+	background-color: #CFA43C;
+	margin-top: 2%;
+}
+#Layoutm4 {
+	clear: none;
+	float: left;
+	margin-left: 2.0408%;
+	width: 38.7755%;
+	display: block;
+	background-color: #45C953;
+	margin-top: 2%;
+}
+#Layoutm5 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 38.7755%;
+	display: block;
+	background-color: #CFA43C;
+	margin-top: 2%;
+}
+#Layoutm6 {
+	clear: none;
+	float: left;
+	margin-left: 2.0408%;
+	width: 38.7755%;
+	display: block;
+	margin-top: 2%;
+	background-color: #45C953;
+}
+#Layoutm7 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 38.7755%;
+	display: block;
+	margin-top: 2%;
+	background-color: #CFA43C;
+}
+#Layoutmoduloprincipal {
+	clear: none;
+	float: left;
+	margin-left: 2.0408%;
+	width: 59.1836%;
+	display: block;
+	margin-top: 1.6%;
+}
+/*----------------------------------------slider-------------------------------*/
+
+.slider{
+	display: block;
+	position: relative;
+	margin: auto;
+	width: 100%;
+	max-width: 70%;
+	max-height: 70%;
+	overflow: hidden;
+}
+
+.boton{
+	position:absolute;
+	display:block;
+	bottom:30px;
+	margin:0;
+	padding:0;
+	z-index:999;
+	cursor:pointer;
+	opacity:0;
+}
+
+.boton:nth-child(1){
+	left:30px;
+}
+.boton:nth-child(3){
+	left:60px;
+}
+.boton:nth-child(5){
+	left:90px;
+}
+
+
+.slider label{
+	position:absolute;
+	bottom:30px;
+	width:12px;
+	height:12px;
+	/*background: rgba (50,50,50,.5);*//*color de fondo transparente*/
+	border-radius:7px;
+	z-index:100;
+	border: 2px solid #777;
+	background-color:rgb(0,128,128);
+	font-size:10px;
+	text-align:center;
+	color:#ffffff;
+	font-family:arial;
+	margin:0;
+	padding:0;
+}
+
+.slider label:nth-child(2){
+	left:30px;
+}
+.slider label:nth-child(4){
+	left:60px;
+}
+.slider label:nth-child(6){
+	left:90px;
+}
+
+
+.boton:checked + label{
+	background: rgba(224,108,0,1);
+	border-color: #eee;
+}
+
+.contenedor-img img {
+	display: block;
+	float: left;
+}
+
+
+.cuatro-imagenes {
+	margin-right:0px;
+	margin-left:0px;
+	width: 400%;
+}
+
+.cuatro-imagenes img {
+	margin-right:0px;
+	margin-left:0px;
+	width: 25%;
+}
+
+.contenedor-img {
+	position: relative;
+	left: 0;
+	-webkit-transition: left .3s ease-in;
+	-ms-transition: left .3s ease-in;
+	-moz-transition: left .3s ease-in;
+	-o-transition: left .3s ease-in;
+	transition: left .3s ease-in;
+}
+
+.boton:nth-child(1):checked ~ .contenedor-img {
+	left: 0;
+}
+
+.boton:nth-child(3):checked ~ .contenedor-img {
+	left: -100%;
+}
+
+.boton:nth-child(5):checked ~ .contenedor-img {
+	left: -200%;
+}
+
+#LayoutTitulo {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#Layoutmodulos {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#Layoutituloip {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+
+
+/*----------------------------------------slider-------------------------------*/
+#titulologin{
+font:bold;
+font-size:25px;
+}
+}
+
+/* Diseño escritorio: de 769 px hasta un máximo de 1232 px.  Hereda estilos de: Diseño móvil y Diseño tableta. */
+
+@media only screen and (min-width: 769px) {
+.gridContainer {
+	width: 96.775%;
+	max-width: 1232px;
+	padding-left: 0.6125%;
+	padding-right: 0.6125%;
+	margin: auto;
+}
+#agefl{
+	max-width: 100%;
+	margin-top: -10%;
+	margin-left: -18%;
+	max-height: 260px;
+}
+#Layoutbanner {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+/*#logoagef {
+	position: absolute;
+	width: 200px;
+	height: 115px;
+	z-index: 1;
+}*/
+#Layoutmenu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background-color: #FC7323;
+}
+#Layoutsubmenu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	text-align: right;
+	background-color: #BCBCBC;
+}
+#Layoutmenuver {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 11.3924%;
+	display: block;
+}
+#Layoutcontenido {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	margin-top: 2%;
+	border-radius: 0px;
+	font-family: "Myriad Pro";
+}
+#Layoutpie1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	text-align: center;
+	background-color: #EBEBEB;
+	margin-bottom: 0.1%;
+	margin-top: 0px;
+}
+#Layoutpie2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#Layoutpie3 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 50%;
+	display: block;
+	text-align: left;
+	background-color: #EBEBEB;
+}
+#Layoutpie4 {
+	clear: none;
+	float: left;
+	width: 50%;
+	display: block;
+	background-color: #EBEBEB;
+	margin-left: 0px;
+}
+#Layoutlogo {
+	clear: both;
+	float: inherit;
+	margin-left: 0;
+	width: 30.3797%;
+	display: block;
+}
+#logo {
+	position: absolute;
+	width: 19%;
+	height: 19%;
+	z-index: 1;
+}
+/*#Layoutcontenido {
+	clear: both;
+	float: left;
+	margin-left: 0%;
+	width: 74.6835%;
+	display: block;
+	text-align: center;
+	background-color: #E1E1E1;
+	margin-top: 2%;
+	border-radius: 0px;
+	font-family: "Myriad Pro";
+}*/
+#Layoutlogin {
+	clear: none;
+	float: right;
+	margin-left: 1.2658%;
+	width: 24.0506%;
+	display: block;
+	margin-top: 0%;
+	font-family: "Myriad Pro";
+	background-color: #59B548;
+	border-radius: 0px;
+	font-size: 18px;
+	color: #FFF;
+	text-align: center;
+}
+#Layoutm1 {
+	clear: none;
+	float: left;
+	margin-left: 13.924%;
+	width: 17.7215%;
+	display: block;
+	background-color: #CFA43C;
+	margin-top: 2%;
+}
+#Layoutm2 {
+	clear: none;
+	float: left;
+	margin-left: 1.2658%;
+	width: 17.7215%;
+	display: block;
+	background-color: #45C953;
+}
+#Layoutm3 {
+	clear: none;
+	float: left;
+	margin-left: 1.2658%;
+	width: 17.7215%;
+	display: block;
+	background-color: #CFA43C;
+}
+#Layoutm4 {
+	clear: none;
+	float: left;
+	margin-left: 1.2658%;
+	width: 17.7215%;
+	display: block;
+	background-color: #45C953;
+}
+#Layoutm5 {
+	clear: both;
+	float: left;
+	margin-left: 18.9873%;
+	width: 17.7215%;
+	display: block;
+	background-color: #CFA43C;
+	margin-top: 1%;
+}
+#Layoutm6 {
+	clear: none;
+	float: left;
+	margin-left: 1.2658%;
+	width: 17.7215%;
+	display: block;
+	background-color: #45C953;
+	margin-top: 1%;
+}
+#Layoutm7 {
+	clear: none;
+	float: left;
+	margin-left: 1.2658%;
+	width: 17.7215%;
+	display: block;
+	background-color: #CFA43C;
+	margin-top: 1%;
+}
+#Layoutmoduloprincipal {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	margin-top: 1%;
+}
+/*----------------------------------------slider-------------------------------*/
+
+.slider{
+	display: block;
+	position: relative;
+	width: 74.6835%;
+	max-width: 57%;
+	max-height: 55%;
+        margin-left: 9%;
+	overflow: hidden;
+	clear: both;
+	float: left;
+}
+
+.boton{
+	position:absolute;
+	display:block;
+	bottom:30px;
+	margin:0;
+	padding:0;
+	z-index:999;
+	cursor:pointer;
+	opacity:0;
+}
+
+.boton:nth-child(1){
+	left:30px;
+}
+.boton:nth-child(3){
+	left:60px;
+}
+.boton:nth-child(5){
+	left:90px;
+}
+
+
+.slider label{
+	position:absolute;
+	bottom:30px;
+	width:12px;
+	height:12px;
+	/*background: rgba (50,50,50,.5);*//*color de fondo transparente*/
+	border-radius:7px;
+	z-index:100;
+	border: 2px solid #777;
+	background-color:rgb(0,128,128);
+	font-size:10px;
+	text-align:center;
+	color:#ffffff;
+	font-family:arial;
+	margin:0;
+	padding:0;
+}
+
+.slider label:nth-child(2){
+	left:30px;
+}
+.slider label:nth-child(4){
+	left:60px;
+}
+.slider label:nth-child(6){
+	left:90px;
+}
+
+
+.boton:checked + label{
+	background: rgba(224,108,0,1);
+	border-color: #eee;
+}
+
+.contenedor-img img {
+	display: block;
+	float: left;
+}
+
+
+.cuatro-imagenes {
+	margin-right:0px;
+	margin-left:0px;
+	width: 300%;
+}
+
+.cuatro-imagenes img {
+	margin-right:0px;
+	margin-left:0px;
+	width: 33.3333%;
+}
+
+.contenedor-img {
+	position: relative;
+	left: 0;
+	-webkit-transition: left .3s ease-in;
+	-ms-transition: left .3s ease-in;
+	-moz-transition: left .3s ease-in;
+	-o-transition: left .3s ease-in;
+	transition: left .3s ease-in;
+}
+
+.boton:nth-child(1):checked ~ .contenedor-img {
+	left: 0;
+}
+
+.boton:nth-child(3):checked ~ .contenedor-img {
+	left: -100%;
+}
+
+.boton:nth-child(5):checked ~ .contenedor-img {
+	left: -200%;
+}
+
+#LayoutTitulo {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#Layoutmodulos {
+	clear: none;
+	float: left;
+	margin-left: 1.2658%;
+	width: 100%;
+	display: block;
+}
+
+#Layoutituloip {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 74.6835%;
+	display: block;
+}
+
+
+
+/*----------------------------------------slider-------------------------------*/
+#titulologin{
+font:bold;
+font-size:25px;
+}
+}
+
+.gridContainer.clearfix #Layoutconten3 fieldset form p {
+	text-align: center;
+}
+.gridContainer.clearfix #Layoutcontenido #Layoutituloip h1 {
+	font-family: Myriad Pro;
+	font-size: 40px;
+}
