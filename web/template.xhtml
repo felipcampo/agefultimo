@@ -7,7 +7,7 @@
     <h:head>
          <h:outputStylesheet name="css/styles.css"  />
         <h:outputStylesheet name="css/skitter.styles.css"  />
-        <link rel="shortcut icon" href="faviconlogo.PNG"/>
+        <link rel="shortcut icon" href="https://lh3.googleusercontent.com/j8Zr_KqW7CylmvrPVJ_cHTsABx8zvN4ZRI6hPmRbD5KeCMOMzsuwOzcb-93zqP7GMQ=w1600" type="image/x-icon" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title><ui:insert name="title">AGEF</ui:insert></title>
@@ -53,17 +53,7 @@
                 allDayText: 'Todo el día'
             };
         </script>
-        <script type="text/javascript" language="javascript">
-		$(document).ready(function() {
-			$('.box_skitter_large').skitter({
-				theme: 'round',
-				numbers_align:'right',
-				progressbar: true, 
-				dots: false, 
-				preview: true
-			});
-		});
-	</script>
+        
     </h:head>
 
     <h:body>
@@ -77,9 +67,11 @@
             <div id="Layoutmenu">
                 <ui:insert name="menumodulo"/>
             </div>
-            <div id="Layoutsubmenu">Submenu</div>
+            <div id="Layoutsubmenu">
+                <ui:insert name="submenu"/>
+            </div>
             <div id="Layoutmenuver"><ul id="navigationMenu">
-                    <li><a  href="#">
+                    <li><a  href="/agefultimo/faces/index_login.xhtml">
                             <span>Inicio</span><h:graphicImage library="images" name="icono_inicio.png" />
                         </a>
                     </li>
@@ -112,12 +104,12 @@
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="/agefultimo/faces/Pages/Indicadores/indexindicadoresxhtml.xhtml">
                             <span>Indicadores</span><h:graphicImage library="images/icoindicadores" name="indicadores.png" />
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/agefultimo/faces/Pages/Bienestar/inicio_bienestar.xhtml">
                             <span>Bienestar</span><h:graphicImage library="images/icobienestar" name="icono_bienestar.png" />
                         </a>
                     </li>

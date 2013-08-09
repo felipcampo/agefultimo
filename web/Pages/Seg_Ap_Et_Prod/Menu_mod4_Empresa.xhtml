@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <ui:composition>
+        <h:form id="Menu_empresa">
+            <div id="Layoutmenu">
+             <p:menubar  style="float: right">
+                    
+                    <p:submenu label="Generar seguimiento"  >
+                        <p:menuitem value="Crear" url="/faces/Pages/Seg_Ap_Et_Prod/seguimientosProductiva/Create.xhtml" />
+                        <p:menuitem value="Ver" url="/faces/Pages/Seg_Ap_Et_Prod/seguimientosProductiva/View.xhtml"/>
+                        <p:menuitem value="Consultar"  url="/faces/Pages/Seg_Ap_Et_Prod/seguimientosProductiva/List.xhtml"/>
+                      
+                    </p:submenu>
+                 
+                   <p:submenu label="Generar informes Aprendices Contratados"  >
+                        <p:menuitem value="Etapa Lectiva"/>
+                        <p:menuitem value="Etapa Productiva"/>
+                        <p:menuitem value="Consolidado Final" />
+               
+                      
+                    </p:submenu>
+                 <p:submenu label="Reportar incidentes"  >
+                        <p:menuitem value="Crear" url="/faces/Pages/Seg_Ap_Et_Prod/incidentesProductiva/Create.xhtml" />
+                        <p:menuitem value="Consultar"  url="/faces/Pages/Seg_Ap_Et_Prod/incidentesProductiva/List.xhtml"/>
+                      
+                    </p:submenu>
+                 
+                 
+                </p:menubar>
+
+            </div>
+
+        </h:form>
+
+    </ui:composition>
+
+
+</html>

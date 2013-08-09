@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <ui:composition>
+        <h:form id="Menu_coordinador">
+            <div id="Layoutmenu">
+             <p:menubar  style="float: right">
+                    
+                    <p:submenu label="Empresas"  >
+                        <p:menuitem value="Crear" url="/faces/Pages/Seg_Ap_Et_Prod/empresas/Create.xhtml" />
+                        <p:menuitem value="Editar" url="/faces/Pages/Seg_Ap_Et_Prod/empresas/Edit.xhtml"/>
+                        <p:menuitem value="Ver" url="/faces/Pages/Seg_Ap_Et_Prod/empresas/View.xhtml"/>
+                        <p:menuitem value="Consultar"  url="/faces/Pages/Seg_Ap_Et_Prod/empresas/List.xhtml"/>
+                      
+                    </p:submenu>
+                 
+                   <p:submenu label="Agendar Visitas"  >
+                        <p:menuitem value="Crear" url="/faces/Pages/Seg_Ap_Et_Prod/visitaEtapaProductiva/Create.xhtml" />
+                        <p:menuitem value="Editar" url="/faces/Pages/Seg_Ap_Et_Prod/visitaEtapaProductiva/Edit.xhtml"/>
+                        <p:menuitem value="Ver" url="/faces/Pages/Seg_Ap_Et_Prod/visitaEtapaProductiva/View.xhtml"/>
+                        <p:menuitem value="Consultar"  url="/faces/Pages/Seg_Ap_Et_Prod/visitaEtapaProductiva/List.xhtml"/>
+                      
+                    </p:submenu>
+                 <p:submenu label="Modalidades productivas"  >
+                        <p:menuitem value="Crear" url="/faces/Pages/Seg_Ap_Et_Prod/modalidadesProductiva/Create.xhtml" />
+                        <p:menuitem value="Editar" url="/faces/Pages/Seg_Ap_Et_Prod/modalidadesProductiva/Edit.xhtml"/>
+                        <p:menuitem value="Ver" url="/faces/Pages/Seg_Ap_Et_Prod/modalidadesProductiva/View.xhtml"/>
+                        <p:menuitem value="Consultar"  url="/faces/Pages/Seg_Ap_Et_Prod/modalidadesProductiva/List.xhtml"/>
+                      
+                    </p:submenu>
+                 
+                 
+                </p:menubar>
+
+            </div>
+
+        </h:form>
+
+    </ui:composition>
+
+
+</html>
