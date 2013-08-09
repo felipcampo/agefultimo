@@ -11,18 +11,16 @@
             <div id="Layoutmenu">
                
                 <p:menubar  style="float: right">
-                     <p:submenu label="Incio">
-                    </p:submenu>
+                                        
                     <p:submenu label="Consulta Tipo Formación">
-                        <p:menuitem value="Tecnólogo" />
-                        <p:menuitem value="Técnico" />
-                        <p:menuitem value="Complementario" />
-                        <p:menuitem value="Virtual"/>
+                        <p:menuitem value="Tecnólogo" outcome="consulta_tip_form.xhtml" />
+                        <p:menuitem value="Técnico" outcome="consulta_tip_form.xhtml" />
+                        <p:menuitem value="Complementario" outcome="consulta_tip_form.xhtml"/>
+                        <p:menuitem value="Virtual" outcome="consulta_tip_form.xhtml"/>
                     </p:submenu>
-                    <p:submenu label="Consulta por Ficha">
-                    </p:submenu>
-                    <p:submenu label="Consulta Global">
-                    </p:submenu>
+                    <p:menuitem value="Consulta por Ficha" url="formularioficha.xhtml" />
+                    <p:menuitem value="Consulta Global" url="consulta_global.xhtml" />
+                   
                 </p:menubar>
              
             </div>
