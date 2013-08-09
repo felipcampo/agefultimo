@@ -9,7 +9,10 @@
     <ui:composition template="/template.xhtml">
 
         <ui:define name="title">
-            <h:outputText value="#{bundle.Seg_ProyectosinicioTitle}"></h:outputText>
+            <h:outputText value="Bienestar al Aprendiz"></h:outputText>
+        </ui:define>
+         <ui:define name="menumodulo">
+            <ui:include src="Menu_bienestar.xhtml"/>
         </ui:define>
         <ui:define name="body">
             <iframe src="Inicio_bienestar/inicio.html" width="1200" height="445" frameborder="0"></iframe>
