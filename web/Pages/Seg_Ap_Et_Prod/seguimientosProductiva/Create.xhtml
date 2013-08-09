@@ -13,20 +13,22 @@
         <ui:define name="body">
 
             <div id="LayoutTitulo_Form_Seg_Ap_Et_Prod">
-                <h3>SEGUIMIENTO AL APRENDIZ EN ETAPA PRODUCTIVA y</h3>
+                <br />
+                <h3>#{bundle.CreateSeguimientosProductivaTitle}</h3>
             </div>
 
             <div id="LayoutForm_Seg_Ap_Et_Prod">
                 <div id="LayoutFormularios_Seg_Et_Prod">
-                    <h4>#{bundle.CreateSeguimientosProductivaTitle}</h4>
 
                     <p:growl id="msgs" showDetail="false" sticky="false"/>
                     <h:form id="formSeguimientosProductiva">
                         <div id="form" align="center">
+                            <br />
+                            <br />
 
                             <p:panelGrid>
                                 <f:facet name="header">
-                                    <p:row><p:column colspan="3">0. POR UTILIZAR</p:column></p:row>                            
+                                    <p:row><p:column colspan="3">0. VALORACIÓN ETAPA PRODUCTIVA</p:column></p:row>                            
                                 </f:facet> 
 
                                 <p:row>
@@ -41,8 +43,8 @@
                                     <p:column>
                                         <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_juiEva}" for="juiEva" />
                                     </p:column>
-                                    <p:column>    
-                                        <p:inputText id="juiEva" value="#{seguimientosProductivaController.selected.juiEva}" title="#{bundle.CreateSeguimientosProductivaTitle_juiEva}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_juiEva}"/>
+                                    <p:column>
+                                        <p:selectBooleanButton id="juiEva" value="#{seguimientosProductivaController.selected.juiEva}" onLabel="Aprobado" offLabel="No Aprobado" onIcon="ui-icon-check" offIcon="ui-icon-close" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_juiEva}"/> 
                                     </p:column>                                    
                                 </p:row>
                                 <p:row>
@@ -50,7 +52,7 @@
                                         <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_reqMej}" for="reqMej" />
                                     </p:column>
                                     <p:column>    
-                                        <p:inputText id="reqMej" value="#{seguimientosProductivaController.selected.reqMej}" title="#{bundle.CreateSeguimientosProductivaTitle_reqMej}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_reqMej}"/>
+                                        <p:selectBooleanButton id="reqMej" value="#{seguimientosProductivaController.selected.reqMej}" onLabel="Si" offLabel="No" onIcon="ui-icon-check" offIcon="ui-icon-close" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_reqMej}"/> 
                                     </p:column>                                    
                                 </p:row>
                                 <p:row>
@@ -58,7 +60,7 @@
                                         <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_recEsp}" for="recEsp" />
                                     </p:column>
                                     <p:column >    
-                                        <p:inputText id="recEsp" value="#{seguimientosProductivaController.selected.recEsp}" title="#{bundle.CreateSeguimientosProductivaTitle_recEsp}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_recEsp}"/>
+                                        <p:selectBooleanButton id="recEsp" value="#{seguimientosProductivaController.selected.recEsp}" onLabel="Si" offLabel="No" onIcon="ui-icon-check" offIcon="ui-icon-close" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_recEsp}"/>
                                     </p:column>                                    
                                 </p:row>
                                 <p:row>
@@ -66,20 +68,10 @@
                                         <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_espRec}" for="espRec" />
                                     </p:column>
                                     <p:column>    
-                                        <p:inputTextarea rows="4" cols="30" id="espRec" value="#{seguimientosProductivaController.selected.espRec}" title="#{bundle.CreateSeguimientosProductivaTitle_espRec}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_espRec}"/>
+                                        <p:inputTextarea  disabled="true" rows="4" cols="30" id="espRec" value="#{seguimientosProductivaController.selected.espRec}" title="#{bundle.CreateSeguimientosProductivaTitle_espRec}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_espRec}"/>
                                     </p:column>                                    
-                                </p:row>                        
+                                </p:row>  
 
-                                <p:row>
-                                    <p:column>
-                                        <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codInc}" for="codInc" />
-                                    </p:column>
-                                    <p:column>    
-                                        <p:selectOneMenu id="codInc" value="#{seguimientosProductivaController.selected.codInc}" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_codInc}">
-                                            <f:selectItems value="#{incidentesProductivaController.itemsAvailableSelectOne}"/>
-                                        </p:selectOneMenu>
-                                    </p:column>                                    
-                                </p:row>
                             </p:panelGrid> 
 
                             <br />
@@ -166,7 +158,7 @@
 
                             <p:panelGrid columns="2">
                                 <f:facet name="header">
-                                    <p:row><p:column>ENTE CO-FORMADOR</p:column></p:row>                            
+                                    <p:row><p:column>ENTE COFORMADOR</p:column></p:row>                            
                                 </f:facet>
                                 <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_nitEmp}" for="nitEmp" />
                                 <p:selectOneMenu id="nitEmp" value="#{seguimientosProductivaController.selected.nitEmp}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_nitEmp}">
@@ -212,7 +204,6 @@
                                     <p:column>
                                         <p:commandButton id="codCpt" value="Modal" oncomplete="dlg.show();" process="@none"/>                          
                                     </p:column>
-
                                 </p:row>
                             </p:panelGrid>  
 
@@ -238,7 +229,7 @@
                                         <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_fecRepIni}" for="fecRepIni" />
                                     </p:column>
                                     <p:column>    
-                                        <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecRepIni" value="#{seguimientosProductivaController.selected.fecRepIni}" title="#{bundle.CreateSeguimientosProductivaTitle_fecRepIni}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_fecRepIni}"/>
+                                        <p:calendar locale="es" navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecRepIni" value="#{seguimientosProductivaController.selected.fecRepIni}" title="#{bundle.CreateSeguimientosProductivaTitle_fecRepIni}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_fecRepIni}"/>
                                     </p:column>                            
                                 </p:row>
 
@@ -247,9 +238,30 @@
                                         <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_fecRepFin}" for="fecRepFin" />
                                     </p:column>
                                     <p:column>    
-                                        <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecRepFin" value="#{seguimientosProductivaController.selected.fecRepFin}" title="#{bundle.CreateSeguimientosProductivaTitle_fecRepFin}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_fecRepFin}"/>
+                                        <p:calendar  locale="es" navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecRepFin" value="#{seguimientosProductivaController.selected.fecRepFin}" title="#{bundle.CreateSeguimientosProductivaTitle_fecRepFin}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_fecRepFin}"/>
                                     </p:column>                            
                                 </p:row> 
+
+                                <p:row>
+                                    <p:column>
+                                        <h:outputLabel value="Criterios" for="criterios" />
+                                    </p:column>
+                                    <p:column>
+                                        <p:commandButton id="criterios" value="Modal" oncomplete="dlg1.show();" process="@none"/>                          
+                                    </p:column>
+                                </p:row>
+
+                                <p:row>
+                                    <p:column>
+                                        <h:outputLabel value="#{bundle.CreateSeguimientosProductivaLabel_codInc}" for="codInc" />
+                                    </p:column>
+                                    <p:column>    
+                                        <p:selectOneMenu id="codInc" value="#{seguimientosProductivaController.selected.codInc}" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_codInc}">
+                                            <f:selectItems value="#{incidentesProductivaController.itemsAvailableSelectOne}"/>
+                                        </p:selectOneMenu>
+                                    </p:column>                                    
+                                </p:row>
+
                             </p:panelGrid>
 
                             <br />
@@ -265,10 +277,11 @@
                             <br />
                             <br /> 
 
-                            <p:dialog  id="dialog" header="#{bundle.CreateConcertacionPlanTrabajoProductivaTitle}" widgetVar="dlg" minHeight="300" minWidth="450" 
-                                       resizable="true" modal="true" >
+                            <p:dialog  id="dialog"   closeOnEscape="true" header="#{bundle.CreateConcertacionPlanTrabajoProductivaTitle}" widgetVar="dlg" minHeight="300" minWidth="450" 
+                                       resizable="true" modal="true" hideEffect="bounce">
                                 <ui:include src="/Pages/Seg_Ap_Et_Prod/concertacionPlanTrabajoProductiva/Create.xhtml" />
-                            </p:dialog>
+                            </p:dialog>                           
+
 
                         </div>
                     </h:form>
