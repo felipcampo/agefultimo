@@ -18,9 +18,9 @@ root {
 }
 #Layoutcontenidoprincipal {
 	clear: both;
-	float: right;
-margin-top:-50 ;
-	width: 50%;
+	position: absolute;
+    margin-top: 20px;
+	width: 40%;
 	display: block;
 }
 #Layoutimagen {
@@ -68,10 +68,8 @@ margin-top:-50 ;
 {
     font-family: Myriad Pro;
 }
-#Layoutfoto{
+#Layoutslide{
     
-   
-    width:40%;
-    float: left;
-    position: absolute;
- }
+    float:right ;
+    
+}

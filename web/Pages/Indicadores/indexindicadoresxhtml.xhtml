@@ -12,17 +12,32 @@ and open the template in the editor.
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{bundle.NameApp}"></h:outputText>
+            <h:outputText value="inicio-indicadores"></h:outputText>
         </ui:define>
         <ui:define name="body">
             <div align="center"><h3>BIENVENIDO AL MODULO DE INDICADORES</h3></div>
             <div id="Layoutcontenidoindicadores">
-                     <div id="Layoutfoto">
-                 <img src="imagenes/foto.PNG"/>
-                   </div>
-                 
-                <div id="Layoutcontenidoprincipal">
-                
+                <div id="Layoutslide">
+                    <div id="page">
+                        <div id="content" >
+                            <div class="border_box">
+                                <div class="box_skitter box_skitter_large">
+                                    <ul>
+                                        <li><a href="#cubeStop"><img src="imagenes/001.jpg" class="cubeStop" /></a></li>	
+                                        <li><a href="#cube"><img src="imagenes/004.jpg" class="cube" /></a></li>
+                                        <li><a href="#cubeRandom"><img src="imagenes/002.jpg" class="cubeRandom" /></a></li>
+                                        <li><a href="#block"><img src="imagenes/003.jpg" class="block" /></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div id="Layoutcontenidoprincipal" >
+
                     <p:accordionPanel >  
                         <p:tab title="¿Qué Es El Indicador De Deserción?">  
                             <h:panelGrid columns="2" cellpadding="10">  
@@ -62,27 +77,13 @@ and open the template in the editor.
                         </p:tab> 
                     </p:accordionPanel> 
                 </div>
-                <div id="Layoutimagen">
-                    <img src="imagenes/sig.png" /> </div>
-                <div id="Layoutnoticia"><p align="justify">El SENA, viene implementando un Sistema Integrado
-                        de Gestión, bajo las normas internacionales: ISO 9001:2008 para 
-                        Gestión de Calidad, ISO 14001:2004 para Gestión Ambiental, 
-                        OHSAS 18001:2007 para Seguridad y Salud Ocupacional, 
-                        ISO 27001:2005 para Seguridad de la Información, y la Norma 
-                        Técnica de Calidad para la Gestión Pública NTCGP 1000:2009, 
-                        adicionalmente, avanzamos en la implementación de modelos de 
-                        excelencia internacionales reconocidos, y en herramientas 
-                        asociadas como los programas de Medición de Huella de Carbono, 
-                        Great Place to Work, y Empresa Libre de Alcohol y Drogas, ELAD, 
-                        para mejorar sus desempeño y seguir siendo la Entidad más 
-                        Querida por los colombianos.</p>
-                </div>
+
 
 
             </div>
         </ui:define>
-    </ui:composition>
 
+    </ui:composition>
 
 
 </html>
