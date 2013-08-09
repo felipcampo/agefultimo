@@ -178,6 +178,54 @@ img, object, embed, video {
 	margin-top: 2%;
 	color: #FFF;
 	background-color: #238276;}
+#Layoutconsul_seg_ap1
+{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	}
+#Layoutform_seg_ap
+{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	}
+#Layouttweet
+{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	}
+#Layoutimg_consul
+{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	}
+#Layoutcont_cont
+{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	}
+#Layoutimg_consul2
+{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	}
 
 /* Diseño tableta: de 481 px a 768 px. Hereda estilos de: Diseño móvil. */
 
@@ -317,7 +365,57 @@ img, object, embed, video {
 	margin-top: 2%;
 	color: #FFF;
 }
-
+#Layoutconsul_seg_ap1
+{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	}
+#Layoutform_seg_ap
+{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 69.3877%;
+	display: block;
+        background-color: #DBDBDB;
+	margin-top: 1%;
+	}
+#Layouttweet
+{
+	clear: none;
+	float: left;
+	margin-left: 2.0408%;
+	width: 28.5714%;
+	display: block;
+	margin-top: 1%;
+	}
+#Layoutimg_consul
+{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 28.5714%;
+	display: block;
+	}
+#Layoutcont_cont
+{
+	clear: none;
+	float: left;
+	margin-left: 2.0408%;
+	width: 38.7755%;
+	display: block;
+	}
+#Layoutimg_consul2
+{
+	clear: none;
+	float: left;
+	margin-left: 2.0408%;
+	width: 28.5714%;
+	display: block;
+	}
 
 }
 
@@ -506,6 +604,56 @@ img, object, embed, video {
 	text-align: center;
 	color: #fff;
 	}
+        #Layoutconsul_seg_ap1
+{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 24.0506%;
+	display: block;
+	}
+#Layoutform_seg_ap
+{
+	clear: none;
+	float: left;
+	margin-left: 1.2658%;
+	width: 55.6962%;
+	display: block;
+	background-color: #DBDBDB;
+	}
+#Layouttweet
+{
+	clear: none;
+	float: left;
+	margin-left: 1.2658%;
+	width: 17.7215%;
+	display: block;
+	margin-top: 3%;
+	}
+#Layoutimg_consul
+{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	}
+#Layoutcont_cont
+{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	}
+#Layoutimg_consul2
+{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	}
 }
 
 #margen{margin:1.6%;
@@ -513,4 +661,5 @@ text-align:justify;
 }
 #titulo{
     color: #fff;
+    
 }
