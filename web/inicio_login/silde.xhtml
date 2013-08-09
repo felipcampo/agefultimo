@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>Slide AGEF</title>
+
+        <link href="css/styles.css" type="text/css" media="all" rel="stylesheet" />
+
+        <!-- Skitter Styles -->
+        <link href="css/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
+        <style type="text/css">
+            #apDiv1 {
+                position: absolute;
+                left: 40px;
+                top: 30px;
+                width: 544px;
+                height: 415px;
+                z-index: 1;
+            }
+        </style>
+
+        <!-- Skitter JS -->
+        <script type="text/javascript" language="javascript" src="js/jquery-1.6.3.min.js"></script>
+        <script type="text/javascript" language="javascript" src="js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" language="javascript" src="js/jquery.animate-colors-min.js"></script>
+        <script type="text/javascript" language="javascript" src="js/jquery.skitter.min.js"></script>
+
+        <!-- Init Skitter -->
+        <script type="text/javascript" language="javascript">
+            $(document).ready(function() {
+                $('.box_skitter_large').skitter({
+                    theme: 'round',
+                    numbers_align: 'right',
+                    progressbar: true,
+                    dots: false,
+                    preview: true
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+
+
+
+        <div id="apDiv1">
+            <div id="content" >
+                <div class="border_box">
+                    <div class="box_skitter box_skitter_large">
+                        <ul>
+                            <li><a href="#cube"><img src="../resources/inicio_login/example/001.jpg" class="cube" /></a><div class="label_text"><p>Seguimiento a Aprendices en Etapa Productiva</p></div></li>
+                            <li><a href="#cubeRandom"><img src="../resources/inicio_login/example/002.jpg" class="cubeRandom" /></a><div class="label_text"><p>Seguimiento y Evaluación a Aprendices</p></div></li>
+                            <li><a href="#block"><img src="../resources/inicio_login/example/003.jpg" class="block" /></a><div class="label_text"><p>Gestión y Desarrollo de Alistamiento</p></div></li>
+                            <li><a href="#cubeStop"><img src="../resources/inicio_login/example/004.JPG" class="cubeStop" /></a><div class="label_text"><p>Apoyo a la Gestión en los Procesos de Bienestar</p></div></li>	
+                            <li><a href="#cube"><img src="../resources/inicio_login/example/005.jpg" class="cube" /></a><div class="label_text"><p>Indicadores para la Gestión del Proceso de Formación</p></div></li>
+                            <li><a href="#cubeRandom"><img src="../resources/inicio_login/example/006.jpg" class="cubeRandom" /></a><div class="label_text"><p>Gestión en los Procesos de Seguimiento a Instructores</p></div></li>
+                            <li><a href="#block"><img src="../resources/inicio_login/example/007.jpg" class="block" /></a><div class="label_text"><p>Gestión en los Procesos de Seguimiento a Proyectos Formativos</p></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <p>&nbsp;</p>
+    </body>
+</html>
