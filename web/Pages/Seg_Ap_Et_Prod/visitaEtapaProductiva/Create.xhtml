@@ -44,8 +44,10 @@
                             <p:column>
                                 <h:outputLabel value="#{bundle.CreateVisitaEtapaProductivaLabel_estVis}" for="estVis" />
                             </p:column>
-                            <p:column style="border-right: white">    
-                                <p:inputText id="estVis" value="#{visitaEtapaProductivaController.selected.estVis}" title="#{bundle.CreateVisitaEtapaProductivaTitle_estVis}" required="true" requiredMessage="#{bundle.CreateVisitaEtapaProductivaRequiredMessage_estVis}"/>
+                            <p:column style="border-left: white;">
+                                <p:selectOneMenu id="estVis" value="#{visitaEtapaProductivaController.selected.estVis}" required="true" requiredMessage="#{bundle.CreateVisitaEtapaProductivaRequiredMessage_estVis}">
+                                    <f:selectItems value="#{visitaEtapaProductivaController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu>
                             </p:column>
                             <p:column style="border-left: white;">
                                 <p:message for="estVis"/>
