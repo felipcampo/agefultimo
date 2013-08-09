@@ -59,8 +59,18 @@
                             <p:inputTextarea rows="4" cols="30" id="obsCpt" value="#{concertacionPlanTrabajoProductivaController.selected.obsCpt}" title="#{bundle.CreateConcertacionPlanTrabajoProductivaTitle_obsCpt}"/>
                         </p:column>                       
                     </p:row>
+                    <p:row>
+                        <p:column colspan="2">
+                            <p:fileUpload fileUploadListener="#{concertacionPlanTrabajoProductivaController.selected.eviApr}" mode="advanced" dragDropSupport="false"  
+                                          multiple="true" sizeLimit="100000000" allowTypes="/(\.|\/)(gif|jpe?g|png|bmp|avi|pdf)$/" />
+                        </p:column>
+                    </p:row>
                 </p:panelGrid>
                 <br />
+
+
+
+
                 <br />
                 <p:commandButton process="@this, @form" update="@form, :msgs"
                                  action="#{concertacionPlanTrabajoProductivaController.create}" value="#{bundle.CreateConcertacionPlanTrabajoProductivaSaveLink}" icon="ui-icon-disk"/>
