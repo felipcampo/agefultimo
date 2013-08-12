@@ -7,7 +7,7 @@
       xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="/template.xhtml">
-        <ui:define name="title">
+        <ui:define name="title">            
             <h:outputText value="#{bundle.CreateSeguimientosProductivaTitle}"></h:outputText>
         </ui:define>
         <ui:define name="body">
@@ -20,7 +20,6 @@
             <div id="LayoutForm_Seg_Ap_Et_Prod">
                 <div id="LayoutFormularios_Seg_Et_Prod">
                     <p:growl id="msgs" showDetail="false" sticky="false"/>
-
 
                     <h:form id="formSeguimientosProductiva">
                         <div id="form" align="center">
@@ -51,10 +50,14 @@
 
                             </p:toolbar> 
 
+                            <a style="display:scroll;position:fixed;bottom:5px;right:5px;" href="#" title="subir"><img src="http://lh5.googleusercontent.com/-luDGEoQ_WZE/T1Ak-gta5MI/AAAAAAAACPI/ojfEGiaNmGw/s60/flecha-arriba.png" alt=
+                                                                                                                       "" /></a>
+
                             <br />
                             <br />
 
                             <p:panelGrid>
+
                                 <f:facet name="header">  
                                     <p:row>  
                                         <p:column colspan="4">1. INFORMACIÓN GENERAL</p:column>  
@@ -62,11 +65,6 @@
 
                                 </f:facet>  
 
-                                <p:row>  
-                                    <p:column colspan="4" styleClass="ui-widget-header">  
-                                        <p:spacer height="0"/>  
-                                    </p:column>  
-                                </p:row>                    
 
                                 <p:row>  
                                     <p:column> 
