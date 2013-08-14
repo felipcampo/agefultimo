@@ -9,894 +9,135 @@
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
             <h:outputText value="fro_coo"></h:outputText>
-            
+
 
 
         </ui:define>
         <ui:define name="body">
-            <table  align="center" bordercolor="#FC7323">
-                <tr>
-                    <td bgcolor="#FC7323" colspan="20" align="center" valign="middle">EVALUACIÓN DE SEGUIMIENTO DE PROYECTO - COORDINADOR ACADÉMICO</td>
+            <p:panelGrid style="margin-top:20px">  
+                <f:facet name="header">  
+                    <p:row>  
+                        <p:column colspan="14">EVALUACION Y SEGUIMIENTO COORDINADOR ACADEMICO</p:column>  
+                    </p:row>  
 
-                </tr>
-                <tr bgcolor="#FFFFFF" >
-                    <td colspan="2">F. REUNIÓN</td>
-                    <td colspan="2">&nbsp;</td>
-                    <td colspan="3">HORA INICIO</td>
-                    <td colspan="3">&nbsp;</td>
-                    <td colspan="3">HORA FINAL</td>
-                    <td colspan="3">&nbsp;</td>
-                    <td colspan="2">HORAS</td>
-                    <td colspan="2">0:00:00</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td colspan="2">FICHA No.</td>
-                    <td width="27">0 </td>
-                    <td colspan="4">PROGRAMA DE FORMACIÓN</td>
-                    <td colspan="13">0 </td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td colspan="3">FECHA APERTURA FICHA</td>
-                    <td width="106">0</td>
-                    <td colspan="3">PROYECTO</td>
-                    <td colspan="13">0 </td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td colspan="3">NIVEL DE FORMACIÓN</td>
-                    <td colspan="3">0</td>
-                    <td colspan="2">ÁREA</td>
-                    <td colspan="6">0</td>
-                    <td colspan="2">JORNADA</td>
-                    <td colspan="4">0</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td colspan="3">DURACIÓN ETAPA    LECTIVA</td>
-                    <td>0</td>
-                    <td colspan="7">DURACIÓN ETAPA PRODUCTIVA</td>
-                    <td colspan="2">0</td>
-                    <td colspan="5">MESES DE FORMACIÓN</td>
-                    <td colspan="2">0</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td colspan="2">REGIONAL</td>
-                    <td colspan="6">VALLE DEL CAUCA</td>
-                    <td colspan="2">CENTRO</td>
-                    <td colspan="10">CENTRO DE BIOTECNOLOGÍA INDUSTRIAL</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td colspan="3">DURACIÓN EN HORAS</td>
-                    <td>0</td>
-                    <td colspan="3">INSTRUCTOR</td>
-                    <td colspan="13">0</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td colspan="3">APRENDICES MATRICULADOS</td>
-                    <td>                        - </td>
-                    <td colspan="6">No. APRENDICES ACTIVOS</td>
-                    <td colspan="2">           - </td>
-                    <td colspan="6">% DESERCIÓN A LA FECHA</td>
-                    <td colspan="2">0,00%</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td colspan="2">EVALUADOR</td>
-                    <td colspan="18">0</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td width="111" rowspan="11">INFORMACIÓN REFERENTE AL PROYECTO</td>
-                    <td colspan="2">FASE DEL PROYECTO</td>
-                    <td>ANÁLISIS</td>
-                    <td width="30">0</td>
-                    <td colspan="3">PLANEACIÓN</td>
-                    <td>0</td>
-                    <td colspan="3">EJECUCIÓN</td>
-                    <td>0</td>
-                    <td colspan="3">EVALUACIÓN</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td colspan="2" rowspan="5">Verificación del Alcance del    proyecto</td>
-                    <td colspan="2">BENEFICIARIOS</td>
-                    <td colspan="15">0</td>
-                </tr>
-                <tr>
-                    <td colspan="2">IMPACTO SOCIAL</td>
-                    <td colspan="15">0</td>
-                </tr>
-                <tr>
-                    <td colspan="2">IMPACTO ECONÓMICO</td>
-                    <td colspan="15">0</td>
-                </tr>
-                <tr>
-                    <td colspan="2">IMPACTO AMBIENTAL</td>
-                    <td colspan="15">0</td>
-                </tr>
-                <tr>
-                    <td colspan="2">IMPACTO TECNOLÓGI O</td>
-                    <td colspan="15">0</td>
-                </tr>
-                <tr>
-                    <td colspan="2" rowspan="4">ESTADO DE LOS APRENDICES</td>
-                    <td colspan="2">APLAZADOS</td>
-                    <td colspan="2">0</td>
-                    <td colspan="3" rowspan="4">DESCRIBA LA    EVALUACIÓN INICIAL DEL PROYECTO BASADO EN EL CONTROL OPERATIVO</td>
-                    <td colspan="10" rowspan="4">0</td>
-                </tr>
-                <tr>
-                    <td colspan="2">CANCELADO</td>
-                    <td colspan="2">0</td>
-                </tr>
-                <tr>
-                    <td colspan="2">TRASLADADOS</td>
-                    <td colspan="2">0</td>
-                </tr>
-                <tr>
-                    <td colspan="2">CONDICIONADO</td>
-                    <td colspan="2">0</td>
-                </tr>
-                <tr>
-                    <td colspan="2">Nombre las competencias actuales de la fase del proyecto</td>
-                    <td colspan="6">0</td>
-                    <td colspan="4">Los    resultados de aprendizaje, asociados a la fase</td>
-                    <td colspan="7">0</td>
-                </tr>
+                </f:facet>  
+                <p:row>  
+                    <p:column colspan="" style="font-weight: bold;" width="1.75px">F.Reunion</p:column>  
+                    <p:column colspan=""> 
+                        <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecSeg" value="#{seguimientoProyectosController.selected.fecSeg}" title="#{bundle.CreateSeguimientoProyectosTitle_fecSeg}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_fecSeg}"/>
+                    </p:column>  
+                    <p:column colspan="">H.Inicio</p:column>  
+                    <p:column>    <p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="horIni" value="#{seguimientoProyectosController.selected.horIni}" title="#{bundle.CreateSeguimientoProyectosTitle_horIni}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_horIni}"/>
+                    </p:column> 
+                     <p:column colspan="">H.Final</p:column>  
+                    <p:column><p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="horFin" value="#{seguimientoProyectosController.selected.horFin}" title="#{bundle.CreateSeguimientoProyectosTitle_horFin}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_horFin}"/>
+                    </p:column>
+                      <p:column colspan="">Horas</p:column>  
+                    <p:column><p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="totHor" value="#{seguimientoProyectosController.selected.totHor}" title="#{bundle.CreateSeguimientoProyectosTitle_totHor}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_totHor}"/>
+                    </p:column>
+                </p:row> 
+                <p:row>  
+                    <p:column  style="font-weight: bold;">Ficha No:</p:column>  
+                    <p:column colspan="3"><p:selectOneMenu id="codFic" value="#{seguimientoProyectosController.selected.codFic}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_codFic}">
+                                    <f:selectItems value="#{fichasCaracterizacionController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu></p:column>  
 
-                <tr>
-                    <td width="111" colspan="20"></td>
+                    <p:column colspan=""  style="font-weight: bold;">Programa de Formacion</p:column>  
+                    <p:column colspan="3"><p:selectOneMenu id="codPrg" value="#{seguimientoProyectosController.selected.codPrg}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_codPrg}">
+                                    <f:selectItems value="#{programasController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu></p:column>  
 
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <th  colspan="20" >REVISIÓN Y    SEGUIMIENTO AL PROYECTO</th>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>No.</td>
-                    <td width="63">ITEM</td>
-                    <td colspan="2">DESCRIPCIÓN ACTIVIDADES A    REALIZAR</td>
-                    <td>C</td>
-                    <td width="30">CP</td>
-                    <td width="30">NC</td>
-                    <td width="29">NA</td>
-                    <td colspan="3">DETALLE</td>
-                    <td colspan="9" rowspan="3">EVIDENCIA    ENCONTRADA O NO CONFORMIDAD PRESENTADA</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td colspan="2" rowspan="2">1</td>
-                    <td colspan="2" rowspan="2">JUSTIFICACIÓN    DE LA OFERTA ACADEMICA</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td width="42" rowspan="2">TIPO</td>
-                    <td width="58" rowspan="2">GRADO</td>
-                    <td width="64" rowspan="2">ESTADO</td>
-                </tr>
-                <tr>
-                    <td>0%</td>
-                    <td>0%</td>
-                    <td>0%</td>
-                    <td>0%</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>1</td>
-                    <td>1</td>
-                    <td colspan="2">El programa contribuye a dinamizar, mejorar los    sectores de Clase Mundial.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>2</td>
-                    <td>2</td>
-                    <td colspan="2">El programa contribuye a dinamizar, mejorar los    Objetivos del Milenio, con impacto SENA.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>3</td>
-                    <td>3</td>
-                    <td colspan="2">El programa contribuye a dinamizar, mejorar las    propuestas en el marco de la agenda regional.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>4</td>
-                    <td>4</td>
-                    <td colspan="2">El programa apunta hacia  el sistema nacional de ciencia, tecnología    e innovación componentes (desarrollo tecnológico e innovación) - SNCT&amp;I</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>5</td>
-                    <td>5</td>
-                    <td colspan="2">El programa contribuye a dinamizar, mejorar las    locomotoras para el desarrollo</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>6</td>
-                    <td>6</td>
-                    <td colspan="2">El programa contribuye a dinamizar, mejorar los    sectores de desarrollo local - la apuesta productiva local.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>7</td>
-                    <td>7</td>
-                    <td colspan="2">El programa contribuye a dinamizar la Misión    institucional .</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>8</td>
-                    <td>8</td>
-                    <td colspan="2">El programa tiene una aceptable demanda en    contratación de aprendices.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>9</td>
-                    <td>9</td>
-                    <td colspan="2">El programa tiene una aceptable demanda    laboral.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>10</td>
-                    <td>10</td>
-                    <td colspan="2">Las empresas solicitan esta formación o    similares.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>11</td>
-                    <td>11</td>
-                    <td colspan="2">El Centro cuenta con los equipos e    infraestructura adecuada para atender dicho programa</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>12</td>
-                    <td>12</td>
-                    <td colspan="2">El Centro cuenta con el talento humano  idóneo (de planta o por contratación) para    atender dicho programa</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>13</td>
-                    <td>13</td>
-                    <td colspan="2">Se    realizó el acta de aprobación de la oferta educativa.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td colspan="2" rowspan="3">2</td>
-                    <td colspan="2" rowspan="3">ALISTAMIENTO    INICIAL DEL PROCESO DE FORMACIÓN</td>
-                    <td>C</td>
-                    <td>CP</td>
-                    <td>NC</td>
-                    <td>NA</td>
-                    <td colspan="3">DETALLE</td>
-                    <td colspan="9" rowspan="3">EVIDENCIA    ENCONTRADA O NO CONFORMIDAD PRESENTADA</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td width="42" rowspan="2">TIPO</td>
-                    <td width="58" rowspan="2">GRADO</td>
-                    <td width="64" rowspan="2">ESTADO</td>
-                </tr>
-                <tr>
-                    <td>0%</td>
-                    <td>0%</td>
-                    <td>0%</td>
-                    <td>0%</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>14</td>
-                    <td>1</td>
-                    <td colspan="2">Se definieron las ofertas académicas.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>15</td>
-                    <td>2</td>
-                    <td colspan="2">Se encuentra creada la ficha en el aplicativo.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
+                 
+                </p:row>  
+                <p:row>  
+                    <p:column>Houston</p:column>  
+                    <p:column >0</p:column>  
+                </p:row>  
 
-                <tr bgcolor="#FFFFFF">
-                    <td>16</td>
-                    <td>3</td>
-                    <td colspan="2">Se nombró el gestor del proyecto.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>17</td>
-                    <td>4</td>
-                    <td colspan="2">Se le entregó el programa de formación al    gestor del proyecto.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>18</td>
-                    <td>5</td>
-                    <td colspan="2">Se encuentra formulado el proyecto para el    diseño curricular</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>19</td>
-                    <td>6</td>
-                    <td colspan="2">Se envió el proyecto al formador de docentes,    para su revisión.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>20</td>
-                    <td>7</td>
-                    <td colspan="2">El proyecto pasó a revisión por el comité de    proyectos, para su aprobación.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>21</td>
-                    <td>8</td>
-                    <td colspan="2">Se cuenta con el control operativo.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td width="17">&nbsp;</td>
-                    <td width="17">&nbsp;</td>
-                    <td width="27">&nbsp;</td>
-                    <td width="37">&nbsp;</td>
-                    <td width="32">&nbsp;</td>
-                    <td width="28">&nbsp;</td>
-                    <td width="23">&nbsp;</td>
-                    <td width="26">&nbsp;</td>
-                    <td width="21">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>22</td>
-                    <td>9</td>
-                    <td colspan="2">Se incluyeron los materiales de formación    requeridos para la ejecución del proyecto.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>23</td>
-                    <td>10</td>
-                    <td colspan="2">Se entrega la matriz de proyectos</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td colspan="2" rowspan="3">3</td>
-                    <td colspan="2" rowspan="3">RECURSOS</td>
-                    <td>C</td>
-                    <td>CP</td>
-                    <td>NC</td>
-                    <td>NA</td>
-                    <td colspan="3">DETALLE</td>
-                    <td colspan="9" rowspan="3">EVIDENCIA    ENCONTRADA O NO CONFORMIDAD PRESENTADA</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td width="42" rowspan="2">TIPO</td>
-                    <td width="58" rowspan="2">GRADO</td>
-                    <td width="64" rowspan="2">ESTADO</td>
-                </tr>
-                <tr>
-                    <td>0%</td>
-                    <td>0%</td>
-                    <td>0%</td>
-                    <td>0%</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>24</td>
-                    <td>1</td>
-                    <td colspan="2">Se encuentra aprobado por el Comité de    proyectos los recursos requeridos.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>25</td>
-                    <td>2</td>
-                    <td colspan="2">El proyecto cuenta con los equipos suficientes    y necesarios para su ejecución.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>26</td>
-                    <td>3</td>
-                    <td colspan="2">El    proyecto cuenta con las herramientas suficientes y necesarios.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>27</td>
-                    <td>4</td>
-                    <td colspan="2">El    proyecto cuenta con el talento humano suficientes y necesarios, asociados.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>28</td>
-                    <td>5</td>
-                    <td colspan="2">El    proyecto cuenta con los materiales suficientes y necesarios.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td colspan="2" rowspan="3">14</td>
-                    <td colspan="2" rowspan="3">SEGUIMIENTO    DE LA ETAPA PRODUCTIVA</td>
-                    <td>C</td>
-                    <td>CP</td>
-                    <td>NC</td>
-                    <td>NA</td>
-                    <td colspan="3">DETALLE</td>
-                    <td colspan="9" rowspan="3">EVIDENCIA    ENCONTRADA O NO CONFORMIDAD PRESENTADA</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td width="42" rowspan="2">TIPO</td>
-                    <td width="58" rowspan="2">GRADO</td>
-                    <td width="64" rowspan="2">ESTADO</td>
-                </tr>
-                <tr>
-                    <td>0%</td>
-                    <td>0%</td>
-                    <td>0%</td>
-                    <td>0%</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>29</td>
-                    <td>1</td>
-                    <td colspan="2">Se    encuentra registrado en Sofía Plus el cambio de la etapa lectiva a la etapa    productiva.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>30</td>
-                    <td>2</td>
-                    <td colspan="2">El    aprendiz realiza el registro quincenalmente en la plataforma blackboard.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>31</td>
-                    <td>3</td>
-                    <td colspan="2">Se    asignó instructor para hacer seguimiento durante la etapa productiva.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>32</td>
-                    <td>4</td>
-                    <td colspan="2">Se    hace el seguimiento a la etapa productiva con la visita del instructor a la    empresa.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>33</td>
-                    <td>5</td>
-                    <td colspan="2">Realizó    el aprendiz la actualización de la hoja de vida.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>34</td>
-                    <td>6</td>
-                    <td colspan="2">El    aprendiz tiene registro en el formato de la evaluación y seguimiento de la    etapa productiva.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>35</td>
-                    <td>7</td>
-                    <td colspan="2">El    aprendiz presentó el paz y salvo académico.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>36</td>
-                    <td>8</td>
-                    <td colspan="2">Cuenta    con los dos seguimientos durante la etapa productiva.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>37</td>
-                    <td>9</td>
-                    <td colspan="2">Presenta    carta de cumplimiento de la etapa productiva a coordinación académica.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>38</td>
-                    <td>10</td>
-                    <td colspan="2">Se    registró la evaluación de la etapa productiva en el aplicativo SOFIA PLUS    para su certificación.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td colspan="2" rowspan="3">15</td>
-                    <td colspan="2" rowspan="3">ADMINISTRACIÓN    EDUCATIVA</td>
-                    <td>C</td>
-                    <td>CP</td>
-                    <td>NC</td>
-                    <td>NA</td>
-                    <td colspan="3">DETALLE</td>
-                    <td colspan="9" rowspan="3">EVIDENCIA    ENCONTRADA O NO CONFORMIDAD PRESENTADA</td>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td width="42" rowspan="2">TIPO</td>
-                    <td width="58" rowspan="2">GRADO</td>
-                    <td width="64" rowspan="2">ESTADO</td>
-                </tr>
-                <tr>
-                    <td>0%</td>
-                    <td>0%</td>
-                    <td>0%</td>
-                    <td>0%</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>39</td>
-                    <td>1</td>
-                    <td colspan="2">El    proyecto se encuentra aprobado en Sofía Plus</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>40</td>
-                    <td>2</td>
-                    <td colspan="2">Los    recursos y materiales de formación están previstos en las órdenes de    requisición de compra.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>41</td>
-                    <td>3</td>
-                    <td colspan="2">El    proyecto cuenta con los ambientes de aprendizaje requeridos en la fase de    alistamiento.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>42</td>
-                    <td>4</td>
-                    <td colspan="2">Se    programan los espacios en el LMS de acuerdo con el perfil del proyecto.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>42</td>
-                    <td>5</td>
-                    <td colspan="2">Se    evidencia concordancia entre la Matriz del Proyecto y lo programado en Sofía    Plus.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>43</td>
-                    <td>6</td>
-                    <td colspan="2">Los    aprendices se encuentran asociados a la ruta de  aprendizaje.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td>44</td>
-                    <td>7</td>
-                    <td colspan="2">En    el LMS se encuentra organizada la Información del proyecto, guías de    aprendizaje, documentos de apoyo y carpeta de Evidencias.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FFFFFF">
-                    <td align="center" valign="middle">45</td>
-                    <td>8</td>
-                    <td colspan="2">Se    ha realizado seguimiento por parte del Comité de Evaluación y Seguimiento    mínimo una vez cada trimestre de acuerdo a los lineamientos.</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td colspan="9">&nbsp;</td>
-                </tr>
-                <tr bgcolor="#FC7323" class="tu">
-                    <td colspan="4" bgcolor="#FC7323" >TOTAL</td>
-                    <td bgcolor="#FC7323" >0</td>
-                    <td bgcolor="#FC7323" >0</td>
-                    <td bgcolor="#FC7323" >0</td>
-                    <td bgcolor="#FC7323" >0</td>
-                    <td bgcolor="#FC7323" >0</td>
-                    <td bgcolor="#FC7323">0</td>
-                    <td bgcolor="#FC7323" >0</td>
-                    <td colspan="9" bgcolor="#FC7323">&nbsp;</td>
-                </tr>
-            </table>
+                <p:row>  
+                    <p:column colspan="4" styleClass="ui-widget-header">  
+                        <p:spacer height="0"/>  
+                    </p:column>  
+                </p:row>  
+
+                <p:row>  
+                    <p:column style="font-weight: bold;">Utah</p:column>  
+                    <p:column style="font-weight: bold;">4</p:column>  
+
+                    <p:column rowspan="2">Utah</p:column>  
+                    <p:column rowspan="2">3</p:column>  
+                </p:row>  
+
+                <p:row>  
+                    <p:column>San Antonio</p:column>  
+                    <p:column >2</p:column>  
+                </p:row>  
+
+                <p:row>  
+                    <p:column colspan="6" styleClass="ui-widget-header">  
+                        <p:spacer height="0"/>  
+                    </p:column>  
+                </p:row>  
+
+                <p:row>  
+                    <p:column style="font-weight: bold;">Chicago</p:column>  
+                    <p:column style="font-weight: bold;">4</p:column>  
+
+                    <p:column rowspan="2" style="font-weight: bold;">Chicago</p:column>  
+                    <p:column rowspan="2" style="font-weight: bold;">4</p:column>  
+
+                    <p:column rowspan="5" style="font-weight: bold;">Chicago</p:column>  
+                    <p:column rowspan="5" style="font-weight: bold;">4</p:column>  
+                </p:row>  
+
+                <p:row>  
+                    <p:column>New York</p:column>  
+                    <p:column >1</p:column>  
+                </p:row>  
+
+                <p:row>  
+                    <p:column colspan="4" styleClass="ui-widget-header">  
+                        <p:spacer height="0"/>  
+                    </p:column>  
+                </p:row>  
+
+                <p:row>  
+                    <p:column>Atlanta</p:column>  
+                    <p:column >1</p:column>  
+
+                    <p:column rowspan="2">Orlando</p:column>  
+                    <p:column rowspan="2">0</p:column>  
+                </p:row>  
+
+                <p:row>  
+                    <p:column style="font-weight: bold;">Orlando</p:column>  
+                    <p:column style="font-weight: bold;">4</p:column>  
+                </p:row>  
+
+
+                <f:facet name="footer">  
+                    <p:row>  
+                        <p:column  colspan="4" style="text-align: right">  
+                            Finals MVP  
+                        </p:column>  
+                        <p:column  colspan="3" rowspan="3">  
+                            Michael Jordan (Chicago)  
+                        </p:column>  
+                    </p:row>  
+
+                    <p:row>  
+                        <p:column  colspan="4" style="text-align: right">  
+                            Season MVP  
+                        </p:column>  
+                    </p:row>  
+                    <p:row>  
+                        <p:column  colspan="4" style="text-align: right">  
+                            Top Scorer  
+                        </p:column>  
+                    </p:row>  
+                </f:facet>  
+            </p:panelGrid> 
+            
         </ui:define>
     </ui:composition>
 
