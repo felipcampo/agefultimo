@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateEmpresasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+
+            <h:form id="form">                  
+                <p:growl id="messages" showDetail="true" />  
+                <p:schedule id="schedule" value="#{scheduleController.eventModel}" locale="es" widgetVar="myschedule">  
+
+                    <p:ajax event="dateSelect" listener="#{scheduleController.onDateSelect}" oncomplete="eventDialog.show();" update="eventDetails"/>  
+                    <p:ajax event="eventSelect" listener="#{scheduleController.onEventSelect}" oncomplete="eventDialog.show();" update="eventDetails"/>  
+                    <p:ajax event="eventMove" listener="#{scheduleController.onEventMove}" update="messages" />  
+                    <p:ajax event="eventResize" listener="#{scheduleController.onEventResize}" update="messages" />  
+
+                </p:schedule> 
+
+                <p:dialog id="eventDialog"  widgetVar="eventDialog" header="Detalle de la Visita" resizable="true" modal="true" showEffect="clip" hideEffect="clip">  
+                    <h:panelGrid id="eventDetails" columns="3">  
+
+                        <f:facet name="header">
+                            <p:row><p:column colspan="3">#{bundle.CreateVisitaEtapaProductivaTitle}</p:column></p:row>                            
+                        </f:facet>                        
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateVisitaEtapaProductivaLabel_codVis}" for="codVis" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="codVis" value="#{visitaEtapaProductivaController.selected.codVis}" title="#{bundle.CreateVisitaEtapaProductivaTitle_codVis}" required="true" requiredMessage="#{bundle.CreateVisitaEtapaProductivaRequiredMessage_codVis}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="codVis"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateVisitaEtapaProductivaLabel_fecVis}" for="fecVis" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecVis" value="#{visitaEtapaProductivaController.selected.fecVis}" title="#{bundle.CreateVisitaEtapaProductivaTitle_fecVis}" required="true" requiredMessage="#{bundle.CreateVisitaEtapaProductivaRequiredMessage_fecVis}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="fecVis"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateVisitaEtapaProductivaLabel_estVis}" for="estVis" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="estVis" value="#{visitaEtapaProductivaController.selected.estVis}" title="#{bundle.CreateVisitaEtapaProductivaTitle_estVis}" required="true" requiredMessage="#{bundle.CreateVisitaEtapaProductivaRequiredMessage_estVis}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="estVis"/>
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>
+                                <h:outputLabel value="#{bundle.CreateVisitaEtapaProductivaLabel_disFec}" for="disFec" />
+                            </p:column>
+                            <p:column style="border-right: white">    
+                                <p:inputText id="disFec" value="#{visitaEtapaProductivaController.selected.disFec}" title="#{bundle.CreateVisitaEtapaProductivaTitle_disFec}" required="true" requiredMessage="#{bundle.CreateVisitaEtapaProductivaRequiredMessage_disFec}"/>
+                            </p:column>
+                            <p:column style="border-left: white;">
+                                <p:message for="disFec"/>
+                            </p:column>
+                        </p:row>
+
+                        <p:commandButton process="@this, @form" update="@form, :msgs"
+                                         action="#{visitaEtapaProductivaController.create}" value="#{bundle.CreateVisitaEtapaProductivaSaveLink}" icon="ui-icon-disk"/>
+
+                        <p:commandButton ajax="false" action="#{visitaEtapaProductivaController.prepareList}" value="#{bundle.CreateVisitaEtapaProductivaShowAllLink}" immediate="true" oncomplete="myschedule.update(); 
+                                         eventDialog.hide();"/>
+                    </h:panelGrid>
+                </p:dialog>
+
+            </h:form>  
+
+        </ui:define>
+    </ui:composition>
+
+</html>

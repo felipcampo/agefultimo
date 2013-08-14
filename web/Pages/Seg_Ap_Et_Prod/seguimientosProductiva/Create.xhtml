@@ -10,6 +10,11 @@
         <ui:define name="title">            
             <h:outputText value="#{bundle.CreateSeguimientosProductivaTitle}"></h:outputText>
         </ui:define>
+
+        <ui:define name="menumodulo">
+            <ui:include src="../Menu_mod4_Auditor.xhtml"/>
+        </ui:define>
+
         <ui:define name="body">
 
             <div id="LayoutTitulo_Form_Seg_Ap_Et_Prod">
@@ -25,20 +30,15 @@
                         <div id="form" align="center">
 
                             <p:toolbar>  
-                                <p:toolbarGroup align="left">  
+                                <p:toolbarGroup align="left"> 
 
                                     <p:commandButton type="button" value="Nuevo" icon="ui-icon-document" /> 
 
                                     <p:commandButton ajax="false" value="Abrir" icon="ui-icon-folder-open" action="#{seguimientosProductivaController.prepareList}" immediate="true"/>
 
-                                    <p:separator />  
+                                    <p:separator />                                      
 
-                                    <p:commandButton process="@this, @form" update="@form, :msgs"  
-                                                     action="#{seguimientosProductivaController.create}" value="#{bundle.CreateSeguimientosProductivaSaveLink}" icon="ui-icon-disk"/>
-
-                                    <p:commandButton type="reset" value="Limpiar" icon="ui-icon-trash"/>  
-
-                                    <p:commandButton type="button" value="Inprimir" icon="ui-icon-print"/>  
+                                    <p:commandButton type="button" value="Imprimir" icon="ui-icon-print"/>  
                                 </p:toolbarGroup>  
 
                                 <p:toolbarGroup align="right">  
@@ -344,8 +344,17 @@
                                     <p:column colspan="3">    
                                         <p:inputTextarea  disabled="true" rows="4" cols="30" id="espRec" value="#{seguimientosProductivaController.selected.espRec}" title="#{bundle.CreateSeguimientosProductivaTitle_espRec}" required="true" requiredMessage="#{bundle.CreateSeguimientosProductivaRequiredMessage_espRec}"/>
                                     </p:column>                                    
-                                </p:row> 
+                                </p:row>
 
+                                <f:facet name="footer">
+                                    <p:row>
+                                        <p:column  colspan="4">
+                                            <p:commandButton process="@this, @form" update="@form, :msgs"  
+                                                             action="#{seguimientosProductivaController.create}" value="#{bundle.CreateSeguimientosProductivaSaveLink}" icon="ui-icon-disk"/>
+                                            <p:commandButton type="reset" value="Limpiar" icon="ui-icon-trash"/>  
+                                        </p:column>                                        
+                                    </p:row>
+                                </f:facet> 
                             </p:panelGrid>
 
                             <br />
@@ -353,34 +362,20 @@
                             <br />                 
 
                             <p:dialog  id="dialog"   closeOnEscape="true" header="#{bundle.CreateConcertacionPlanTrabajoProductivaTitle}" widgetVar="dlg" minHeight="300" minWidth="450" 
-                                       resizable="true" modal="true" hideEffect="bounce">
+                                       resizable="true" modal="true" showEffect="clip" hideEffect="clip">
                                 <ui:include src="/Pages/Seg_Ap_Et_Prod/concertacionPlanTrabajoProductiva/Create.xhtml" />
-                            </p:dialog>                           
-
-
+                            </p:dialog>  
                         </div>
                     </h:form>
                 </div>
-
-
-
             </div>
             <div id="LayoutInformacion_Seg_Ap_Et_Prod">
                 <h4>INFORMACION</h4>
                 <hr></hr>
                 <p id="margen">Informacion de ayuda para formularios</p>
 
-
-
-
             </div>
         </ui:define>
     </ui:composition>
-
-
-
-
-
-
 
 </html>
