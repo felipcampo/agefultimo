@@ -50,9 +50,9 @@
 
                             </p:toolbar> 
 
-                            <a style="display:scroll;position:fixed;bottom:5px;right:5px;" href="#" title="subir"><img src="http://lh5.googleusercontent.com/-luDGEoQ_WZE/T1Ak-gta5MI/AAAAAAAACPI/ojfEGiaNmGw/s60/flecha-arriba.png" alt=
-                                                                                                                       "" /></a>
-
+                                <div id='IrArriba'>
+<a href='#Arriba'><span/></a>
+</div>
                             <br />
                             <br />
 
@@ -375,7 +375,33 @@
                 <p id="margen">Informacion de ayuda para formularios</p>
 
             </div>
+            <script type='text/javascript'>
+//<![CDATA[
+// Botón para Ir Arriba
+jQuery.noConflict();
+jQuery(document).ready(function() {
+jQuery("#IrArriba").hide();
+jQuery(function () {
+jQuery(window).scroll(function () {
+if (jQuery(this).scrollTop() > 200) {
+jQuery('#IrArriba').fadeIn();
+} else {
+jQuery('#IrArriba').fadeOut();
+}
+});
+jQuery('#IrArriba a').click(function () {
+jQuery('body,html').animate({
+scrollTop: 0
+}, 800);
+return false;
+});
+});
+
+});
+//]]>
+</script>
         </ui:define>
+        
     </ui:composition>
 
 </html>
