@@ -14,130 +14,124 @@
 
         </ui:define>
         <ui:define name="body">
-            <p:panelGrid style="margin-top:20px">  
+            <center>
+            <p:panelGrid style="margin-top:20px; alignment-adjust: central;">  
                 <f:facet name="header">  
                     <p:row>  
-                        <p:column colspan="14">EVALUACION Y SEGUIMIENTO COORDINADOR ACADEMICO</p:column>  
+                        <p:column colspan="14">EVALUACION Y SEGUIMIENTO    <p:selectOneMenu id="idUsu" value="#{seguimientoProyectosController.selected.idUsu}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_idUsu}">
+                                    <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                                </p:selectOneMenu></p:column> 
+                      
                     </p:row>  
-
                 </f:facet>  
                 <p:row>  
-                    <p:column colspan="" style="font-weight: bold;" width="1.75px">F.Reunion</p:column>  
-                    <p:column colspan=""> 
+                    <p:column colspan="2" style="font-weight: bold;" width="1.75px">F.Reunion</p:column>  
+                    <p:column colspan="2"> 
                         <p:calendar navigator="true" pattern="MM/dd/yyyy" showOn="button" id="fecSeg" value="#{seguimientoProyectosController.selected.fecSeg}" title="#{bundle.CreateSeguimientoProyectosTitle_fecSeg}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_fecSeg}"/>
                     </p:column>  
-                    <p:column colspan="">H.Inicio</p:column>  
-                    <p:column>    <p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="horIni" value="#{seguimientoProyectosController.selected.horIni}" title="#{bundle.CreateSeguimientoProyectosTitle_horIni}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_horIni}"/>
+                    <p:column colspan="2">H.Inicio</p:column>  
+                    <p:column colspan="2"><p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="horIni" value="#{seguimientoProyectosController.selected.horIni}" title="#{bundle.CreateSeguimientoProyectosTitle_horIni}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_horIni}"/>
                     </p:column> 
-                     <p:column colspan="">H.Final</p:column>  
-                    <p:column><p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="horFin" value="#{seguimientoProyectosController.selected.horFin}" title="#{bundle.CreateSeguimientoProyectosTitle_horFin}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_horFin}"/>
+                     <p:column colspan="1">H.Final</p:column>  
+                    <p:column colspan="2"><p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="horFin" value="#{seguimientoProyectosController.selected.horFin}" title="#{bundle.CreateSeguimientoProyectosTitle_horFin}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_horFin}"/>
                     </p:column>
-                      <p:column colspan="">Horas</p:column>  
-                    <p:column><p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="totHor" value="#{seguimientoProyectosController.selected.totHor}" title="#{bundle.CreateSeguimientoProyectosTitle_totHor}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_totHor}"/>
+                      <p:column colspan="1" >Horas</p:column>  
+                    <p:column colspan="2"><p:calendar navigator="true" pattern="HH:mm:ss" showOn="button" id="totHor" value="#{seguimientoProyectosController.selected.totHor}" title="#{bundle.CreateSeguimientoProyectosTitle_totHor}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_totHor}"/>
                     </p:column>
                 </p:row> 
-                <p:row>  
-                    <p:column  style="font-weight: bold;">Ficha No:</p:column>  
-                    <p:column colspan="3"><p:selectOneMenu id="codFic" value="#{seguimientoProyectosController.selected.codFic}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_codFic}">
+                   <p:row>  
+                    <p:column colspan="3" style="font-weight: bold;" width="1.75px">Ficha No:</p:column>  
+                    <p:column colspan="4"> 
+                        <p:selectOneMenu id="codFic" value="#{seguimientoProyectosController.selected.codFic}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_codFic}">
                                     <f:selectItems value="#{fichasCaracterizacionController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu></p:column>  
-
-                    <p:column colspan=""  style="font-weight: bold;">Programa de Formacion</p:column>  
-                    <p:column colspan="3"><p:selectOneMenu id="codPrg" value="#{seguimientoProyectosController.selected.codPrg}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_codPrg}">
+                                </p:selectOneMenu>
+                     </p:column>  
+                     
+                   
+                     <p:column colspan="3">Programa de Formacion:</p:column>  
+                    <p:column colspan="4">
+                        <p:selectOneMenu id="codPrg" value="#{seguimientoProyectosController.selected.codPrg}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_codPrg}">
                                     <f:selectItems value="#{programasController.itemsAvailableSelectOne}"/>
-                                </p:selectOneMenu></p:column>  
-
-                 
-                </p:row>  
+                                </p:selectOneMenu>
+                    </p:column>
+                       
+                    
+                </p:row> 
+               
                 <p:row>  
-                    <p:column>Houston</p:column>  
-                    <p:column >0</p:column>  
-                </p:row>  
-
+                    <p:column colspan="3" style="font-weight: bold;" width="1.75px">Fecha Apertura Ficha:</p:column>  
+                    <p:column colspan="4"> 
+                       
+                     </p:column>  
+                     
+                   
+                     <p:column colspan="3" style="font-weight: bold;">Proyecto:</p:column>  
+                    <p:column colspan="4">
+                       <p:inputText id="codPro" value="#{seguimientoProyectosController.selected.codPro}" title="#{bundle.CreateSeguimientoProyectosTitle_codPro}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_codPro}"/>
+                    </p:column>
+                       
+                    
+                </p:row>
+                
+                
                 <p:row>  
-                    <p:column colspan="4" styleClass="ui-widget-header">  
-                        <p:spacer height="0"/>  
+                    <p:column colspan="2" style="font-weight: bold;" width="1.75px">Nivel de Formacion:</p:column>  
+                    <p:column colspan="3"> 
+                       
                     </p:column>  
-                </p:row>  
-
-                <p:row>  
-                    <p:column style="font-weight: bold;">Utah</p:column>  
-                    <p:column style="font-weight: bold;">4</p:column>  
-
-                    <p:column rowspan="2">Utah</p:column>  
-                    <p:column rowspan="2">3</p:column>  
-                </p:row>  
-
-                <p:row>  
-                    <p:column>San Antonio</p:column>  
-                    <p:column >2</p:column>  
-                </p:row>  
-
-                <p:row>  
-                    <p:column colspan="6" styleClass="ui-widget-header">  
-                        <p:spacer height="0"/>  
+                     
+                   <p:column colspan="2" style="font-weight: bold;">Area:</p:column>  
+                    <p:column colspan="3">
+                        
+                    </p:column>
+                     <p:column colspan="2" style="font-weight: bold;">Jornada:</p:column>  
+                    <p:column colspan="2">
+                       
+                    </p:column>    
+                    
+                </p:row>
+                
+                  <p:row>  
+                    <p:column colspan="2" style="font-weight: bold;" width="1.75px">Duracion Etapa Lectiva:</p:column>  
+                    <p:column colspan="3"> 
+                       
                     </p:column>  
-                </p:row>  
-
-                <p:row>  
-                    <p:column style="font-weight: bold;">Chicago</p:column>  
-                    <p:column style="font-weight: bold;">4</p:column>  
-
-                    <p:column rowspan="2" style="font-weight: bold;">Chicago</p:column>  
-                    <p:column rowspan="2" style="font-weight: bold;">4</p:column>  
-
-                    <p:column rowspan="5" style="font-weight: bold;">Chicago</p:column>  
-                    <p:column rowspan="5" style="font-weight: bold;">4</p:column>  
-                </p:row>  
-
-                <p:row>  
-                    <p:column>New York</p:column>  
-                    <p:column >1</p:column>  
-                </p:row>  
-
-                <p:row>  
-                    <p:column colspan="4" styleClass="ui-widget-header">  
-                        <p:spacer height="0"/>  
-                    </p:column>  
-                </p:row>  
-
-                <p:row>  
-                    <p:column>Atlanta</p:column>  
-                    <p:column >1</p:column>  
-
-                    <p:column rowspan="2">Orlando</p:column>  
-                    <p:column rowspan="2">0</p:column>  
-                </p:row>  
-
-                <p:row>  
-                    <p:column style="font-weight: bold;">Orlando</p:column>  
-                    <p:column style="font-weight: bold;">4</p:column>  
-                </p:row>  
+                     
+                   <p:column colspan="3" style="font-weight: bold;">Duracion Etapa Productiva:</p:column>  
+                    <p:column colspan="2">
+                        
+                    </p:column>
+                     <p:column colspan="3" style="font-weight: bold;">Meses de Formacion:</p:column>  
+                    <p:column colspan="2">
+                       
+                    </p:column>    
+                    
+                </p:row>
+                
+                   <p:row>  
+                    <p:column colspan="3" style="font-weight: bold;" width="1.75px">Regional:</p:column>  
+                    <p:column colspan="4"> 
+                       
+                     </p:column>  
+                     
+                   
+                     <p:column colspan="3" style="font-weight: bold;">Centro:</p:column>  
+                    <p:column colspan="4">
+                       <p:inputText id="codPro" value="#{seguimientoProyectosController.selected.codPro}" title="#{bundle.CreateSeguimientoProyectosTitle_codPro}" required="true" requiredMessage="#{bundle.CreateSeguimientoProyectosRequiredMessage_codPro}"/>
+                    </p:column>
+                       
+                    
+                </p:row>
+                
+                
+           
 
 
                 <f:facet name="footer">  
-                    <p:row>  
-                        <p:column  colspan="4" style="text-align: right">  
-                            Finals MVP  
-                        </p:column>  
-                        <p:column  colspan="3" rowspan="3">  
-                            Michael Jordan (Chicago)  
-                        </p:column>  
-                    </p:row>  
-
-                    <p:row>  
-                        <p:column  colspan="4" style="text-align: right">  
-                            Season MVP  
-                        </p:column>  
-                    </p:row>  
-                    <p:row>  
-                        <p:column  colspan="4" style="text-align: right">  
-                            Top Scorer  
-                        </p:column>  
-                    </p:row>  
+            
                 </f:facet>  
             </p:panelGrid> 
-            
+            </center>
         </ui:define>
     </ui:composition>
 
